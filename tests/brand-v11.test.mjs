@@ -40,3 +40,8 @@ test("Brand update does not enable payment links or storage", () => {
   assert.doesNotMatch(page, /checkout\.revolut\.com/);
   assert.doesNotMatch(page, /supabase\.co/);
 });
+
+test("Small section labels use accessible on-light teal instead of low-contrast original", () => {
+  assert.match(style, /\.eyebrow-on-light\s*\{color:#006B65\}/);
+  assert.doesNotMatch(page, /#00857d/i);
+});
