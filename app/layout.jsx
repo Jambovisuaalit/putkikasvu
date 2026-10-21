@@ -1,0 +1,1 @@
+import './style.css';export const metadata={title:'Putkikasvu | Verkkosivut putkialalle',description:'Näe omalle LVI-yrityksellesi suunniteltu verkkosivuluonnos ennen ostopäätöstä.',robots:{index:false,follow:false}};export default function Layout({children}){return <html lang="fi"><body>{children}</body></html>}
