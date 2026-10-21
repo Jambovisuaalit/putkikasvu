@@ -6,9 +6,13 @@ export async function POST(request:Request){
  try{
   if(!backendReady())return reply({ok:false,error:"Maksujen täsmäytys ei ole aktivoitu."},503);
   const staff=await authenticatedUser(request);await requireStaff(staff.id);
-  const input=validatePayment(await readLimitedJson(request));
-  const order=await findOne("pk_orders","select=id,order_ref&id=eq."+encodeURIComponent(input.orderId)) as {id:string;order_ref:string}|null;
+  const body=await readLimitedJson(request);
+  const input=validatePayment(body);
+  const extra=body as Record<string,unknown>;
+  const order=await findOne("pk_orders","select=id,order_ref,company_name&id=eq."+encodeURIComponent(input.orderId)) as {id:string;order_ref:string;company_name:string}|null;
   if(!order)return reply({ok:false,error:"Tilausta ei löydy."},404);
+  if(extra.orderRef!==order.order_ref||extra.companyName!==order.company_name)
+   return reply({ok:false,error:"Yritys- tai tilausviite ei täsmää. Tarkista tapahtuma Revolut Prosta."},409);
   // Reviewer must verify the order reference and gross sum against Revolut Pro transaction details.
   // The external transaction ID is unique across the entire database.
   const result=await db("rpc/pk_confirm_verified_payment","POST",{
