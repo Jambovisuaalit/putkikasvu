@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import BrandLogo from '../components/BrandLogo';
 export const metadata={title:'Tietosuojaseloste | Putkikasvu'};
 const sections=[
 ['Rekisterinpitäjä','Tmi Jami Harju, Y-tunnus 3581581-6, palvelubrändi Putkikasvu. Yhteydenotot ja rekisteröidyn pyynnöt: visualjambo@gmail.com. Osoitetiedot täydennetään ennen varsinaista asiakastietojen keruuta.'],
@@ -12,4 +13,4 @@ const sections=[
 ['Evästeet ja analytiikka','Tässä esikatseluversiossa ei ole otettu käyttöön erillistä käyttäjäanalytiikkaa eikä markkinointievästeitä. Mahdolliset palvelun tekniset istunto- ja turvallisuustoiminnot määräytyvät hosting-palvelun toteutuksen mukaan. Jos myöhemmin lisätään ei-välttämättömiä evästeitä, ne arvioidaan ja suostumusratkaisu toteutetaan ennen käyttöönottoa.'],
 ['Automatisoitu päätöksenteko','Nykyinen esikatselusivusto ei tee yksittäiseen henkilöön kohdistuvia oikeusvaikutuksia tai vastaavia merkittäviä vaikutuksia aiheuttavia automatisoituja päätöksiä.']
 ];
-export default function Privacy(){return <><header className="nav"><div className="wrap"><Link href="/" className="brand">Putkikasvu</Link><Link href="/">Etusivu →</Link></div></header><main className="wrap legal"><p className="eyebrow" style={{color:'#00857d'}}>Henkilötiedot</p><h1>Tietosuojaseloste</h1><p>Versio 1.0 · 21.10.2026</p><p className="warning"><strong>Esikatseluversion tietosuojateksti:</strong> yhteystietojen lopullinen vahvistus, tietojen säilytysaikojen tarkennus ja mahdollisten alihankkijoiden käsittelysopimusten tarkistus tarvitaan ennen asiakastietojen keruun laajentamista.</p>{sections.map(([h,p])=><section key={h}><h2>{h}</h2><p>{p}</p></section>)}</main></>}
+export default function Privacy(){return <><header className="nav"><div className="wrap"><BrandLogo /><Link href="/">Etusivu →</Link></div></header><main id="main-content" tabIndex={-1} className="wrap legal"><p className="eyebrow eyebrow-on-light">Henkilötiedot</p><h1>Tietosuojaseloste</h1><p>Versio 1.0 · 21.10.2026</p><p className="warning"><strong>Esikatseluversion tietosuojateksti:</strong> yhteystietojen lopullinen vahvistus, tietojen säilytysaikojen tarkennus ja mahdollisten alihankkijoiden käsittelysopimusten tarkistus tarvitaan ennen asiakastietojen keruun laajentamista.</p>{sections.map(([h,p])=><section key={h}><h2>{h}</h2><p>{p}</p></section>)}</main></>}
