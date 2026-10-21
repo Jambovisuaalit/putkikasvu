@@ -38,3 +38,6 @@ h1,h2,h3{font-weight:700}
 .hero-watermark{position:absolute;right:5%;top:10%;width:min(34vw,420px);height:auto;opacity:.12;pointer-events:none;z-index:0}
 @media(max-width:820px){.hero-watermark{display:none}.brand-wordmark{width:min(250px,55vw)}}
 @media(max-width:480px){.brand-wordmark{width:min(230px,70vw)}.nav .wrap{align-items:center}}
+
+/* Accessible darkened teal for 12px labels on white and ice-white surfaces. */
+.eyebrow-on-light{color:#006B65}
