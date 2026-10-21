@@ -3,7 +3,8 @@
 import { randomBytes } from "node:crypto";
 
 export class ApiProblem extends Error {
- constructor(public status:number, message:string){super(message)}
+ status:number;
+ constructor(status:number, message:string){super(message);this.status=status}
 }
 export type Identity = {id:string;email?:string};
 export const PRICE_CENTS=59000;
