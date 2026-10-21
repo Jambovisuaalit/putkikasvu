@@ -38,4 +38,4 @@
 .error{background:#ffebec!important;color:#952b3b!important;padding:12px;border-radius:8px}
 .footer{font-size:12px;color:#658088;border-top:1px solid #cedbde;margin-top:40px;padding-top:22px}
 @media(max-width:850px){.grid{grid-template-columns:1fr}.inner{padding:22px 15px 35px}.intro{margin-top:36px}.steps{gap:3px}.steps li{flex-direction:column;align-items:center;font-size:9px;text-align:center}.steps li span{width:24px;height:24px;flex-basis:24px}.panel{padding:23px}.previewHero{padding:47px 24px 56px}.serviceGrid div{padding:16px 8px;font-size:10px}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){.shell *{scroll-behavior:auto!important;transition:none!important}}
