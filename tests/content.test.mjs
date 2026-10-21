@@ -31,7 +31,7 @@ test('Legal pages visibly remain pending approval', () => {
 
 test('Terms cover B2B, cancellations, ownership and GDPR scope', () => {
   for (const required of ['vain elinkeinotoimintaa', '295 euroa ennakkomaksuna', 'Peruutus ennen aloitusta', '90 €/h',
-    'yksi koottu', 'nimenomaista kirjallista hyväksyntää', 'lähdekoodin', 'domain', 'hosting',
+    'yhden kootun', 'nimenomaista kirjallista hyväksyntää', 'lähdekoodin', 'domain', 'hosting',
     'GDPR 28 artiklan', 'ei-yksinomaisen']) {
     assert.ok(terms.toLowerCase().includes(required.toLowerCase()), `missing term: ${required}`);
   }
