@@ -29,4 +29,5 @@ production mode for this static export. No server environment variables are requ
 - DNS, production domain, Revolut and Supabase are outside this PR.
 - [Branch audit and candidate decision](docs/RELEASE_CANDIDATE_AUDIT.md)
 - [Brand integration provenance](docs/BRAND_WEB_V1_1.md)
+- [Contact delivery, Resend DNS and lead-handling runbook](docs/CONTACT_DELIVERABILITY_RUNBOOK.md)
 - Canva master: https://www.canva.com/folder/FAHYrTHF9cU
