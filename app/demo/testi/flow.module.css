@@ -1,4 +1,4 @@
-:root{--putki-navy:#061827;--putki-blue:#123c5a;--putki-teal:#08b8ad}
+.shell{--putki-navy:#061827;--putki-blue:#123c5a;--putki-teal:#08b8ad}
 .shell{min-height:100vh;background:#eff4f5;color:#092033;font-family:Arial,Helvetica,sans-serif}
 .testBanner{display:flex;justify-content:center;gap:14px;align-items:center;flex-wrap:wrap;background:#07382f;color:#f0fff9;padding:12px 18px;font-size:13px;line-height:1.5}
 .testBanner strong{letter-spacing:.12em}.inner{max-width:1240px;margin:0 auto;padding:28px 28px 50px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px}
