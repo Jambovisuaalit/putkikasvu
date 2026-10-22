@@ -10,7 +10,7 @@ export function validateDemo(d,{checkAssets=true}={}) {
  need(d.synthetic===true || (d.verified===true&&clean(d.source)&&clean(d.checkedAt)),'Verified source or explicit synthetic fixture required');
  need(Array.isArray(d.services)&&d.services.length>=1&&d.services.length<=6,'Supply 1–6 verified services');
  for(const s of d.services)need(clean(s.title,60)&&clean(s.description,240),'Service title/description required');
- need(/^\+?[0-9 ()-]{5,25}$/.test(d.phone)&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email),'Valid phone and email required');
+ need((d.phone == null || /^\+?[0-9 ()-]{5,25}$/.test(d.phone))&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email),'Valid phone and email required');
  need(!('reviews' in d)&&!('references' in d),'Reviews and references are not part of this template');
  need(Array.isArray(d.images)&&d.images.length<=3,'Supply at most 3 approved images');
  for(const i of d.images){
@@ -18,6 +18,8 @@ export function validateDemo(d,{checkAssets=true}={}) {
   need(/^\/images\/[a-z0-9-]+\.(png|jpg|jpeg|webp)$/.test(i.src),'Only local raster images with safe filenames allowed');
   if(checkAssets)need(existsSync(path.join(demoRoot,'public',i.src)),'Approved image file missing');
  }
+ if(d.businessId)need(/^\d{7}-\d$/.test(d.businessId),'Valid business ID required');
+ for(const key of ['heroTitle','heroLead','areaNote'])if(d[key])need(clean(d[key],300),'Invalid '+key);
  need(!d.callToAction || d.callToAction==='request','Unsupported CTA');
  return d;
 }

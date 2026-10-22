@@ -118,3 +118,16 @@ Viimeisin ajo 22.10.2026 klo 03.01.17–03.01.25 (Europe/Helsinki): **7,900 s**,
 josta generointi 0,057 s, build/export 7,842 s ja HTML-tarkistus 0,001 s.
 `npm test`: **20/20 PASS**. Myyntisivuston erillinen `npm run build` ja export-tarkistus
 läpäisivät myös. Nämä eivät korvaa paikallista visuaalista selaintarkistusta.
+
+## Kolmen pilotin valmistelu 22.10.2026
+
+Pohja tukee nyt yrityskohtaista `heroTitle`- ja `heroLead`-tekstiä, `businessId`-kenttää,
+erillistä toimialueosiota ja `areaNote`-tekstiä. Puhelinnumero voi olla `null`, jos
+varmennettua numeroa ei ole; numeroa ei korvata keksityllä tiedolla.
+Päävalikon ja heron ensisijainen toiminto on sama: Kerro työstäsi → #yhteys.
+Työn etenemistä kuvaava teksti merkitään luonnosehdotukseksi.
+
+Yrityskohtaiset lähtöaineistot ja valmiit demot pysyvät Gitin ulkopuolella,
+yksityisessä toimituspaketissa. Tuotannon markkinointisivustoa ei muuteta.
+Uusi skeematesti kattaa puuttuvan puhelimen sekä virheellisen Y-tunnuksen
+ja liian pitkän herotekstin.
