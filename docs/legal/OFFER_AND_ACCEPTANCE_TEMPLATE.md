@@ -1,0 +1,41 @@
+# Putkikasvu Standard — yksilöity tarjous ja kirjallinen tilausvahvistus v1.0
+**Asiakkaalle lähetettävä vasta, kun omistajan päätökset ja P0-esteet on ratkaistu.** Ei maksupyyntöä eikä tilausta tällä pohjalla ilman tarkistusta.
+
+## Tarjous
+**Tarjousnumero:** [ ] · **Päiväys:** [ ] · **Voimassa:** [ ]
+**Myyjä:** [vahvistettu virallinen nimi], Y-tunnus 3581581-6 · **maantieteellinen yritysosoite:** [vahvistettava] · visualjambo@gmail.com
+**Ostaja:** [virallinen yritys, Y-tunnus, osoite] · **valtuutettu hyväksyjä:** [nimi, asema, yrityssähköposti].
+**Palvelu:** Putkikasvu Standard, yritys [ ], toimialue [ ], hyväksytyt aineistot [ ].
+
+**Sisältyy:** 3 sivua (etusivu / palvelut / yhteystiedot), mobiilirakenne, kevyt tekstieditointi, asiakkaan luvalliset kuvat, soita- ja sähköposti-CTA, teknisen SEO:n perustaso, 1 koottu korjauskierros (enintään 5 kohtuullista tarkennusta), testaus ja 1 sovittu julkaisu.
+
+**Ei sisälly:** tallentava lomake, CRM- tai maksukytkentä, ajanvaraus, monikielisyys, referenssien hankinta, kuvatyöt, markkinointi, tulostakuu, hosting- tai domainmaksut, jatkuva ylläpito.
+
+**Hinta:** 590 € yhteensä. **Arvonlisäveromerkintä:** [tarkista tosiasiallinen ALV-tila ja laskumerkintä, EI täytetä automaattisesti].
+**Maksuerät:** 295 € kirjallisen tilaussopimuksen jälkeen; 295 € asiakkaan kirjallisesti hyväksyttyä julkaisuvalmiin toteutuksen, ennen julkaisua.
+**Maksutapa ja eräpäivä:** [manuaalisesti vahvistettava lasku/tili/viite]; maksu tunnistetaan tiliotteelta ennen työn aloitusta/julkaisua.
+**Ennakonpidätys:** [varmista voimassaoleva ennakkoperintärekisteri tai ennakonpidätyksen käytännöt ennen työkorvauslaskua].
+
+**Aikataulu:** esikatselun tavoite 5 arkipäivää vasta maksun + kaikkien sovittujen materiaalien/oikeuksien saamisesta; julkaisun tavoite 2 arkipäivää kirjallisen hyväksynnän, loppumaksun ja domain-/hosting-edellytysten täyttymisestä.
+
+**Domain/hosting:** tilaaja [ ], hallintaoikeuksien haltija [ ], tilaajan kustannukset [arvio tai toimittajan hinnasto], sovittu käyttöönotto [ ].
+
+**Erikseen hyväksyttävät lisätyöt, jos niitä tarvitaan:** [sisältö, määrä, hinta, toteutuksen rajaus]. Ei automaattisia lisämaksuja. Mahdollinen 29 €/kk ylläpito ei kuulu tähän sopimukseen.
+
+**Sopimuksen liitteet:**
+1. `/ehdot` — Palvelu- ja toimitusehdot, versio/päiväys [ ], toimitettu tallennettavassa muodossa [päiväys].
+2. `/tietosuoja` — Putkikasvun tietosuojaseloste, versio [ ].
+3. Soveltuvissa projekteissa täytetty asiakkaan henkilötietojen käsittelysopimus liitteineen [ ].
+4. Demolinkki (luonnos, ei asiakasreferenssi), rajaus ja aineistoluettelo [ ].
+
+## Asiakkaan kirjallinen hyväksyntä (vastauksen malli)
+> Hyväksyn yrityksen [yrityksen nimi ja Y-tunnus] puolesta Putkikasvu Standard -tarjouksen [numero, päiväys], hinnan 590 €, maksuerät 295 € + 295 € ja mukana toimitetut palvelu- ja toimitusehdot version [päiväys]. Olen yrityksen valtuutettu edustaja. Ymmärrän, että domain/hosting ja mahdolliset erikseen hyväksytyt lisätyöt eivät sisälly 590 euroon. Hyväksyn toimitusrajan, peruutus- ja keskeytysehdot sekä sovitut tekijänoikeudelliset käyttöehdot.
+>
+> Nimi / asema / yritys / päivämäärä: [ ]
+
+**Putkikasvun erillinen tilausvahvistus:** vastaanotettu hyväksyntä [pvm], ehtoversio [ ], valtuus tarkistettu [ ], asiakkaan ilmoittamat muutokset [ ], sovittu aloitusedellytys [ ], hyväksyjä [ ]. Vasta tämän jälkeen voidaan lähettää oikea lasku, jos P0-esteet on ratkaistu.
+
+## Julkaisun ja loppumaksun nimenomainen hyväksyntä
+> Olen tarkistanut esikatselun [URL ja versio/pvm], hyväksyn sen toimituslaajuuden mukaisena julkaisuvalmiiksi ja pyydän laskuttamaan 295 € loppuerän. Tuotantojulkaisu tapahtuu vasta maksun vahvistamisen sekä domainin/hostingin käyttöönottovalmiuden jälkeen.
+
+**Arkistointi:** tallenna tarjous, liitteiden muuttumattomat versiot, asiakkaan hyväksyntä ja toimittajan vahvistus samaan sopimustunnukseen. Älä lisää henkilötietoja julkiseen GitHubiin.
