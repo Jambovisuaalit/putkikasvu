@@ -1,5 +1,6 @@
 import { Inter, Manrope } from "next/font/google";
 import "./style.css";
+import SkipLink from "./components/SkipLink";
 const manrope = Manrope({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-manrope", display: "swap" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 export const metadata = {
@@ -10,7 +11,7 @@ export const metadata = {
 };
 export default function Layout({ children }) {
   return <html lang="fi"><body className={manrope.variable + " " + inter.variable}>
-    <a className="skip-link" href="#main-content">Siirry sisältöön</a>
+    <SkipLink />
     {children}
   </body></html>;
 }
