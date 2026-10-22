@@ -28,3 +28,4 @@ test('generator stages only approved images, preserves originals and refuses ove
  // Remove only this test's own generated directory and input.
  fs.rmSync(output,{recursive:true});fs.rmSync(dir,{recursive:true});
 });
+test('verified email-only company does not require a fabricated phone',()=>{assert.doesNotThrow(()=>validateDemo({...base,phone:null,businessId:'3454047-8',heroTitle:'Asennustyöt'}));assert.throws(()=>validateDemo({...base,businessId:'invalid'}));assert.throws(()=>validateDemo({...base,heroTitle:'x'.repeat(301)}));});
