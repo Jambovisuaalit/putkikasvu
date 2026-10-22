@@ -7,8 +7,8 @@ const sections = [
   {
     title: '1. Rekisterinpitäjä ja yhteystiedot',
     paragraphs: [
-      'Rekisterinpitäjä: Tmi Jami Harju, Y-tunnus 3581581-6. Palvelubrändi: Putkikasvu. Tietosuojaa koskevat pyynnöt ja yhteydenotot: visualjambo@gmail.com.',
-      'Rekisterinpitäjän maantieteellinen yritysosoite on vahvistamatta eikä palvelua avata maksullisille asiakastilauksille ennen osoitteen julkaisemista. Tämä seloste koskee Putkikasvun omia yhteydenotto-, tarjous- ja asiakkuustietoja; asiakkaan oman verkkosivuston tietosuojaseloste on erillinen.'
+      'Rekisterinpitäjä: Tmi Jami Harju, Y-tunnus 3581581-6. Yritysosoite: Mannerheimintie 109, Helsinki (rekisterinpitäjän ilmoittama). Palvelubrändi: Putkikasvu. Tietosuojaa koskevat pyynnöt ja yhteydenotot: visualjambo@gmail.com.',
+      'Tämä seloste koskee Putkikasvun omia yhteydenotto-, tarjous- ja asiakkuustietoja; asiakkaan oman verkkosivuston tietosuojaseloste on erillinen.'
     ]
   },
   {
