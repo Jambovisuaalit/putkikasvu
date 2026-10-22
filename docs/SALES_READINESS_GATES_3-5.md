@@ -43,3 +43,15 @@ Päiväys 22.10.2026. Tila: **TEKNINEN MYYNTIVERSIO / EI VIELÄ KAUPALLINEN GO**
 - https://eur-lex.europa.eu/eli/reg/2016/679/oj?locale=fi
 - https://tietopalvelu.ytj.fi/yritys/3581581-6
 - https://www.vero.fi/yritykset-ja-yhteisot/yritystoiminta/verohallinnon-rekisterit/ennakkoperintarekisteri/
+
+
+## 22.10.2026 — PR #9:n hyväksyntäpaketti
+- [x] Omistajan kirjallinen ehtojen hyväksyntämalli: `docs/legal/WRITTEN_APPROVAL_PACKAGE.md`.
+- [x] Asiakkaan tarjous-, tilaushyväksyntä- ja julkaisuvalmiuden nimenomaisen hyväksynnän malli: `docs/legal/OFFER_AND_ACCEPTANCE_TEMPLATE.md`.
+- [x] Käsittely-/poistotodistuksen pohja ja käyttöönoton ohje: `docs/legal/DATA_FLOW_AND_RETENTION.md`.
+- [x] DPA-luonnoksen alikäsittelijä-, ohje- ja allekirjoitusliitteet: `docs/legal/DPA_TEMPLATE.md`.
+- [x] Ehtoihin maantieteellisen osoitteen pakollisuus ja tarjouksen tallennettavuus; tietosuojaselosteeseen nykyisten palveluiden ja vahvistamattomien siirtojen ero.
+- [ ] **Ei kuitattu:** virallinen maantieteellinen osoite, ennakkoperintä ja ALV-tiedot, omistajan 90 €/h/peruutus/lisenssipäätös, tosiasialliset Google/Vercel DPA- ja siirtotiedot, säilytys-/poistotestit, tuotantoevästeet, tarvittaessa asiakkaan DPA, maksun manuaalinen vastaanotto ja mobiili-QA.
+- [ ] **Ei tehty:** merge, myynnin/kassan avaus, DNS-/backend-/maksujärjestelyjen muutos.
+
+**Päätösjärjestys:** omistaja hyväksyy sisältöehdot kirjallisesti → P0-faktat ja tietosuojan ajantasaiset tiedot varmennetaan → vasta sen jälkeen kaupallisen tilaamisen erillinen GO → maksun ja julkaisun erilliset hyväksynnät.
