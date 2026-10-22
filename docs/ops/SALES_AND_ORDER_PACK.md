@@ -152,3 +152,48 @@ Varmennettava ennen sitovaa tarjous-/tilausvaihetta: virallinen myyjän nimi ja 
 ## Mittarit ensimmäiselle asiakkaalle
 Seuraa: kiinnostus → tarjous → hyväksytty tilaus → maksettu ennakko → toimitus.
 Mittaa vastaus- ja läpimenoajat, työminuutit vaiheittain, korjauskierrosten määrä ja todelliset kulut. Tavoite on yksi varmennettu maksettu tilaus; tulosta ei luvata asiakkaalle.
+
+## 11. Omistajan vahvistama tuote ja olemassa olevat resurssit
+Päivitetty käyttäjän tietojen perusteella 22.10.2026.
+- Brändi ja verkkotunnus: Putkikasvu / putkikasvu.fi.
+- Kohderyhmä: Suomessa toimivat 1–10 henkilön LVI- ja putkialan yritykset; alkuvaiheen painopiste Uusimaa, laajennus koko Suomeen.
+- Päätuote: Standard, enintään 3 sivua, 590 € yhteensä, 295 € ennakko ja 295 € loppuerä.
+- Omistajan ilmoitus: myyjä ei ole ALV-velvollinen. Ilmoitus kirjattu; virallisen tarkistuksen ja laskumerkinnän tilaa ei kuitata tällä dokumentilla.
+- Myyjä: Tmi Jami Harju, Y-tunnus 3581581-6.
+- 29 €/kk ylläpito on erillinen ehdotus, ei valmis sopimustuote.
+- Ensisijainen tavoite: ensimmäinen maksava Standard-asiakas, laadukas toimitus sekä koko prosessin työajan ja katteen mittaus.
+
+### Maksaminen: olemassa oleva resurssi, ei uusi integraatio
+Omistajan toimittama Revolut-maksulinkki:
+https://checkout.revolut.com/pay/595062b8-6377-4e8d-bb80-fd53ecced9c9
+Linkkiä ei tarvitse luoda uudelleen. Linkin avaaminen lukutyökalulla ei onnistunut;
+summaa, valuuttaa, maksunsaajaa, linkin voimassaoloa tai tilausviitekenttää ei siten
+vahvistettu tässä työssä. Älä lisää linkkiä asiakasviestiin ennen niiden tarkistusta.
+Olemassa oleva dokumentaatio käsittelee jaettua 295 EUR linkkiä, mutta sen kuvaus
+ei yksin todista juuri tämän URL:n nykyistä sisältöä.
+Jaettu linkki ei ole yksilöllinen tilausviite. Kumpikin 295 € erä kohdistetaan
+omaan maksutapahtumaan ja hyväksyttyyn tilaukseen palveluntarjoajan näkymästä.
+
+Tekninen lähde:
+https://github.com/Jambovisuaalit/putkikasvu/blob/feat/secure-orders-revolut-onboarding/docs/SECURE_PAYMENT_ONBOARDING.md
+Lähteen tila: CODE READY FOR REVIEW, NOT ACTIVATED. API:t, tietokanta ja
+asiakkaan kirjautumiskäyttöliittymä eivät ole dokumentin perusteella tuotannossa.
+Manuaalinen tilauskortti ei tarvitse tätä backendia; automaattista maksunvahvistusta
+tai asiakkaan onboarding-portaalia ei luvata.
+
+### Tietosuojan lähteiden ajantasaisuus
+https://github.com/Jambovisuaalit/putkikasvu/blob/feat/secure-orders-revolut-onboarding/docs/DATA_PROCESSING_INVENTORY.md
+Tämä 21.10.2026 inventaario kuvaa kyseisen kehityshaaran suunnitellut rajapinnat.
+Sen maininta CRM:n puuttumisesta ja sähköpostin mahdollisesta käytöstä ei kuvaa
+22.10. toteutunutta Sheets-CRM:ää, Gmail-vastaanottoa ja Resend-lähetyksiä.
+Ajantasainen käsittelykartta ja todelliset käytännöt sovitetaan yhteen
+docs/legal/DATA_FLOW_AND_RETENTION.md:n kanssa; aiempaa inventaariota ei käytetä
+todisteena, että kaikki tietosuojatoimet on toteutettu.
+
+### Brändilähteet — omistajan ilmoittamat
+Masterkansio: https://canva.link/b37me2yb0rwcb2o
+Brändivärit ja logo: https://www.canva.com/d/EEooRJqn1lp96GY
+Omistajan mukaan optimoidut PNG-logot sijaitsevat repositorion public/brand/-hakemistossa;
+alkuperäiset korkearesoluutioiset aineistot säilyvät Canvassa.
+Tässä päivityksessä Canvan sisältöä, väriarvoja tai hakemiston tiedostoluetteloa
+ei tarkistettu. Käytä nykyisiä brändiaineistoja; älä keksi uusia väriarvoja tai logoja.
