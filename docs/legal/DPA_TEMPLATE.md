@@ -1,4 +1,4 @@
-# Putkikasvu — henkilötietojen käsittelysopimus (DPA), LUONNOS v1.0
+# Putkikasvu — henkilötietojen käsittelysopimus (DPA), LUONNOS v1.1
 22.10.2026. Käytetään VAIN jos Putkikasvu käsittelee asiakasyrityksen kävijöiden, asiakkaiden tai henkilöstön henkilötietoja tämän lukuun. Pelkkä staattisten sivujen toimitus ei automaattisesti edellytä DPA:ta.
 
 ## 1. Osapuolet
@@ -44,4 +44,35 @@ Osapuolet ilmoittavat nimettyjen tietosuoja- ja tietoturvayhteyshenkilöiden tie
 - Poiston todentaminen: [ ]
 - Tietoturvapoikkeamien yhteydenottokanava: [ ]
 
-**Ei allekirjoitusvalmis ennen liitteen ja osapuolten täyttämistä.**
+**Ei allekirjoitusvalmis ennen liitteiden ja osapuolten täyttämistä.**
+
+### Liite B — hyväksytyt alikäsittelijät ja siirrot (täytettävä)
+| Toimija ja sopimuskumppani | Tehtävä ja tietoryhmät | Käsittely-/pääsymaat | Siirtoperuste ja tarpeelliset lisäsuojat | Rekisterinpitäjän lupa ja päiväys |
+| --- | --- | --- | --- | --- |
+| [ ] | [ ] | [ ] | [ ] | [ ] |
+
+Jos alikäsittelijöitä ei tarvita, merkitään erikseen: **[ ] ei alikäsittelijöitä**. Vercel tai Gmail eivät automaattisesti kuulu asiakkaan sivuston käsittelysopimukseen; ne kirjataan vain, jos ne tosiasiassa käsittelevät asiakkaan henkilötietoja rekisterinpitäjän lukuun.
+
+### Liite C — rekisterinpitäjän kirjalliset käsittelyohjeet (täytettävä)
+- Sallitut käsittelytehtävät: [ ]
+- Sallitut tietoryhmät ja pääsyn laajuus: [ ]
+- Kielletyt käsittelyt ja julkaisut: [ ]
+- Asiakkaan yhteyshenkilö tietopyynnöissä: [ ]
+- Poisto/palautus ja sen vastaanottajan määrittely: [ ]
+- Poikkeus- ja häiriöilmoitusten yhteyskanava: [ ]
+- Ohjeiden muutosmenettely ja alikäsittelijämuutoksista ilmoittaminen: [ ]
+
+## 6. Hyväksyntä ja voimaantulo
+Tämä DPA tulee voimaan vasta, kun osapuolet ovat kirjallisesti hyväksyneet sen **sekä täytetyt liitteet A–C**. Tyhjä mallipohja ei anna lupaa aloittaa henkilötietojen käsittelyä asiakkaan puolesta.
+
+**Rekisterinpitäjän edustaja:** [nimi, asema, yritys]  
+**Päivämäärä ja todennettava hyväksyntä / allekirjoitus:** [ ]  
+
+**Käsittelijän edustaja:** [nimi, asema]  
+**Päivämäärä ja todennettava hyväksyntä / allekirjoitus:** [ ]  
+
+**Viite asiakassopimukseen ja DPA-versioon:** [ ]
+
+## 7. Huomautus roolijaosta
+Putkikasvu on oman myyntinsä, laskutuksensa ja yritysyhteydenottojensa itsenäinen rekisterinpitäjä. Tämä DPA koskee ainoastaan liitteessä yksilöityä asiakkaan lukuun tehtävää henkilötietojen käsittelyä. Jos vain toimitetaan staattiset sivut ilman pääsyä asiakkaan henkilötietoihin, käsittelijän roolia ei synny pelkästä sivuston tekemisestä.
+
