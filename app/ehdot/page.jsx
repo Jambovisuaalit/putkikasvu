@@ -8,13 +8,13 @@ const sections = [
     title: '1. Sopijapuolet ja soveltamisala',
     paragraphs: [
       'Palveluntarjoaja on Tmi Jami Harju (Y-tunnus 3581581-6), joka käyttää Putkikasvu-palvelubrändiä. Sähköposti: visualjambo@gmail.com. Näitä ehtoja sovelletaan vain elinkeinotoimintaa varten tilaavien yritysasiakkaiden Putkikasvu Standard -toimituksiin. Kuluttajatilauksia ei hyväksytä näillä ehdoilla.',
-      'Asiakaskohtainen kirjallinen tarjous, siinä sovittu toimituserittely ja sen jälkeen nämä ehdot muodostavat sopimuksen. Ristiriitatilanteessa yksilöity tarjous on ensisijainen. Sopijapuolten tiedot ja ehtojen versio kirjataan tilausvahvistukseen.'
+      'Asiakaskohtainen kirjallinen tarjous, siinä sovittu toimituserittely ja sen jälkeen nämä ehdot muodostavat sopimuksen. Ristiriitatilanteessa yksilöity tarjous on ensisijainen. Tarjouksessa ja tilausvahvistuksessa ilmoitetaan myyjän vahvistettu maantieteellinen yritysosoite, sopijapuolten tiedot, palvelun rajaukset, ehdot ja versio. Ehdot toimitetaan asiakkaalle ennen hyväksyntää sellaisessa muodossa, että ne voi tallentaa ja toisintaa.'
     ]
   },
   {
     title: '2. Tarjous, demo ja sopimuksen syntyminen',
     paragraphs: [
-      'Mahdollinen yrityskohtainen demo on luonnos, ei asiakkaan virallinen sivusto eikä tilaus. Sopimus syntyy, kun asiakas nimenomaisesti hyväksyy kirjallisen tarjouksen ja nämä ehdot ja palveluntarjoaja vahvistaa tilauksen kirjallisesti. Hiljaisuus tai demon katselu ei ole hyväksyntä.',
+      'Mahdollinen yrityskohtainen demo on luonnos, ei asiakkaan virallinen sivusto eikä tilaus. Sopimus syntyy, kun yrityksen valtuutettu edustaja nimenomaisesti hyväksyy yksilöidyn kirjallisen tarjouksen ja sen mukana toimitetun ehtoversion ja palveluntarjoaja vahvistaa tilauksen kirjallisesti. Tarjous, ehdot, hyväksyntä ja vahvistus säilytetään todennettavasti. Hiljaisuus tai demon katselu ei ole hyväksyntä.',
       'Ennen ennakkomaksun pyytämistä asiakkaalle annetaan kokonaishinta, toimitussisältö, aikataulun alkuehdot, mahdolliset erilliskulut sekä korjaus- ja peruutusehdot. Sivusto ei tarjoa tällä hetkellä verkkokassaa tai toimivaa maksulinkkiä.'
     ]
   },
@@ -108,8 +108,8 @@ export default function Terms() {
     <main id="main-content" tabIndex={-1} className="wrap legal">
       <p className="eyebrow eyebrow-on-light">Putkikasvu · vain B2B</p>
       <h1>Palvelu- ja toimitusehdot</h1>
-      <p>Luonnos v1.1 · 22.10.2026</p>
-      <p className="warning"><strong>Hyväksyntää odottava sopimusluonnos:</strong> myyjän YTJ- ja ALV-merkinnät, yrityksen virallinen osoite, tilausprosessi sekä asiakkaan hosting- ja henkilötietojen käsittelyjärjestelyt on vahvistettava ennen maksullista käyttöönottoa. Verkkomaksaminen ei ole käytössä.</p>
+      <p>Hyväksyttävä luonnos v1.2 · 22.10.2026</p>
+      <p className="warning"><strong>Ei vielä asiakastilauksiin hyväksytty:</strong> myyjän maantieteellinen yritysosoite (laki sähköisen viestinnän palveluista 176 §), rekisteri- ja ALV-tiedot, ennakkoperintämenettely, kirjallinen tilausprosessi sekä tosiasialliset tietosuojajärjestelyt on vahvistettava ennen myyntikäyttöä. Verkkomaksaminen ei ole käytössä.</p>
       {sections.map(({title,paragraphs})=><section key={title}><h2>{title}</h2>{paragraphs.map(p=><p key={p}>{p}</p>)}</section>)}
     </main></>;
 }
