@@ -40,3 +40,16 @@ Kaikilla aloitetuilla riveillä `stage=Ei kontaktoitu`; yksittäisten henkilöid
 
 ## STOP
 Älä yhdistä PR #5:n, #8:n tai #9:n kokeilurajapintoja maksujärjestelmään, älä poista Vercel SSO:ta, älä muuta Zonerin DNS:ää, älä lähetä viestejä, älä aktivoi nykyistä 295 € maksulinkkiä ilman erillistä hyväksyntää.
+
+
+## Myyntiprosessin päätös 22.10.2026 — täysin asynkroninen
+Omistajan nimenomainen linjaus: **ei demopalaveria, myyntipuhelua eikä ajanvarausta**. Asiakas voi ostaa verkkosivuston kirjallisesti ilman keskustelua puhelimessa.
+
+1. Kylmäviesti: yksi todennettu yrityskohtainen havainto, palvelun rajaus ja kiinteä 590 € hinta. CTA: **Vastaa ”Haluan nähdä ehdotuksen”** tai **”Haluan tilata”**. Ei puhelupyyntöä.
+2. Demo: tarvittaessa suojattu, itsenäisesti katsottava LUONNOS; ei julkista linkkiä tai luvattomia asiakasaineistoja. Vaihtoehtoisesti yksinkertainen tekstipohjainen esittely.
+3. Tarjous: yksilöity kirjallinen tarjous ja tallennettavat v1.2 ehdot. Asiakkaan valtuutettu edustaja hyväksyy kirjallisesti; myyjä vahvistaa tilauksen kirjallisesti. Ei hiljaista hyväksyntää.
+4. Materiaalit: yritystiedot, palvelut, toimialue, puhelin/sähköposti, domain/hosting sekä kuvien oikeudet kerätään sähköpostitse tai hyväksytyllä turvallisella kanavalla. Ei pakollista puhelua.
+5. Maksu ja julkaisu: **erilliset portit pysyvät**. Rekisteritilanne, ennakonpidätys ja ALV tarkistetaan ennen maksua; asiakkaan kirjallinen julkaisuvalmiuden hyväksyntä ennen loppumaksua. Tuotantojulkaisu vain erillisellä GO:lla.
+6. Viestien lähetys: aiempi lupa koskee enintään 10 tarkastettua henkilökohtaista B2B-viestiä, mutta omistajan myöhempi ohje **tehdä tarkastukset ennen lähettämistä** estää lähetyksen ennen kampanjan lopputarkistusta.
+
+**Poistetaan kaikista uusista kampanjamateriaaleista:** ”sovitaan puhelu”, ”10 minuutin demopalaveri”, ajanvarauslinkki ja ”voinko soittaa”.
