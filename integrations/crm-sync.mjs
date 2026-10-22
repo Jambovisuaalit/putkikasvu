@@ -8,6 +8,7 @@
 import { createSign } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import { readConfig } from './crm-sync-config.mjs';
+import { assertLiveReadReady } from './crm-sync-readiness.mjs';
 import { matchesReply, mergeEvent, safeMetrics, sheetRowIndex } from './crm-sync-core.mjs';
 
 const env = (key) => { if (!process.env[key]) throw new Error('Missing '+key); return process.env[key]; };
@@ -37,6 +38,9 @@ export async function runSync({ environment=process.env, requestJson=request,
   tokens={sheet:serviceToken,gmail:gmailToken}, now=()=>new Date() }={}) {
   // Validate isolation and write prohibition before any OAuth or external request.
   const config=readConfig(environment);
+  // Fail before any OAuth/network I/O when a live read cannot authenticate.
+  // Fixture runners can inject mock tokens/providers and must opt in explicitly.
+  if (!environment.CRM_SYNC_FIXTURE_MODE) assertLiveReadReady(environment);
   const TAB="'"+config.tab.replaceAll("'","''")+"'";
   const sheetToken=await tokens.sheet();
   const base='https://sheets.googleapis.com/v4/spreadsheets/'+encodeURIComponent(config.sheetId)+'/values/';
