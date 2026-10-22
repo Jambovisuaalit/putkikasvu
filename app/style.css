@@ -41,3 +41,19 @@ h1,h2,h3{font-weight:700}
 
 /* Accessible darkened teal for 12px labels on white and ice-white surfaces. */
 .eyebrow-on-light{color:#006B65}
+
+
+/* Contact fallback: readable, tappable and usable without a mail handler. */
+.contact-panel{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,1fr);gap:42px;align-items:center}
+.contact-panel .btn{margin-top:18px;min-height:48px}
+.contact-aside{padding:32px;background:var(--brand-ice-white);border:1px solid #d0e1e4;border-radius:14px}
+.contact-aside h3{font-size:23px;margin:0 0 14px}
+.contact-aside p{line-height:1.6}
+.contact-address{font-size:clamp(17px,2vw,22px);font-weight:800;overflow-wrap:anywhere}
+.contact-address a,.contact-aside .fine a{text-decoration:underline;text-underline-offset:4px}
+.copy-btn{min-height:48px;max-width:100%;padding:12px 18px;border:2px solid var(--navy);border-radius:7px;background:white;color:var(--navy);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.copy-status{display:block;min-height:24px;margin-top:8px;font-size:14px;font-weight:600;color:#006B65}
+@media(max-width:820px){.contact-panel{grid-template-columns:1fr;gap:30px}}
+@media(max-width:480px){.contact-aside{padding:22px}.contact-section{padding-block:56px}}
+
+.hero .note-link{text-decoration:underline;text-underline-offset:3px;font-weight:700}
