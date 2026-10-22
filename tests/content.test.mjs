@@ -24,8 +24,8 @@ test('Static conversion flow remains contact-only', () => {
 });
 
 test('Legal pages visibly remain pending approval', () => {
-  assert.match(terms, /Hyväksyntää odottava sopimusluonnos/);
-  assert.match(privacy, /Tietosuojan käyttöönoton esteet/);
+  assert.match(terms, /Ei vielä asiakastilauksiin hyväksytty/);
+  assert.match(privacy, /Käsittelykartta ei ole vielä hyväksytty/);
   assert.match(terms, /Verkkomaksaminen ei ole käytössä/);
 });
 
@@ -44,4 +44,24 @@ test('Privacy covers retention, role distinction, rights and information duty', 
     'Suoramarkkinointia voi vastustaa']) {
     assert.ok(privacy.includes(required), `missing privacy item: ${required}`);
   }
+});
+
+test('written legal signoff is distinct from commercial GO', () => {
+  const signoff = read('../docs/legal/WRITTEN_APPROVAL_PACKAGE.md');
+  const dataMap = read('../docs/legal/DATA_FLOW_AND_RETENTION.md');
+  const offer = read('../docs/legal/OFFER_AND_ACCEPTANCE_TEMPLATE.md');
+  const dpa = read('../docs/legal/DPA_TEMPLATE.md');
+  assert.match(signoff, /TEXT APPROVED/);
+  assert.match(signoff, /P0/);
+  assert.match(signoff, /ennakkoperintärekisterin/i);
+  assert.match(signoff, /yritysosoite/i);
+  assert.match(dataMap, /EI TODETTU/);
+  assert.match(dataMap, /Kuluttaja-Gmailiin ei oleteta Google Workspace/);
+  assert.match(offer, /valtuutettu hyväksyjä/);
+  assert.match(offer, /kirjallinen hyväksyntä/);
+  assert.match(dpa, /Liite B/);
+  assert.match(dpa, /Liite C/);
+  assert.match(dpa, /allekirjoitus/);
+  assert.match(terms, /maantieteellinen yritysosoite/);
+  assert.match(privacy, /Säilytysajat/);
 });
