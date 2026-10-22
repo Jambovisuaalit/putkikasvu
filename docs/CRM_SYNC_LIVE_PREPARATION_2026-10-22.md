@@ -23,7 +23,7 @@ Resend/Gmail read-only contract checks. Do not place real customer data in this 
 
 ## Connector observations (not raw worker authentication)
 An existing authorized sent message was read through the Resend connector:
-delivered, delivered count 1, opens 0, clicks 0. The corresponding Gmail sender
+delivered. Domain open/click tracking is disabled, so engagement is unavailable; prior zero counts are not evidence of no engagement. The corresponding Gmail sender
 search returned no matching messages. No positive live reply is available to
 prove exact reply attribution. Message contents are not retained in this report.
 
@@ -74,3 +74,28 @@ https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messag
 https://developers.google.com/workspace/sheets/api/scopes
 https://resend.com/changelog/new-api-key-permissions
 https://resend.com/changelog/message-id-for-sent-emails
+
+## Canonical test target and recheck — 22 October 2026
+The canonical integration target remains the TEST CRM workbook configured above.
+The separate workbook 1OYbeVdYhp87i8nnI3wAvT94_hLej5jOlfYNpVUliWK0
+(SYNC_TEST tab) is historical connector-only rehearsal evidence, not a worker target.
+It was not renamed, deleted, or connected to the worker. The current configuration
+validator rejects SYNC_TEST because test tabs must start with TEST.
+
+Read-only recheck:
+- Canonical TEST CRM!A1:J4 has the expected header and synthetic rows.
+- Resend domain remains verified; ten recent campaign messages are delivered.
+- Connected Gmail profile is visualjambo@gmail.com; a bounded sender search for
+  three pilot recipients returned no messages. This does not prove reply routing.
+- Existing Resend message detail confirms sender jami@putkikasvu.fi and its
+  Message-ID; the connector result does not expose Reply-To. Mailbox routing is
+  therefore still unverified.
+- Runtime presence-only checks found all six worker credentials absent.
+- Four PR-triggered workflows passed at head 36d8be80ad50594cd63221ce58070da50de985dd:
+  worker tests, fixture tests, static release checks, Chromium browser QA.
+  Worker CI: https://github.com/Jambovisuaalit/putkikasvu/actions/runs/39841430818
+- Standalone authenticated worker test: BLOCKED, not run.
+- No production CRM changes, sends, credential creation, or release were performed.
+
+Next required input is secure provisioning of a private runner and provider-owned
+credentials; connector access cannot be transferred into standalone worker tokens.
