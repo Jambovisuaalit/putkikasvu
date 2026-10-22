@@ -7,8 +7,8 @@ const sections = [
   {
     title: '1. Sopijapuolet ja soveltamisala',
     paragraphs: [
-      'Palveluntarjoaja on Tmi Jami Harju (Y-tunnus 3581581-6), joka käyttää Putkikasvu-palvelubrändiä. Sähköposti: visualjambo@gmail.com. Näitä ehtoja sovelletaan vain elinkeinotoimintaa varten tilaavien yritysasiakkaiden Putkikasvu Standard -toimituksiin. Kuluttajatilauksia ei hyväksytä näillä ehdoilla.',
-      'Asiakaskohtainen kirjallinen tarjous, siinä sovittu toimituserittely ja sen jälkeen nämä ehdot muodostavat sopimuksen. Ristiriitatilanteessa yksilöity tarjous on ensisijainen. Tarjouksessa ja tilausvahvistuksessa ilmoitetaan myyjän vahvistettu maantieteellinen yritysosoite, sopijapuolten tiedot, palvelun rajaukset, ehdot ja versio. Ehdot toimitetaan asiakkaalle ennen hyväksyntää sellaisessa muodossa, että ne voi tallentaa ja toisintaa.'
+      'Palveluntarjoaja on Tmi Jami Harju (Y-tunnus 3581581-6), joka käyttää Putkikasvu-palvelubrändiä. Yritysosoite: Mannerheimintie 109, Helsinki (palveluntarjoajan ilmoittama). Sähköposti: visualjambo@gmail.com. Näitä ehtoja sovelletaan vain elinkeinotoimintaa varten tilaavien yritysasiakkaiden Putkikasvu Standard -toimituksiin. Kuluttajatilauksia ei hyväksytä näillä ehdoilla.',
+      'Asiakaskohtainen kirjallinen tarjous, siinä sovittu toimituserittely ja sen jälkeen nämä ehdot muodostavat sopimuksen. Ristiriitatilanteessa yksilöity tarjous on ensisijainen. Tarjouksessa ja tilausvahvistuksessa ilmoitetaan myyjän maantieteellinen yritysosoite, sopijapuolten tiedot, palvelun rajaukset, ehdot ja versio. Ehdot toimitetaan asiakkaalle ennen hyväksyntää sellaisessa muodossa, että ne voi tallentaa ja toisintaa.'
     ]
   },
   {
