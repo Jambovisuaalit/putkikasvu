@@ -1,5 +1,5 @@
 # Revolut Pro – manuaalisen maksunvarmennuksen tarkistusohje (pilotti)
-Päiväys: 22.10.2026. **Ei ole todiste suoritetusta maksusta**. Toimeenpano vasta juridisten myyntiehtojen hyväksymisen jälkeen.
+Päiväys: 22.10.2026. **Manuaalisen asiakasmaksun hyväksyntä on edelleen estetty.** 22.10.2026 suoritettiin erillinen 0,01 € Apple Pay -itsekoe, mutta se ei vahvista Pro-tilitystä eikä 295 € asiakastilausta. Katso `REAL_LINK_SMOKE_TEST_2026-10-22.md`. Toimeenpano vasta juridisten myyntiehtojen hyväksymisen jälkeen.
 
 ## Mikä on vahvistettu
 - Revolut Pro on erillinen ammattikäyttöön tarkoitettu tili tavallisen Revolut-sovelluksen sisällä, ei sama kuin Revolut Business/Merchant API.
@@ -29,6 +29,8 @@ Omistaja todistaa yksityisessä Revolut Pro -näkymässä ainakin tapahtuman yks
 ## Tila
 - [x] Menettely, lähteet ja fail-closed-portit dokumentoitu.
 - [x] Olemassa oleva 43 testin synteettinen tilaustyönkulku.
-- [ ] Oikean Revolut Pro -tapahtuman tarkistus todennettu tilinäkymästä.
+- [x] Erillinen 0,01 € checkout + Apple Pay -itsekoe: kuitin mukaan `Payment successful` ja maksajan korttilistassa `Kaapattu`. Tämä on **vain maksajan puolen rajattu PASS**; itse tehty koe ei ole asiakasmyynti.
+- [ ] Testitapahtuman olemassaolo **Pro → Katso kaikki myynnit** -näkymässä, maksukulukirjaus ja tilitys vahvistettu erikseen.
+- [ ] Oikean 295 € asiakasmaksun Revolut Pro -tapahtuma- ja tilitystarkistus todennettu tilinäkymästä.
 - [ ] Myyjän rekisterimerkinnät, ehdot ja asiakasvahvistukset hyväksytty.
 - [ ] Automaattista maksunvarmennusta ei ole otettu käyttöön.
