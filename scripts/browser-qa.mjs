@@ -79,7 +79,11 @@ for(const width of [375,390,768,1440]){
   assert.equal(await fallback.locator('a[href="mailto:visualjambo@gmail.com"]').count(),1);
   const copy=fallback.getByRole("button",{name:"Kopioi sähköpostiosoite"});
   assert.equal(await copy.isVisible(),true);
+  // Next.js static HTML can arrive before client-side hydration. Wait for all
+  // page assets/React listeners rather than treating pre-hydration clicks as failure.
+  await page.waitForLoadState("networkidle",{timeout:12000});
   await copy.click();
+  await page.waitForFunction(()=>/Osoite kopioitu|Kopiointi ei onnistunut/.test(document.querySelector("#yhteys [role=status]")?.textContent||""),null,{timeout:5000});
   const status=await fallback.locator('[role="status"]').innerText();
   assert.match(status,/Osoite kopioitu|Kopiointi ei onnistunut/);
  });
