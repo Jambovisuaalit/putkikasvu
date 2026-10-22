@@ -45,3 +45,14 @@ Myyjän Y-tunnukselle ei saatu uutta julkisen viranomaisrekisterin otetta. PRH:n
 Verohallinnon vähäisen toiminnan ohje luettiin uudelleen: https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/48658/arvonlisaveroton-vahainen-toiminta/ . Tämä on verkkolähde, ei MCP-varmennettu oikeustila eikä todiste tämän myyjän verottomuudesta. Vuosien 2025/2026 liikevaihto puuttuu edelleen. Tarjouspohjan ehdoton verottomuusväite on korvattu täytettävällä verokohtelulla; 590 € kokonaishintaa tai maksueriä ei muutettu.
 
 Lähdevarmennus epäonnistui – en voi vahvistaa oikeustilaa. Virhekoodi REQUIRED_VERIFIER_TOOL_UNAVAILABLE: Lakimies AI -ohjeen edellyttämät ajallisuuden ja pykälien varmennustyökalut puuttuvat istunnosta. Voimassaoloa ei voitu varmentaa. Aiemmat numero- ja pykäläviittaukset eivät saa tämän päivityksen perusteella uutta juridista varmennusta.
+
+## Omistajan uudet ilmoitukset 23.10.2026 — korvaa aiemman tilannekuvan oletukset
+
+Omistaja ilmoitti keskustelussa 23.10.2026:
+- **ALV:** myyjä ei ole ALV-velvollinen ja vuotuinen liikevaihto on alle 20 000 €. Tämä on **omistajan ilmoittama tila**, ei tilikohtainen rekisteri-/kirjanpitovarmennus. AVL 3 §:n mukaan vähäisen toiminnan rajaa sovellettaessa arvioidaan sekä kuluva että edellinen kalenterivuosi ja se, ettei vapaaehtoista ALV-rekisteröintiä ole. Lopullinen laskun verottomuusmerkintä vasta sen jälkeen, kun tämä tulkinta on vahvistettu.
+- **Verohallinto:** Verohallinnon perusilmoitus **on tehty**. Tämä syrjäyttää vanhan keskustelupäätelmän, ettei ilmoitusta olisi tehty. Ilmoitus / vastaanottokuittaus ei yksin osoita ennakkoperintärekisteriin hyväksymistä eikä YTJ-osoitteen nykyistä tilaa. Pyydä tarvittaessa vastaanottokuittaus ja ajantasainen YTJ-merkintä.
+- **Maksu:** omistajan mukaan **Revolut Pro -maksulinkki toimii**. Tämä korvaa väitteen, ettei käytössä olisi toimivaa maksutapaa. Oikeaa uutta testimaksua ei tehty, eikä maksupalvelun tilikohtaista vastaanottajaa, tapahtumatositetta, palautuspolkua tai asiakkaan mahdollisen ennakonpidätyksen toteuttamista todennettu tässä työssä.
+
+**Päivitetty portti:** ALV-asema, perusilmoitus ja maksulinkin toimivuus kirjataan **OMISTAJAN VAHVISTAMAKSI**; aiemmin avoimet kohdat rajataan rekisterin/veroedellytysten tositetarkistukseen ja maksun dokumentointiin. Maksulinkkiä ei aktivoida uutena eikä maksua pyydetä automaattisesti. Tämän merkinnän tarkoitus on säilyttää uusi tieto ilman, että se esitetään riippumattomana varmennuksena.
+
+Lähteet: https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/48658/arvonlisaveroton-vahainen-toiminta/ ; https://www.vero.fi/yritykset-ja-yhteisot/yritystoiminta/verohallinnon-rekisterit/ennakkoperintarekisteri/
