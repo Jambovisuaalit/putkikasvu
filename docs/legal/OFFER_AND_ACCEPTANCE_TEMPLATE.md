@@ -12,7 +12,7 @@
 **Ei sisälly:** tallentava lomake, CRM- tai maksukytkentä, ajanvaraus, monikielisyys, referenssien hankinta, kuvatyöt, markkinointi, tulostakuu, hosting- tai domainmaksut, jatkuva ylläpito.
 
 **Hinta:** 590,00 € yhteensä. Ensimmäinen maksuerä 295,00 €, toinen maksuerä 295,00 €.
-**Arvonlisävero:** Arvonlisäveroa ei veloiteta, koska myyjä soveltaa vähäisen toiminnan verovapautusta (AVL 3 §). Myyjä ei ole arvonlisäverovelvollisten rekisterissä.
+**Arvonlisävero:** [VAHVISTETTAVA ennen tarjouksen lähettämistä: rekisteritila, vuosien 2025 ja 2026 liikevaihto sekä soveltuva laskumerkintä]. Kokonaishinta on 590,00 €; veron käsittely ei oikeuta automaattiseen lisähintaan. Mahdolliset muutokset edellyttävät erillistä päätöstä ennen sopimusta.
 **Sisäinen tarkistus ennen lähettämistä:** ALV-teksti perustuu myyjän ilmoitukseen. Rekisteritiedon sekä vuosien 2025 ja 2026 vähäisen toiminnan edellytysten varmennusta ei merkitä tehdyksi tämän ilmoituksen perusteella.
 **Maksuerät:** 295 € kirjallisen tilaussopimuksen jälkeen; 295 € asiakkaan kirjallisesti hyväksyttyä julkaisuvalmiin toteutuksen, ennen julkaisua.
 **Maksutapa ja eräpäivä:** [manuaalisesti vahvistettava lasku/tili/viite]; maksu tunnistetaan tiliotteelta ennen työn aloitusta/julkaisua.

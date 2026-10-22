@@ -49,8 +49,8 @@ Hyväksynnän rajaus: kyse on dokumentointipäätöksestä, ei väitteestä käs
 
 ## C. Päätöstilat
 1. **TEXT APPROVED**: kohta A kirjallisesti hyväksytty, tekstit voidaan sisällyttää tarjouksen liitteeksi korjattuna.
-2. **CONDITIONAL SALES READY**: A + B:n tilaamista edeltävät P0-esteet ratkaistu ja nykyiset henkilötietokäsittelyt dokumentoitu. Vasta tällöin voidaan pyytää ensimmäisen asiakkaan allekirjoitusta.
-3. **PAYMENTS ENABLED**: lisäksi maksutili ja manuaalinen varmennus toteutettu; erillinen kirjallinen GO-päätös. Ei tapahdu automaattisesti.
+2. **CONDITIONAL SALES READY**: asiakashankinta, demoesittelyt, neuvottelut ja tarjousten valmistelu voivat jatkua omien kanava-, tietosuoja- ja lähetyshyväksyntävaatimustensa mukaisesti. Ennakkoperintärekisterimerkinnän puute ei yksin estä toimeksiantosopimusta. Ennen sitovaa hyväksyntää yksilöidään sopimusosapuolet, sisältö, kokonaishinta, verokohtelu ja ehdot. Kohdan B maksamiseen liittyviä P0-tarkistuksia ei tulkita kaikkien myyntitoimien aloitusehdoiksi.
+3. **PAYMENTS ENABLED**: ennen maksua tarkistetaan maksupäivän ennakkoperintärekisteriasema tai sovitaan soveltuva maksajan ennakonpidätysmenettely; lisäksi maksunsaaja, laskumerkinnät ja tositteellinen täsmäytys varmistetaan. Maksuerä 295 € on sopimuksen bruttomäärä; mahdollinen pidätys ja myyjälle maksettava netto eritellään. Erillinen kirjallinen maksamisen GO-päätös säilyy.
 4. **PRODUCTION RELEASE**: saavutettavuus-/selaintestit ja nimenomainen merge-/julkaisulupa. Tämä dokumentti ei anna lupaa julkaisuun.
 
 ## Lähteet
@@ -59,3 +59,6 @@ Hyväksynnän rajaus: kyse on dokumentointipäätöksestä, ei väitteestä käs
 - https://eur-lex.europa.eu/eli/reg/2016/679/oj?locale=fi (13–14, 21, 28, 32 ja V luku)
 - https://www.vero.fi/yritykset-ja-yhteisot/yritystoiminta/verohallinnon-rekisterit/ennakkoperintarekisteri/
 - https://www.vero.fi/yritykset-ja-yhteisot/verot-ja-maksut/arvonlisaverotus/rekisterointi/
+
+## Päätöstilojen täsmennys 23.10.2026
+Myynnin ja maksun erottelu noudattaa omistajan 23.10.2026 päätöstä: `ORDER_READINESS_DECISION_2026-10-22.md`. Ennakkoperintärekisterihakemus on erillinen 24.–25.10.2026 hallinnollinen tehtävä; sitä ei merkitä tehdyksi eikä rekisteröintiä vahvistetuksi etukäteen. Tämä dokumenttikorjaus ei lähetä viestejä, aktivoi maksamista tai julkaise tuotantoon. Kaupalliset v1.2-ehdot säilyvät.
