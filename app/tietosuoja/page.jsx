@@ -8,7 +8,7 @@ const sections = [
     title: '1. Rekisterinpitäjä ja yhteystiedot',
     paragraphs: [
       'Rekisterinpitäjä: Tmi Jami Harju, Y-tunnus 3581581-6. Palvelubrändi: Putkikasvu. Tietosuojaa koskevat pyynnöt ja yhteydenotot: visualjambo@gmail.com.',
-      'Rekisterinpitäjän vahvistettu posti- tai käyntiosoite täydennetään ennen varsinaisen asiakastilausprosessin käyttöönottoa. Tämä sivu koskee Putkikasvun omia yhteydenotto-, tarjous- ja asiakkuustietoja; asiakkaan oman verkkosivuston tietosuojaseloste on erillinen.'
+      'Rekisterinpitäjän maantieteellinen yritysosoite on vahvistamatta eikä palvelua avata maksullisille asiakastilauksille ennen osoitteen julkaisemista. Tämä seloste koskee Putkikasvun omia yhteydenotto-, tarjous- ja asiakkuustietoja; asiakkaan oman verkkosivuston tietosuojaseloste on erillinen.'
     ]
   },
   {
@@ -35,7 +35,7 @@ const sections = [
   {
     title: '5. Tietojen vastaanottajat ja käsittelijät',
     paragraphs: [
-      'Putkikasvun sivuston tekninen hosting on Vercel-alustalla. Sähköpostiviestinnässä käytetään ilmoitettua Gmail-sähköpostiosoitetta. Vain työtehtävän perusteella oikeutetut henkilöt ja tarvittavat palveluntarjoajat saavat käsitellä tietoja omien rooliensa mukaisesti.',
+      'Putkikasvun sivuston tekninen hosting on Vercel-alustalla. Sähköpostiviestinnässä käytetään ilmoitettua Gmail-sähköpostiosoitetta. Nämä palvelut voivat käsitellä teknisiä tietoja ja viestien henkilötietoja; niiden tarkat roolit, käyttöehdot ja alikäsittelijät määräytyvät todellisen palvelusopimuksen ja käytön mukaan. Asiakastilausten laajennus estetään, kunnes käsittelykartta on varmennettu.',
       'Resend-, Supabase- ja Revolut-palveluita ei tässä selosteessa ilmoiteta aktiivisiksi sivuston lomake-, tietokanta- tai maksunkäsittelijöiksi: näitä toimintoja ei ole otettu käyttöön nykyisessä staattisessa julkaisuehdokkaassa. Kunkin tosiasiallisesti käytetyn palvelun rooli, sopimusehdot ja mahdolliset alikäsittelijät dokumentoidaan käsittelyrekisteriin ennen tietovirtojen laajentamista.'
     ]
   },
@@ -51,7 +51,7 @@ const sections = [
   {
     title: '7. Kansainväliset tietojen siirrot',
     paragraphs: [
-      'Hosting- ja sähköpostipalveluntarjoajien käsittelysijainnit ja mahdolliset siirrot Euroopan talousalueen ulkopuolelle riippuvat todellisista sopimuksista ja käytetyistä alikäsittelijöistä. Mahdollisen siirron oikeusperusteena on tarvittaessa EU:n tietosuojan riittävyyspäätös tai hyväksytyt vakiosopimuslausekkeet ja muut vaadittavat suojatoimet. Siirtoperusteet ja mahdollisuus saada niistä lisätietoja vahvistetaan rekisteröidylle ennen tuotantokäyttöön liittyvän käsittelyn laajentamista.'
+      'Google kertoo voivansa käsitellä tietoja myös käyttäjän maan ulkopuolella, ja Vercel käyttää alikäsittelijöitä. Näin ollen myös Euroopan talousalueen ulkopuoliset siirrot voivat olla mahdollisia. Tapauskohtainen siirtokartta ja sovellettava suoja (esimerkiksi riittävyyspäätös tai EU:n vakiosopimuslausekkeet tarvittavine lisätoimineen) on vielä vahvistettava käytettyjen palvelutilien ja sopimusten perusteella. Siirtoperusteita koskevat lisätiedot voi pyytää rekisterinpitäjän yhteysosoitteesta; tämän selosteen keskeneräisyys on käyttöönoton este.'
     ]
   },
   {
@@ -94,8 +94,8 @@ export default function Privacy() {
     <main id="main-content" tabIndex={-1} className="wrap legal">
       <p className="eyebrow eyebrow-on-light">Henkilötiedot</p>
       <h1>Tietosuojaseloste</h1>
-      <p>Luonnos v1.1 · 22.10.2026</p>
-      <p className="warning"><strong>Tietosuojan käyttöönoton esteet:</strong> rekisterinpitäjän osoite, tosiasialliset käsittelijät ja kansainväliset siirrot, säilytys- ja poistomenettelyjen toteutus sekä tuotantoevästeet on vahvistettava. Maksu- ja lomaketoiminnot eivät ole käytössä.</p>
+      <p>Hyväksyttävä luonnos v1.2 · 22.10.2026</p>
+      <p className="warning"><strong>Käsittelykartta ei ole vielä hyväksytty:</strong> yritysosoite, Gmail-tilin sopimustyyppi, Vercelin todelliset käsittelytiedot ja siirrot sekä säilytys-, poistamis- ja tuotantoevästekäytännöt on todennettava. Suunnitellut säilytysajat eivät ole osoitus tehdyistä poistoista. Maksu- ja lomaketoiminnot eivät ole käytössä.</p>
       {sections.map(({title,paragraphs})=><section key={title}><h2>{title}</h2>{paragraphs.map(p=><p key={p}>{p}</p>)}</section>)}
     </main></>;
 }
