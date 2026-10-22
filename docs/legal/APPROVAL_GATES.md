@@ -4,9 +4,9 @@
 **Kohde:** `app/ehdot/page.jsx` ja `app/tietosuoja/page.jsx`; staattinen release-haara `release/brand-a11y-static`.
 
 ## Todennetut lähtötiedot
-- Myyjä ilmoitettu: **Tmi Jami Harju**, **Y-tunnus 3581581-6** (ei itsenäisesti varmennettu YTJ:stä).
+- Myyjä ilmoitettu: **Tmi Jami Harju**, **Y-tunnus 3581581-6** (YTJ vahvistaa Y-tunnuksen ja yritysmuodon; käyttäjän ilmoittama toiminimi ei näy julkisella YTJ-sivulla).
 - Kaupallinen tuote: **Putkikasvu Standard 590 €**, 295 € ennakkoon ja 295 € nimenomaisen hyväksynnän jälkeen ennen julkaisua.
-- Käyttäjän ilmoitus: ei ALV-rekisterissä. **Ei todennettu rekisterimerkintä**. Ei lisätä ALV:tä laskuun tämän ilmoituksen ollessa oikea, mutta rekisteritilanne on tarkistettava ennen laskutusta.
+- YTJ-tarkistus 22.10.2026: voimassaolevien rekisteröintien taulukossa **vain Verohallinnon perustiedot (alku 24.11.2025)**; ALV- tai ennakkoperintärekisteröintiä ei listata. Verovapauden 20 000 € rajan ja 2025–2026 liikevaihdon täyttyminen on edelleen vahvistettava. Ei lisätä ALV:tä laskuun tämän ilmoituksen ollessa oikea, mutta rekisteritilanne on tarkistettava ennen laskutusta.
 - Ylläpito **29 €/kk** vain erillisellä nimenomaisella sopimuksella.
 - Staattinen release-haara: ei API-reittejä, asiakastietokantaa tai checkout-toimintoja; PR #1–3 eivät kuulu tähän rajaukseen.
 
@@ -22,7 +22,7 @@
 9. [Verohallinto: ALV-rekisteröinti](https://www.vero.fi/yritykset-ja-yhteisot/verot-ja-maksut/arvonlisaverotus/rekisterointi/).
 10. [Tietosuojavaltuutettu: informointi](https://tietosuoja.fi/rekisteroidyn-informointi).
 
-**Rajoitus:** Virallista YTJ:n yrityskohtaista tietuetta ei saatu avattua, eikä PRH:n avoin datarajapinta sisällä yksityisiä elinkeinonharjoittajia. Y-tunnusta, oikeaa virallista nimeä, kaupparekisteriasemaa, ennakkoperintämerkintää, ALV-statusta tai virallista osoitetta EI esitetä tarkistettuina. [PRH:n rajapintakuvaus](https://avoindata.prh.fi/fi/info/swagger-ui).
+**Uusi virallinen YTJ-tulos 22.10.2026:** https://tietopalvelu.ytj.fi/yritys/3581581-6 avautui selaimessa. Y-tunnus 3581581-6, yritysmuoto **yksityinen elinkeinonharjoittaja**, Y-tunnus annettu 23.11.2025. Ainoa näkyvä aktiivinen rekisteröinti on Verohallinnon perustiedot. Tietueesta ei löydy julkista toiminimeä tai yritysosoitetta, joten ne eivät ole riippumattomasti varmennettuja. ALV:n vähäisen toiminnan rajat ja liikevaihto on vielä varmistettava. [PRH:n rajapintakuvaus](https://avoindata.prh.fi/fi/info/swagger-ui).
 
 ## Oikeudelliset ratkaisut ja niiden luonne
 | Ratkaisu | Luonne |
@@ -38,7 +38,8 @@
 | Vain hyväksyntä ennen loppumaksua; hiljaisuus ei hyväksy | Ehdotettu toimitusmenettely |
 
 ## Hyväksyntäesteet
-- **LEGAL-01 / P1:** Varmista YTJ:stä Y-tunnuksen yritysmuoto, rekisterit, kauppanimi, ALV-merkintä ja sen ajankohta. Vahvista laskutuksessa käytettävä arvonlisäveromerkintä ja seuraa 20 000 € vähäisen toiminnan rajaa.
+- **LEGAL-01 / P1:** YTJ:n Y-tunnus, yritysmuoto ja näkyvät voimassaolevat rekisteröinnit tarkistettu 22.10.2026. ALV-merkintää ei näy; varmista silti 2025/2026 liikevaihto ja käytettävä laskumerkintä ennen laskutusta. Käyttäjän ilmoittama toiminimi ei näy tietueesta.
+- **PREPAY-01 / P0:** YTJ:n aktiivirekistereissä ei näy ennakkoperintärekisteriä. Tmi-muotoisen työn suorittajan työkorvauksen maksaja voi joutua toimittamaan ennakonpidätyksen verokortin perusteella (ilman verokorttia 60 %). Suositus: hae ennakkoperintärekisteriin OmaVerossa ennen ensimmäistä yritysasiakkaan työkorvauslaskua ja varmista merkinnän voimaantulo; jos ei rekisteröidytä, järjestä lakisääteinen ennakonpidätysmenettely maksajan kanssa. Lähteet: https://www.vero.fi/yritykset-ja-yhteisot/yritystoiminta/verohallinnon-rekisterit/ennakkoperintarekisteri/ ja https://tietopalvelu.ytj.fi/yritys/3581581-6 .
 - **LEGAL-02 / P1:** Täydennä myyjän virallinen yritysosoite ja tarvittaessa rekisterin mukaiset yhteystiedot. Tiedot myös tarjoukseen, tilausvahvistukseen ja laskulle.
 - **LEGAL-03 / P1:** Hyväksy nimenomaisesti keskeytyksen 90 €/h -laskentatapa, 14 päivän palautussääntö ja asiakkaan saamat tekijänoikeudelliset lisenssit; varmista, ettei ulkopuolisten komponenttien lisenssien kanssa synny ristiriitaa.
 - **LEGAL-04 / P1:** Päätä toimituksen vastaanottotapa: nykyinen staattinen versio tukee sähköpostilinkkiä, ei tallentavaa lomaketta. Vahvista asiakkaan omistama hosting/domain ja yhden julkaisun vastuu.
