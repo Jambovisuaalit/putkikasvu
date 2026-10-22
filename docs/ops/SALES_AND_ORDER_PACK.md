@@ -52,7 +52,7 @@ Hei [nimi],
 Vahvistan [yrityksen, Y-tunnus] tilauksen hyväksymänne tarjouksen [numero, päiväys] mukaisesti.
 
 Toimitus: [sovitut sivut ja sisältö].
-Kokonaishinta: 590 €. Veromerkintä: [varmennettu merkintä].
+Kokonaishinta: 590,00 €. Arvonlisäveroa ei veloiteta, koska myyjä soveltaa vähäisen toiminnan verovapautusta (AVL 3 §). Myyjä ei ole arvonlisäverovelvollisten rekisterissä.
 Maksuerät: 295 € kirjallisen tilaussopimuksen jälkeen ja 295 € hyväksyttyänne toteutuksen kirjallisesti julkaisuvalmiiksi, ennen julkaisua.
 Sopimusehdot: mukana toimitettu v1.2 [päiväys].
 Domain ja hosting: [asiakkaan omistamat palvelut ja erilliset kulut].
@@ -159,7 +159,7 @@ Päivitetty käyttäjän tietojen perusteella 22.10.2026.
 - Kohderyhmä: Suomessa toimivat 1–10 henkilön LVI- ja putkialan yritykset; alkuvaiheen painopiste Uusimaa, laajennus koko Suomeen.
 - Päätuote: Standard, enintään 3 sivua, 590 € yhteensä, 295 € ennakko ja 295 € loppuerä.
 - Omistajan ilmoitus: myyjä ei ole ALV-velvollinen. Ilmoitus kirjattu; virallisen tarkistuksen ja laskumerkinnän tilaa ei kuitata tällä dokumentilla.
-- Myyjä: Tmi Jami Harju, Y-tunnus 3581581-6.
+- Palveluntarjoaja: Harju Jami, Putkikasvu, Y-tunnus 3581581-6 (rekisteriyhteys tarkistettava). Osoite Mannerheimintie 109, Helsinki; kotipaikka Helsinki; jami@putkikasvu.fi; https://putkikasvu.fi.
 - 29 €/kk ylläpito on erillinen ehdotus, ei valmis sopimustuote.
 - Ensisijainen tavoite: ensimmäinen maksava Standard-asiakas, laadukas toimitus sekä koko prosessin työajan ja katteen mittaus.
 
@@ -197,3 +197,8 @@ Omistajan mukaan optimoidut PNG-logot sijaitsevat repositorion public/brand/-hak
 alkuperäiset korkearesoluutioiset aineistot säilyvät Canvassa.
 Tässä päivityksessä Canvan sisältöä, väriarvoja tai hakemiston tiedostoluetteloa
 ei tarkistettu. Käytä nykyisiä brändiaineistoja; älä keksi uusia väriarvoja tai logoja.
+
+## 12. Omistajan täydentämät tiedot
+Myyjän ilmoittama ALV-merkintä: Arvonlisäveroa ei veloiteta, koska myyjä soveltaa vähäisen toiminnan verovapautusta (AVL 3 §). Myyjä ei ole arvonlisäverovelvollisten rekisterissä.
+Maksulinkin toimivuus on käyttäjän vahvistama. Tämä vahvistus ei yksilöi maksunsaajaa tai maksutapahtumaa.
+Putkikasvu toimii oman asiakashankintansa, markkinointikieltojensa, sopimustensa ja laskutuksensa osalta itsenäisenä rekisterinpitäjänä. Yksityiskohtainen käsittelykartta: ../legal/DATA_FLOW_AND_RETENTION.md.
