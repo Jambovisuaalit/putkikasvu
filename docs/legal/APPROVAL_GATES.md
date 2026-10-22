@@ -53,3 +53,16 @@
 
 ## Rajaus
 Tämä muutos koskee ainoastaan juridisia sivuja, mahdollista käsittelysopimuspohjaa, niiden dokumentaatiota ja regressiotestejä. Ei muutoksia maksu-, API-, tietokanta-, DNS- tai Vercel-asetuksiin. Ei merkitä juridisesti hyväksytyksi, vaikka build- ja testiajot olisivat vihreitä. Tarvittaessa suomalainen yritysjuristi tarkistaa lopulliset ehdot ennen laajempaa kaupallista käyttöönottoa.
+
+
+## PR #9 — kirjallisesti hyväksyttävä myyntiversio, päivitys 22.10.2026
+**Olemassa olevat esteet eivät poistuneet pelkällä tekstin laatimisella.** Hyväksyttävä sopimuskokonaisuus on nyt:
+- `app/ehdot/page.jsx` v1.2 ja `app/tietosuoja/page.jsx` v1.2.
+- `docs/legal/WRITTEN_APPROVAL_PACKAGE.md`: omistajan nimenomaiset B2B-hinnoittelu-, keskeytys-, lisenssi- ja säilytyspäätökset sekä stop/go-tila.
+- `docs/legal/OFFER_AND_ACCEPTANCE_TEMPLATE.md`: yksilöidyn tarjouksen malli, asiakkaan valtuutetun edustajan kirjallinen hyväksyntä ja erillinen julkaisuvalmiin toteutuksen hyväksyntä.
+- `docs/legal/DATA_FLOW_AND_RETENTION.md`: todellisten käsittelyiden, siirtojen ja poistotodisteiden rekisteri (ei vielä käyttöön otettu).
+- `docs/legal/DPA_TEMPLATE.md` v1.1: asiakkaan tarpeen mukaan täytettävä ja hyväksyttävä, liitteet A–C sekä allekirjoitukset.
+
+**Olennaisen uusi lainkohta:** laki sähköisen viestinnän palveluista 917/2014, 176 § edellyttää palveluntarjoajan maantieteellisen osoitteen saatavilla oloa. Vahvistamatonta osoitetta ei keksitä eikä julkaista. 178 § edellyttää ehtojen toimitusta tallennettavaan ja toisinnettavaan muotoon; asiakkaan hyväksymisprosessi on nyt yksilöity.
+
+**Tilat:** juridinen teksti = tarkistettava hyväksyntäversio; osoite, ALV/ennakkoperintä, tietojen todelliset siirrot/poistot, maksunvarmennus ja tuotanto-QA = edelleen avoimia. Ei julkaisua, maksulinkkejä eikä tilausten vastaanottamista tämän PR:n perusteella.
