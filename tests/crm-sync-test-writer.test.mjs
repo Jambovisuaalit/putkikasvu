@@ -12,7 +12,7 @@ test('test-only writer targets the isolated workbook and persists fingerprint in
  assert.equal(repeated.updated,0);
 });
 test('production destination and blank approval both rejected',()=>{
- assert.throws(()=>prepareTestWrites({environment:{...env,CRM_SYNC_TEST_SHEET_ID:'other'},grid,updates:[update]}),/Unapproved/);
+ assert.throws(()=>prepareTestWrites({environment:{...env,CRM_SYNC_TEST_SHEET_ID:'other'},grid,updates:[update]}),/Unapproved|outside dedicated/);
  assert.throws(()=>prepareTestWrites({environment:{...env,CRM_SYNC_WRITE:'false'},grid,updates:[update]}),/blocked|explicitly/);
  assert.throws(()=>prepareTestWrites({environment:env,grid:[grid[0],['Real','real@example.com','id']],updates:[update]}),/Non-synthetic/);
 });
