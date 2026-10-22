@@ -6,21 +6,21 @@
  * No outbound mail is sent. No secrets or message bodies are written to Sheets.
  */
 import { createSign } from 'node:crypto';
-import { safeMetrics, sheetRowIndex } from './crm-sync-core.mjs';
+import { pathToFileURL } from 'node:url';
+import { readConfig } from './crm-sync-config.mjs';
+import { matchesReply, mergeEvent, safeMetrics, sheetRowIndex } from './crm-sync-core.mjs';
 
-const SHEET_ID = '1xVjcWb8lq4xVwSFu6oMkwdPeLXY8oKAtVfv2qhx23LA';
-const TAB = "'SEURANTA 22-10-2026'";
 const env = (key) => { if (!process.env[key]) throw new Error('Missing '+key); return process.env[key]; };
 const b64url = (v) => Buffer.from(JSON.stringify(v)).toString('base64url');
 async function request(url, opts={}) {
   const r=await fetch(url,opts); const txt=await r.text();
-  if (!r.ok) throw new Error('HTTP '+r.status+' '+url.split('?')[0]+': '+txt.slice(0,180));
+  if (!r.ok) throw new Error('Provider request failed: HTTP '+r.status);
   return txt ? JSON.parse(txt) : {};
 }
 async function serviceToken(){
   const now=Math.floor(Date.now()/1000);
   const header=b64url({alg:'RS256',typ:'JWT'});
-  const payload=b64url({iss:env('GOOGLE_SERVICE_ACCOUNT_EMAIL'),scope:'https://www.googleapis.com/auth/spreadsheets',aud:'https://oauth2.googleapis.com/token',iat:now,exp:now+3600});
+  const payload=b64url({iss:env('GOOGLE_SERVICE_ACCOUNT_EMAIL'),scope:'https://www.googleapis.com/auth/spreadsheets.readonly',aud:'https://oauth2.googleapis.com/token',iat:now,exp:now+3600});
   const unsigned=header+'.'+payload;
   const sign=createSign('RSA-SHA256'); sign.update(unsigned); sign.end();
   const signature=sign.sign(env('GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY').replace(/\\n/g,'\n'),'base64url');
@@ -32,41 +32,72 @@ async function gmailToken(){
   return (await request('https://oauth2.googleapis.com/token',{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded'},body})).access_token;
 }
 const auth=(token)=>({authorization:'Bearer '+token});
-async function main(){
-  const sheetToken=await serviceToken();
-  const base='https://sheets.googleapis.com/v4/spreadsheets/'+SHEET_ID+'/values/';
-  const range=encodeURIComponent(TAB+'!A1:J100');
-  const grid=(await request(base+range,{headers:auth(sheetToken)})).values||[];
+/** Importing this module never starts OAuth or network requests. */
+export async function runSync({ environment=process.env, requestJson=request,
+  tokens={sheet:serviceToken,gmail:gmailToken}, now=()=>new Date() }={}) {
+  // Validate isolation and write prohibition before any OAuth or external request.
+  const config=readConfig(environment);
+  const TAB="'"+config.tab.replaceAll("'","''")+"'";
+  const sheetToken=await tokens.sheet();
+  const base='https://sheets.googleapis.com/v4/spreadsheets/'+encodeURIComponent(config.sheetId)+'/values/';
+  const grid=(await requestJson(base+encodeURIComponent(TAB+'!A1:J'),{headers:auth(sheetToken)})).values||[];
   if(grid[0]?.[0]!=='Yritys'||grid[0]?.[2]!=='Resend ID')throw new Error('Unexpected CRM schema');
-  const gmail=await gmailToken();
-  const writeEnabled=process.env.CRM_SYNC_WRITE==='true';
+  // Validate all IDs before reading other providers.
+  for(const row of grid.slice(1)) if(row[2]) sheetRowIndex(grid,row[2]);
+  const gmail=await tokens.gmail();
   const updates=[];
-  for(let i=1;i<grid.length;i++){
-    const row=grid[i]; const email=row[1];const id=row[2];
+  for(const row of grid.slice(1)) {
+    const email=row[1], id=row[2];
     if(!email||!id)continue;
     const targetRow=sheetRowIndex(grid,id);
-    const r=await request('https://api.resend.com/emails/'+encodeURIComponent(id),{headers:auth(env('RESEND_API_KEY'))});
-    // Resend metrics endpoint is used for opens/clicks; absence of an event means zero *tracked* events.
-    const start='2026-10-01';const end=new Date().toISOString().slice(0,10);
-    const metricsUrl=new URL('https://api.resend.com/emails/metrics');
-    metricsUrl.searchParams.set('start_date',start);metricsUrl.searchParams.set('end_date',end);
-    metricsUrl.searchParams.set('email_id',id);
-    let opens='Ei saatavilla', clicks='Ei saatavilla';
-    try {
-      const m=await request(metricsUrl,{headers:auth(env('RESEND_API_KEY'))});
-      if(m?.data?.length===1){opens=m.data[0].opened??'Ei saatavilla';clicks=m.data[0].clicked??'Ei saatavilla';}
-    }catch{ /* avoid falsely reporting zero when metrics endpoint is unavailable */ }
-    const query='from:('+email+') after:2026/10/19';
-    const result=await request('https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=30&q='+encodeURIComponent(query),{headers:auth(gmail)});
-    // A sender-only Gmail search is not evidence of a reply to this exact outbound message.
-    const reply=(result.messages?.length||0)>0?'Ehdokkaita – ketjukohdistus puuttuu':'Ei löydetty';
-    const state=reply.startsWith('Ehdokkaita')?'Tarkista viestiketju':'Odottaa vastausta';
-    const stamp=new Date().toISOString();
-    const values=[[r.last_event||r.status||'Tuntematon',opens,clicks,reply,state,stamp]];
+    const r=await requestJson('https://api.resend.com/emails/'+encodeURIComponent(id),{
+      headers:auth(environment.RESEND_API_KEY||'')});
+    // Raw metrics contract remains unverified: do not call a guessed endpoint or report zero.
+    const {opened,clicked}=safeMetrics(undefined);
+    const sentAt=Date.parse(r.created_at);
+    const messageId=r.message_id;
+    let found=false;
+    let reply='Kohdistustiedot puuttuvat';
+    if(typeof messageId==='string' && /^<[^<>\s]+>$/.test(messageId) && Number.isFinite(sentAt)) {
+      const query='from:'+email+' after:'+Math.floor(sentAt/1000);
+      let pageToken;
+      const seen=new Set();
+      do {
+        const url=new URL('https://gmail.googleapis.com/gmail/v1/users/me/messages');
+        url.searchParams.set('maxResults','100');url.searchParams.set('q',query);
+        if(pageToken)url.searchParams.set('pageToken',pageToken);
+        const result=await requestJson(url.toString(),{headers:auth(gmail)});
+        for(const candidate of result.messages||[]) {
+          const detailUrl=new URL('https://gmail.googleapis.com/gmail/v1/users/me/messages/'+encodeURIComponent(candidate.id));
+          detailUrl.searchParams.set('format','metadata');
+          for(const name of ['From','In-Reply-To','References'])detailUrl.searchParams.append('metadataHeaders',name);
+          const detail=await requestJson(detailUrl.toString(),{headers:auth(gmail)});
+          const headers=detail.payload?.headers||[];
+          const header=(name)=>headers.filter(h=>h.name.toLowerCase()===name).map(h=>h.value).join(' ');
+          const rawFrom=header('from').trim();
+          const from=rawFrom.match(/^[^<>]*<([^<>]+)>$/)?.[1]||rawFrom;
+          const refs=header('references').match(/<[^<>\s]+>/g)||[];
+          const receivedAtMs=detail.internalDate ? Number(detail.internalDate) : NaN;
+          if(matchesReply({from,references:refs,inReplyTo:header('in-reply-to'),receivedAtMs},email,messageId,sentAt))found=true;
+        }
+        pageToken=result.nextPageToken;
+        if(pageToken && seen.has(pageToken))throw new Error('Repeated Gmail page token');
+        if(pageToken)seen.add(pageToken);
+      } while(pageToken && !found);
+      reply=found?'Vastaus tunnistettu':'Ei löydetty';
+    }
+    // Preserve a previously verified reply if a later search no longer finds it.
+    const replied=found||row[6]==='Vastaus tunnistettu';
+    if(replied)reply='Vastaus tunnistettu';
+    const state=replied?'Vastannut':reply==='Kohdistustiedot puuttuvat'?'Tarkista kohdistus':'Odottaa vastausta';
+    const values=[[mergeEvent(row[3],r.last_event||r.status),opened,clicked,reply,state,now().toISOString()]];
     updates.push({range:TAB+'!D'+targetRow+':I'+targetRow,values});
   }
-  if(writeEnabled) throw new Error('CRM_SYNC_WRITE is blocked pending verified Resend metrics schema and exact Gmail thread matching');
-  if(false && updates.length)await request('https://sheets.googleapis.com/v4/spreadsheets/'+SHEET_ID+'/values:batchUpdate',{method:'POST',headers:{...auth(sheetToken),'content-type':'application/json'},body:JSON.stringify({valueInputOption:'RAW',data:updates})});
-  console.log(JSON.stringify({mode:'dry-run',candidates:updates.length,updated:0,at:new Date().toISOString()}));
+  // Deliberately no Sheets write or mail-send implementation in this test-stage worker.
+  return {mode:'dry-run',candidates:updates.length,updated:0,updates};
 }
-main().catch(e=>{console.error(e.message);process.exitCode=1;});
+
+if(process.argv[1] && import.meta.url===pathToFileURL(process.argv[1]).href) {
+  runSync().then(({mode,candidates,updated})=>console.log(JSON.stringify({mode,candidates,updated})))
+    .catch(()=>{console.error('CRM sync failed; check configuration and provider access');process.exitCode=1;});
+}

@@ -3,14 +3,15 @@ export function emailAddress(value) {
   return String(value||'').trim().toLowerCase();
 }
 export function matchesReply(message, recipient, sentMessageId, sentAtMs) {
+  if(typeof sentMessageId!=='string'||!/^<[^<>\s]+>$/.test(sentMessageId)) return false;
   const from=emailAddress(message.from);
-  if (from!==emailAddress(recipient)) return false;
+  if (!from || from!==emailAddress(recipient)) return false;
   if (!Number.isFinite(sentAtMs)||!Number.isFinite(message.receivedAtMs)||message.receivedAtMs<sentAtMs) return false;
   const refs=[...(message.references||[]),message.inReplyTo].filter(Boolean).map(x=>String(x).trim());
   return refs.includes(sentMessageId);
 }
 export function mergeEvent(current, incoming) {
-  const rank={queued:0,sent:1,delivered:2,delivery_delayed:2,bounced:3,failed:3,complained:4};
+  const rank={queued:0,sent:1,delivered:2,delivery_delayed:1,bounced:3,failed:3,complained:4};
   if(!(incoming in rank))return current;
   if(!(current in rank))return incoming;
   return rank[incoming]>=rank[current]?incoming:current;
