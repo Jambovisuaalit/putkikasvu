@@ -3,3 +3,8 @@ node_modules/
 out/
 .env*
 .vercel/
+.demo-output/
+demo-template/.next/
+demo-template/out/
+demo-template/private/
+node_modules

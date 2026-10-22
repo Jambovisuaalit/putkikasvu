@@ -1,0 +1,24 @@
+import {performance} from 'node:perf_hooks';
+import {spawnSync} from 'node:child_process';
+import {writeFileSync,readFileSync,mkdtempSync,existsSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+const start=performance.now(),slug='benchmark-'+Date.now(),fixture=path.join(mkdtempSync(path.join(tmpdir(),'pk-demo-')),'fixture.json');
+const stages=[];
+function run(name,args){const t=performance.now();const r=spawnSync(process.execPath,args,{encoding:'utf8',env:{...process.env,VERCEL:'',VERCEL_ENV:'',DEPLOYMENT_URL:'',PK_DEMO_ALLOW_PUBLIC:''}});stages.push({name,seconds:Number(((performance.now()-t)/1000).toFixed(3)),exit:r.status});if(r.status!==0){process.stderr.write(r.stdout+r.stderr);process.exit(1)}return r.stdout;}
+const sample=JSON.parse(readFileSync('demo-template/data/example.json','utf8'));
+const d={...sample,companyName:'Testiputki Etelä — kuvitteellinen yritys',area:'Espoo ja Kirkkonummi',phone:'000 111 2222',email:'testiputki@example.invalid',services:[{title:'Putkikorjaukset',description:'Kuvitteellisen demoyrityksen palvelukuvaus.'},{title:'LVI-huolto',description:'Kuvitteellisen demoyrityksen toinen palvelu.'}]};
+writeFileSync(fixture,JSON.stringify(d),{mode:0o600});
+const result=JSON.parse(run('generate-and-validate',['scripts/create-lvi-demo.mjs','--input',fixture,'--slug',slug]));
+run('build-export',['node_modules/next/dist/bin/next','build',result.directory]);
+const t=performance.now(),html=readFileSync(path.join(result.directory,'out/index.html'),'utf8');
+for(const word of [d.companyName,d.area,d.phone,d.email,...d.services.map(s=>s.title)])assert.ok(html.includes(word),word);
+assert.match(html,/noindex/);assert.match(html,/LUONNOS/);assert.match(html,/kuvitteellisia/);assert.equal((html.match(/<h1\b/g)||[]).length,1);
+for(const id of ['sisalto','palvelut','toiminta','yhteys'])assert.match(html,new RegExp('id="'+id+'"'));
+assert.doesNotMatch(html,/href="(?:tel:|mailto:)|<form\b|checkout\.revolut|supabase/i);
+assert.ok(existsSync(path.join(result.directory,'out/404.html')));
+stages.push({name:'export-acceptance',seconds:Number(((performance.now()-t)/1000).toFixed(3)),exit:0});
+const seconds=Number(((performance.now()-start)/1000).toFixed(3));
+const report={kind:'synthetic-company-clone',startedAt:new Date(Date.now()-seconds*1000).toISOString(),finishedAt:new Date().toISOString(),seconds,targetSeconds:1800,pass:seconds<=1800,slug,stages,scope:'Ready synthetic source data → new company config → validation → local production export → HTML checks. Excludes prospect research, real photo consent, human copy approval, browser visual QA and deployment. Template development time excluded.'};
+writeFileSync('docs/LVI_DEMO_BENCHMARK.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
