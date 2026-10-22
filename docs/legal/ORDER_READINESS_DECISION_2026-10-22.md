@@ -1,5 +1,7 @@
 # Putkikasvu Standard — tilaamisen ja maksun hyväksymisportti
 Päiväys 22.10.2026. **Tila: dokumentoitu, TILAUSTA JA MAKSUA EI OLE AKTIVOITU.**
+**Ajantasainen tulkinta 23.10.2026:** myyntityö ja sopimuksen valmistelu voivat jatkua; maksun käsittelyn edellytykset tarkistetaan erikseen. Lopun omistajan täsmennykset korvaavat aiemmat ristiriitaiset tilannekuvat. Rekisterihakemusta ei merkitä valmiiksi ennen toteuman näyttöä.
+
 Perustuu WRITTEN_APPROVAL_PACKAGE v1.2:een, käyttäjän 22.10.2026 ilmoituksiin, perustamisilmoituksen luonnoksiin ja viranomaisohjeisiin.
 
 ## 1 Myyjän identiteetti
@@ -25,10 +27,10 @@ Perustuu WRITTEN_APPROVAL_PACKAGE v1.2:een, käyttäjän 22.10.2026 ilmoituksiin
 Ei domainia, jatkuvaa ylläpitoa, sähköpostilaatikkoa tai liiditakuuta. Muutokset vain kirjallisesti.
 Lähetyssähköpostien ilmaisu ”sovitun toimituksen yhteydessä” täsmennetään tarjous- ja tilaustekstiin edellä olevaksi ennen sitovaa hyväksyntää.
 
-## 5 Sulkemiskriteerit
+## 5 Sopimuksen ja maksun erilliset tarkistukset
 - [ ] Myyjän käytettävä julkinen/sopimusosoite ja Y-tunnus vahvistettu.
 - [ ] Vuoden 2025 ja kuluvan 2026 ALV-rajaan vaikuttava liikevaihto ja ALV-asema vahvistettu.
-- [ ] Ennakkoperintärekisterimerkintä tai asiakkaan ennakonpidätysmenettely ja tarvittava työkorvauksen verokortti vahvistettu.
+- [ ] **Ennen maksua:** maksupäivän ennakkoperintärekisterimerkintä tarkistettu tai asiakkaan soveltuva ennakonpidätysmenettely ja tarvittavat verokorttitiedot järjestetty. Tämä ei ole yleinen myyntityön tai tarjousten valmistelun aloitusehto.
 - [ ] Maksulinkin kauppias/osapuoli, maksukuitti, palautus sekä manuaalinen täsmäytys varmennettu ennen ensimmäistä maksua.
 - [ ] Lopulliset ehdot ja tilausvahvistus hyväksytty käyttäjän toimesta.
 
