@@ -7,7 +7,7 @@ const update={range:"'TEST CRM'!D2:I2",values:[['delivered','Ei saatavilla','Ei 
 test('test runner writes to isolated CRM exactly once on replay',async()=>{
  let ledger='';let writes=0;
  const requestJson=async(url,opts)=> {
-   if(url.includes('/values/'))return {values:[grid[0],[...grid[1].slice(0,10),ledger]]};
+   if(url.includes('/values/'))return {values:[grid[0],[...Array.from({length:10},(_,i)=>grid[1][i]??''),ledger]]};
    if(url.includes('/values:batchUpdate')){writes++;const b=JSON.parse(opts.body);ledger=b.data.find(x=>x.range==="'TEST CRM'!K2").values[0][0];return {totalUpdatedCells:8};}
    throw new Error('Unexpected network URL');
  };
