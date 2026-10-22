@@ -28,7 +28,7 @@ Tämän tiedoston hyväksyntä koskee sopimustekstien ja liiketoimintaehtojen si
 
 ## B. Pakolliset faktat ja käyttöönottoesteet (EI voi hyväksyä oletuksina)
 - [ ] **P0:** Ennakkoperintärekisterin voimassaolo varmistettu ennen yritysasiakkaan työkorvauksen maksamista tai maksajan ennakonpidätys järjestetty lain edellyttämällä tavalla. YTJ:n 22.10.2026 tarkastelun mukaan merkintä puuttui.
-- [ ] **P0:** Myyjän toimiva, julkisesti ilmoitettava maantieteellinen yritysosoite vahvistettu ja lisätty verkkosivuille sekä sopimus-/laskutusasiakirjoihin. Älä julkaise vahvistamatonta tai yksityiseksi tarkoitettua osoitetta. Laki sähköisen viestinnän palveluista 917/2014, 176 §.
+- [x] **Osoitteen ilmoitus ja verkkosivutekstit:** Omistaja ilmoitti julkiseen käyttöön yritysosoitteeksi **Mannerheimintie 109, Helsinki** 22.10.2026. Lisätty /ehdot- ja /tietosuoja-sivuille. **Virallinen rekisterivarmennus ja osoitteen käyttö tarjous-/laskutusasiakirjoissa tarkistetaan vielä erikseen.** Ei ole julkaisu- tai maksulupa.
 - [ ] **P0:** ALV-status, vähäisen toiminnan liikevaihto sekä 2025 että 2026 ja laskumerkintä tarkistettu ennen laskua; julkisesta rekisteristä puuttuva ALV-merkintä ei yksin todista rajaa.
 - [ ] **P0:** Valittu maksutili ja tositteellinen manuaalinen maksun tarkistus määritelty. Ei maksulinkkejä tai automaattista laskutusta tämän PR:n perusteella.
 - [ ] **P1:** Gmailin todellinen tilitys-/asiakasviestikäyttö, säilytys, poistot ja palvelun sopimustyyppi (henkilökohtainen Gmail vs Workspace) dokumentoitu.
