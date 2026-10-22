@@ -51,7 +51,8 @@ test('written legal signoff is distinct from commercial GO', () => {
   const dataMap = read('../docs/legal/DATA_FLOW_AND_RETENTION.md');
   const offer = read('../docs/legal/OFFER_AND_ACCEPTANCE_TEMPLATE.md');
   const dpa = read('../docs/legal/DPA_TEMPLATE.md');
-  assert.match(signoff, /TEXT APPROVED/);
+  assert.match(signoff, /TEKSTIEHDOT HYVÄKSYTTY|TEXT APPROVED/);
+  assert.match(signoff, /EI MYYNTI-\/LASKUTUS-\/JULKAISULUPA/);
   assert.match(signoff, /P0/);
   assert.match(signoff, /ennakkoperintärekisterin/i);
   assert.match(signoff, /yritysosoite/i);
