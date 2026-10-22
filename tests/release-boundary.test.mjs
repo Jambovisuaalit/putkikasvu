@@ -18,7 +18,9 @@ test('release has no backend, database migration, mock checkout or server routes
   }
 });
 test('each public page supports the shared skip link and uses official logo', () => {
-  assert.match(read('app/layout.jsx'), /href="#main-content"/);
+  assert.match(read('app/layout.jsx'), /<SkipLink\s*\/>/);
+  assert.match(read('app/components/SkipLink.jsx'), /href="#main-content"/);
+  assert.match(read('app/components/SkipLink.jsx'), /main-content.*focus/);
   for (const p of ['app/page.jsx','app/ehdot/page.jsx','app/tietosuoja/page.jsx']) {
     const s=read(p);
     assert.match(s, /id="main-content"/);
