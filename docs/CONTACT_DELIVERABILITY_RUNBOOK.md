@@ -53,7 +53,7 @@ Gmail-vastaanotto säilyy osoitteessa `visualjambo@gmail.com`. Yksittäinen vies
 | **Tarjous** | Lähetä erikseen hyväksyttävä kirjallinen Standard-tarjous, 590 € ja 295 € + 295 €. | ei maksua ennen juridista hyväksyntää |
 | **Voitettu / Ei jatkoon** | Kirjaa lopputulos ja jatkokontaktin tila. | tarkista viikoittain |
 
-Maksuton käytäntö: Gmail-tunnisteet `Putkikasvu/Uusi`, `Putkikasvu/Vastattu`, `Putkikasvu/Demo`, `Putkikasvu/Tarjous`, `Putkikasvu/Suljettu`; tarvittaessa manuaalinen Google Sheet. Älä luo automaattista lähettämistä tai kampanjoita. Gmail-suodatin voi ehdotuksena merkitä saapuvia viestejä aiheen perusteella, mutta suodatin ei korvaa säännöllistä postilaatikon tarkistusta.
+Käytössä 22.10.2026 yhdistetyllä Gmail-tilillä (luotu, ei automaattisia suodattimia): Gmail-tunnisteet `Putkikasvu/Uusi`, `Putkikasvu/Vastattu`, `Putkikasvu/Demo`, `Putkikasvu/Tarjous`, `Putkikasvu/Suljettu`; tarvittaessa manuaalinen Google Sheet. Älä luo automaattista lähettämistä tai kampanjoita. Gmail-suodatin voi ehdotuksena merkitä saapuvia viestejä aiheen perusteella, mutta suodatin ei korvaa säännöllistä postilaatikon tarkistusta.
 
 **KPI:t:** Uudet yhteydenotot / viikko, 1 arkipäivässä vastatut / kaikki, demon pyytäneistä soveltuvat / kaikki, demosta tarjoukseen %, tarjouksesta kauppaan %, toteutuneet tunnit per tarjous/kauppa. Tällä staattisella `mailto:`-versiolla painalluksia tai kaavakkeen valmistumista **ei** mitata; älä laske klikkejä liideiksi. Säilytä henkilötietoja vain vahvistetun tietosuojapolitiikan ja tarpeen mukaan.
 
@@ -61,8 +61,9 @@ Maksuton käytäntö: Gmail-tunnisteet `Putkikasvu/Uusi`, `Putkikasvu/Vastattu`,
 - [x] CTA:t käyttävät keskitettyä osoitetta, aihetta ja täytettäviä kenttiä.
 - [x] Sivulla näkyy kopioitava varayhteystieto ja toimintaohje tilanteeseen, jossa mobiili ei avaa mail-sovellusta.
 - [x] Automaattinen testi tarkistaa URI:n dekoodauksen ja näkyvän varayhteystavan.
-- [ ] GitHub Actions: `npm ci`, `npm run build`, `npm audit` läpi uusimmasta haarasta.
-- [ ] Mobiili- ja desktop-selainkokeet oikeilla sähköpostisovelluksilla; varmista vastaanottajaksi `visualjambo@gmail.com` ja että viesti saapuu vastaanottajan Gmailiin. Varsinaista saapumista **ei** voida todentaa pelkällä linkkitestillä.
+- [x] GitHub Actions: 16/16 testiä, `npm ci`, `npm run build`, `npm audit` (0 tunnettua haavoittuvuutta) ja Vercel-tarkistus läpi 22.10.2026.
+- [x] Yksi sisäinen Gmail-vastaanottotesti: viesti lähetettiin Gmail-tililtä `visualjambo@gmail.com` omaan osoitteeseen 22.10.2026 aiheen `[TESTI – yhteydenottopolku]` kanssa. Gmail API palautti viestille `INBOX`- ja `SENT`-tunnisteet. Viesti on merkitty `Putkikasvu/Suljettu` eikä ole oikea liidi.
+- [ ] Mobiili- ja desktop-selainkokeet oikeilla sähköpostisovelluksilla: `mailto:` avaa vastaanottajan ja viestiluonnoksen, viesti lähetetään ja saapuu Gmailiin. Sisäinen Gmailista Gmailiin tehty testi ei todenna selaimen tai puhelimen sähköpostisovelluksen avaamista.
 - [ ] Tarkista Zonerin tämänhetkiset DNS-tietueet hallinnasta / julkisesta autoritatiivisesta DNS:stä.
 - [ ] Resend hyväksytty käyttöön vain tarvittaessa, DNS-verifiointi valmis ennen lähettämistä.
 - [ ] Asiakastietojen säilytys ja tietosuojaseloste hyväksytty ennen tuotantoliidien keräämistä.
