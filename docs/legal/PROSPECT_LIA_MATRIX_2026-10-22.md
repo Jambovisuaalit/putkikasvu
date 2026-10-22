@@ -11,7 +11,8 @@ Paikallisille pienille yrityksille tarjottavat verkkosivupalvelut. Yritysten ver
 | Yrityksen julkaisema yritysniminen Gmail/Saunalahti | Julkaisutarkoitus ja luonnollisen henkilön käyttö epäselviä | Osoite/rooli- ja aiemman kontaktin lisävarmennus | HOLD jos vastaanottajaluokka jää epäselväksi |
 | Nimetyn työntekijän työosoite | Yksilöity henkilö; arvioi soveltuuko palvelu työtehtävään ja onko vähemmän yksilöivä osoite mahdollinen | Tehtävän varmistus, minimointi, informointi, Suomen markkinointisäännöt | HOLD kunnes oikeusperuste ja markkinoinnin poikkeus tai suostumus selvä |
 | Toiminimiyrittäjän osoite | Yksityisen henkilön oikeudet painottuvat | Ei automaattista yhteisöluokitusta; tarvittava suostumus tai lainmukainen poikkeus | HOLD jos peruste ei vahvistu |
-| Aiemmin kontaktoitu tai kieltänyt | Uuden viestin tarve heikko; henkilön vastustamisoikeus vahva | Kielto ensisijaiseksi, estolistan minimisäilytys ja aliasvertailu | ESTÄ / ei automaattista seurantaa |
+| Aiemmin kontaktoitu, ei todettua kieltoa | Aiempi kontakti ei yksin ole suostumus eikä markkinointikielto | Täsmäytä lähetyshistoria; ei pilotin uudelleenlähetystä tai automaattimuistutusta tässä toimeksiannossa | HOLD / erillinen arvio ja lähetyshyväksyntä |
+| Markkinoinnin kieltänyt | Vastustaminen estää uuden suoramarkkinoinnin | Estotieto ensisijaiseksi; osoitteet ja tunnetut aliakset tarkistetaan | ESTÄ |
 
 ## Informointimenettely
 GDPR 14 artiklan mukaiset tiedot annetaan kohtuullisessa ajassa, pääsääntöisesti enintään kuukaudessa tietojen saamisesta, ja jos henkilötietoja käytetään yhteydenottoon, viimeistään ensimmäisen yhteydenoton yhteydessä, jollei soveltuva poikkeus päde. Yksilöi rekisterinpitäjä ja yhteystiedot, tarkoitus, peruste, oikeutettu etu tarvittaessa, henkilötietoryhmät, lähde, vastaanottajat, mahdolliset siirrot, säilytys, oikeudet ja valitusmahdollisuus.

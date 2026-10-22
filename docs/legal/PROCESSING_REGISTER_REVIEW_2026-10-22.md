@@ -34,3 +34,20 @@ Tämä täydentää olemassa olevaa DATA_FLOW_AND_RETENTION.md:tä, ei korvaa si
 - [ ] Varmista, että 22.10 jo lähetettyjen viestien informointia ei väitetä annetuksi jälkikäteen ilman todistetta.
  
 Viranomaispohja: https://eur-lex.europa.eu/eli/reg/2016/679/oj?locale=fi
+
+## Täsmennys 23.10.2026 — lähteet ja vastuut
+Ensisijainen toteumainventaario: [DATA_FLOW_AND_RETENTION.md](DATA_FLOW_AND_RETENTION.md). Tämän tiedoston historiallisia havaintoja ei käsitellä uutena tilikohtaisena varmennuksena. Tarkastaja: tämän toimeksiannon suorittanut agentti; operatiivinen vastuuhenkilö ja käyttöoikeuksien hyväksyjä: palvelun omistaja. Oikeusperusteet ovat arvioitavia ehdotuksia, eivät tämän työn uutta oikeudellista hyväksyntää.
+
+| Järjestelmä | Tarkoitus, tietoryhmät ja rooli | Sijainti, siirrot ja alikäsittelijät | Säilytys, poisto ja oikeudet | Näyttö 23.10.2026 |
+| --- | --- | --- | --- | --- |
+| Sheets / Drive | CRM ja sopimusaineisto; Putkikasvu rekisterinpitäjä; Googlen käsittelijärooli sopimuksesta | Tilikohtainen sijainti, sopimus ja siirtoperuste avoinna | Suunniteltu tarpeellisuusarvio 12 kk; poistopolku pääinventaarion mukaan. Käyttöoikeuslista tarkistettava uudelleen | 12 välilehteä ja seurannan 10 riviä luettu; ei tämän työn jakamisoikeus- tai poistotestiä |
+| Gmail | Vastaukset, tarjoukset, kiellot; omat myyntitiedot | Kuluttaja-/Workspace-sopimus, sijainti, siirrot ja alikäsittelijät avoinna | Todennettua automaattipoistoa ei ole; viesti, roskakori ja kopiot erikseen; käyttöoikeudet avoinna | Lähettäjä- ja aihehaut suoritettu; ei pilotin vastausosumia |
+| Euronic | Yritysposti ja mahdollinen välitys Gmailiin | Sopimus, oikeushenkilö, sijainti ja alikäsittelijät avoinna | Palvelimen, välitettyjen kopioiden ja varmistusten poisto erikseen; laatikko-oikeudet avoinna | Aiempi vastaanottohavainto, ei uutta hallintavarmennusta |
+| Resend | Kymmenen pilotin viestin toimitusmetadata; Putkikasvu rekisterinpitäjä | Tilikohtainen DPA, US-siirtoperuste ja alikäsittelijäluettelo dokumentoitava | Julkinen palvelupolitiikka ei todista tilikohtaista poistoa; paikalliskopiot erikseen | Tuore listaus: pilotin 10 viestiä delivered; ei avausnäyttöä |
+| Vercel | Sivusto, demot, tekniset lokit | Demojen region iad1; tämä ei kuvaa kaikkien lokien tai tukipalveluiden sijaintia. DPA/siirrot/alikäsittelijät avoinna | Kolme demoa READY; SSO all. Lokisäilytys ja asiakaskohtainen pääsynrajaus varmistettava | Projektin ja kolmen deploymentin metadata luettu |
+| GitHub | Lähdekoodi ja dokumentaatio; mahdolliset julkiset yritysyhteystiedot | Repojen näkyvyys, sopimus, siirrot ja alikäsittelijät tarkistettava | Git-historia ja kloonit eivät poistu tiedoston poistolla; ei salaisuuksia tai henkilötunnuksia | PR #12 ja pohjahaara luettu; uusi sisältö rajattu dokumentteihin |
+| ChatGPT / työaineistot | Tutkimus, demot ja asiakirjat; asiakkaan aineistot vain tarpeellisin osin | Työtilatyyppi, sopimus, sijainti, koulutuskäyttö ja alikäsittelijät avoinna | Arkistot, paikalliskopiot ja keskustelut erillisiä; poistot ja jakamisoikeudet avoinna | Kaksi nimettyä demoarkistoa haettu, ei yksityisiä perustamispapereita julkiseen repoon |
+| Brevo | Historiallisen havainnon mukaan oma tili ja oma kontakti | Palveleva oikeushenkilö, DPA, siirrot ja alikäsittelijät avoinna | Kontaktin, SMTP-lokien ja tilitietojen todellinen säilytys/poisto avoinna | Ei uutta tililukua; ei väitettä uusista kampanjoista |
+| Revolut | Käyttäjän ilmoittama maksulinkki; mahdolliset maksaja- ja tapahtumatiedot | Vastaanottaja, tuote, oikeushenkilö, rooli ja siirrot avoinna | Lakisääteiset palveluntarjoajan säilytykset erotettava omista tositteista; ei poistotestiä | Ei tililukua eikä maksua; maksujen käsittelyä ei varmennettu |
+
+Kieltoprosessi: havaittu kielto keskeyttää kyseisen vastaanottajan markkinoinnin. Vastuuhenkilö täsmäyttää osoitteen ja tunnetut aliakset, kirjaa vain tarpeellisen estotiedon sekä varmistaa Sheets- ja Resend-estot ennen uutta lähetystä. Tämä on suunniteltu manuaalinen prosessi; automaattista synkronointia ei ole tämän työn perusteella todistettu.

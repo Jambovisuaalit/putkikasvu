@@ -33,3 +33,6 @@ Tarkistetut palveluohjeet 22.10.2026:
 - https://vercel.com/docs/logs/runtime
 
 Tämä on toiminnan inventaario, ei todistus kaikkien palvelusopimusten tarkastuksesta. Tunnuksia, esikatselujen pääsylinkkejä ja prospektien viestisisältöjä ei tallenneta julkiseen repositorioon.
+
+## Käyttöönoton rajaus — 23.10.2026
+**EI TODETTU:** kaikkien palveluiden tilikohtainen sopimus-, siirto- ja poistovarmennus. Kuluttaja-Gmailiin ei oleteta Google Workspace -sopimusta tai sen suojatoimia. Tilin sopimustyyppi on vahvistettava erikseen. Tämä rajaus ei mitätöi yllä erikseen dokumentoituja havaintoja.

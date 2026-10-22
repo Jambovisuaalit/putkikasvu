@@ -38,3 +38,10 @@ Viranomaislähteet:
 - https://www.vero.fi/yritykset-ja-yhteisot/yritystoiminta/verohallinnon-rekisterit/ennakkoperintarekisteri/
 - https://www.vero.fi/yritykset-ja-yhteisot/verot-ja-maksut/arvonlisaverotus/rekisterointi/
 - https://vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/48658/arvonlisaveroton-vahainen-toiminta/
+
+## Tarkistuksen päivitys 23.10.2026
+Myyjän Y-tunnukselle ei saatu uutta julkisen viranomaisrekisterin otetta. PRH:n avoimen datan ohjeen mukaan rajapinta ei tarjoa yksityisten elinkeinonharjoittajien tietoja: hakutuloksen puuttumisesta ei päätellä rekisteriasemaa. Lähde: https://avoindata.prh.fi/faq.html/info/swagger-ui (luettu 23.10.2026). Rekisteriyhteys, virallinen osoite, ennakkoperintä ja ALV jäävät ESTE-tilaan.
+
+Verohallinnon vähäisen toiminnan ohje luettiin uudelleen: https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/48658/arvonlisaveroton-vahainen-toiminta/ . Tämä on verkkolähde, ei MCP-varmennettu oikeustila eikä todiste tämän myyjän verottomuudesta. Vuosien 2025/2026 liikevaihto puuttuu edelleen. Tarjouspohjan ehdoton verottomuusväite on korvattu täytettävällä verokohtelulla; 590 € kokonaishintaa tai maksueriä ei muutettu.
+
+Lähdevarmennus epäonnistui – en voi vahvistaa oikeustilaa. Virhekoodi REQUIRED_VERIFIER_TOOL_UNAVAILABLE: Lakimies AI -ohjeen edellyttämät ajallisuuden ja pykälien varmennustyökalut puuttuvat istunnosta. Voimassaoloa ei voitu varmentaa. Aiemmat numero- ja pykäläviittaukset eivät saa tämän päivityksen perusteella uutta juridista varmennusta.

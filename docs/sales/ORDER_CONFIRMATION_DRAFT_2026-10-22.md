@@ -36,3 +36,13 @@ Kirjallisen hyväksynnän tunniste: [ ]
 - [ ] CRM-tila VOITETTU vain hyväksytyn tilauksen ja vahvistetun maksutapahtuman jälkeen.
 
 Älä lähetä tätä asiakasviestinä ilman käyttäjän hyväksyntää.
+
+## Täytettävät ehdot ja molempien osapuolten vahvistus
+Sopimustunnus [ ], sivut [ ], aineistot ja oikeudet [ ], tavoitepäivät ja alkuehdot [ ], eräpäivät [ ], domain-/hostingvastuu [ ]. Asiakkaalle toimitetaan ennen hyväksyntää muuttumattomat Standard v1.2 -ehdot: lähde `app/ehdot/page.jsx`, pohja `docs/legal/OFFER_AND_ACCEPTANCE_TEMPLATE.md`, omistajan sisältöhyväksyntä `docs/legal/WRITTEN_APPROVAL_PACKAGE.md`. Pelkkä muuttuva verkkolinkki ei ole arkistoitu ehtoversio.
+
+Hyväksyttyjen v1.2-tekstiehtojen mukaan ennen työn aloitusta ennakko palautetaan kokonaan, ellei asiakkaan etukäteen hyväksymiä peruuttamattomia ulkoisia kuluja ole. Aloituksen jälkeisessä asiakkaan keskeytyksessä todennettava työ 90 €/h ja hyväksytyt peruuttamattomat kulut, Standardin osalta enintään 590 €; maksettu ennakko hyvitetään. Vahvistettu palautussumma palautetaan 14 kalenteripäivässä. Sopimusrikkomusta koskevat oikeudet säilyvät ehtojen mukaan. Tämä on aiemmin hyväksytyn tekstin yhteenveto, ei uusi oikeustilan varmennus.
+
+Asiakas: hyväksyntäviesti [ ], valtuus [ ], päivä [ ], tarjous- ja liiteversiot [ ].
+Palveluntarjoaja: vahvistan yksilöidyn tilauksen, hinnan, ehdot ja aikataulun; nimi [ ], päivä [ ], vahvistusviestin tunniste [ ]. Ei hyväksyntää hiljaisuudesta.
+
+Jos ennakonpidätys soveltuu, maksuerän täsmäytykseen merkitään sovittu bruttomäärä, soveltuva veron peruste, pidätys, myyjälle maksettu netto ja maksajan tosite. Veroprosenttia tai laskumerkintää ei täytetä oletuksella.
