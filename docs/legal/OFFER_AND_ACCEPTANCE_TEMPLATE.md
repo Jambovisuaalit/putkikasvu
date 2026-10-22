@@ -1,9 +1,9 @@
-# Putkikasvu Standard — yksilöity tarjous ja kirjallinen tilausvahvistus v1.1
+# Putkikasvu Standard — yksilöity tarjous ja kirjallinen tilausvahvistus v1.2
 **Pohja viimeistelty hyväksytyn v1.2-tekstiversion perusteella. Asiakkaalle lähetettävä sitovana tarjouksena vasta, kun päätösrekisterin kaupalliset edellytykset on ratkaistu.** Ei maksupyyntöä eikä tilausta tällä pohjalla ilman tarkistusta.
 
 ## Tarjous
 **Tarjousnumero:** [ ] · **Päiväys:** [ ] · **Voimassa:** [ ]
-**Myyjä:** Tmi Jami Harju / Putkikasvu, Y-tunnus 3581581-6 · **yritysosoite:** Mannerheimintie 109, Helsinki (omistajan ilmoittama; virallinen nimi, osoite ja laskutusmerkinnät varmennetaan ennen lähettämistä) · jami@putkikasvu.fi
+**Palveluntarjoaja:** Harju Jami, Putkikasvu · Y-tunnus 3581581-6 (rekisteriyhteys tarkistettava) · Mannerheimintie 109, Helsinki · kotipaikka Helsinki · jami@putkikasvu.fi · https://putkikasvu.fi
 **Ostaja:** [virallinen yritys, Y-tunnus, osoite] · **valtuutettu hyväksyjä:** [nimi, asema, yrityssähköposti].
 **Palvelu:** Putkikasvu Standard, yritys [ ], toimialue [ ], hyväksytyt aineistot [ ].
 
@@ -11,7 +11,9 @@
 
 **Ei sisälly:** tallentava lomake, CRM- tai maksukytkentä, ajanvaraus, monikielisyys, referenssien hankinta, kuvatyöt, markkinointi, tulostakuu, hosting- tai domainmaksut, jatkuva ylläpito.
 
-**Hinta:** 590 € yhteensä. **Arvonlisäveromerkintä:** [tarkista tosiasiallinen ALV-tila ja laskumerkintä, EI täytetä automaattisesti].
+**Hinta:** 590,00 € yhteensä. Ensimmäinen maksuerä 295,00 €, toinen maksuerä 295,00 €.
+**Arvonlisävero:** Arvonlisäveroa ei veloiteta, koska myyjä soveltaa vähäisen toiminnan verovapautusta (AVL 3 §). Myyjä ei ole arvonlisäverovelvollisten rekisterissä.
+**Sisäinen tarkistus ennen lähettämistä:** ALV-teksti perustuu myyjän ilmoitukseen. Rekisteritiedon sekä vuosien 2025 ja 2026 vähäisen toiminnan edellytysten varmennusta ei merkitä tehdyksi tämän ilmoituksen perusteella.
 **Maksuerät:** 295 € kirjallisen tilaussopimuksen jälkeen; 295 € asiakkaan kirjallisesti hyväksyttyä julkaisuvalmiin toteutuksen, ennen julkaisua.
 **Maksutapa ja eräpäivä:** [manuaalisesti vahvistettava lasku/tili/viite]; maksu tunnistetaan tiliotteelta ennen työn aloitusta/julkaisua.
 **Ennakonpidätys:** [varmista voimassaoleva ennakkoperintärekisteri tai ennakonpidätyksen käytännöt ennen työkorvauslaskua].
