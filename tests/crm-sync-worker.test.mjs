@@ -5,7 +5,7 @@ import {readConfig} from '../integrations/crm-sync-config.mjs';
 
 // Any accidental native fetch (including OAuth) fails this suite; all data is synthetic.
 globalThis.fetch=async()=>{throw new Error('Network forbidden in credential-free tests');};
-const environment={CRM_SYNC_ENV:'test',CRM_SYNC_TEST_SHEET_ID:'synthetic-sheet',CRM_SYNC_TEST_TAB:"TEST O'Brien"};
+const environment={CRM_SYNC_ENV:'test',CRM_SYNC_TEST_SHEET_ID:'synthetic-sheet',CRM_SYNC_TEST_TAB:"TEST O'Brien",CRM_SYNC_FIXTURE_MODE:'true'};
 const original='<sent@example.invalid>';
 const sentAt='2026-10-22T00:00:00.000Z';
 const grid=()=>[['Yritys','Vastaanottaja','Resend ID'],['Fixture','prospect@example.invalid','fixture-id','delivered']];
