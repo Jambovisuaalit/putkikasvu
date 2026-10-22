@@ -1,9 +1,9 @@
-# Putkikasvu Standard — yksilöity tarjous ja kirjallinen tilausvahvistus v1.0
-**Asiakkaalle lähetettävä vasta, kun omistajan päätökset ja P0-esteet on ratkaistu.** Ei maksupyyntöä eikä tilausta tällä pohjalla ilman tarkistusta.
+# Putkikasvu Standard — yksilöity tarjous ja kirjallinen tilausvahvistus v1.1
+**Pohja viimeistelty hyväksytyn v1.2-tekstiversion perusteella. Asiakkaalle lähetettävä sitovana tarjouksena vasta, kun päätösrekisterin kaupalliset edellytykset on ratkaistu.** Ei maksupyyntöä eikä tilausta tällä pohjalla ilman tarkistusta.
 
 ## Tarjous
 **Tarjousnumero:** [ ] · **Päiväys:** [ ] · **Voimassa:** [ ]
-**Myyjä:** [vahvistettu virallinen nimi], Y-tunnus 3581581-6 · **maantieteellinen yritysosoite:** [vahvistettava] · visualjambo@gmail.com
+**Myyjä:** Tmi Jami Harju / Putkikasvu, Y-tunnus 3581581-6 · **yritysosoite:** Mannerheimintie 109, Helsinki (omistajan ilmoittama; virallinen nimi, osoite ja laskutusmerkinnät varmennetaan ennen lähettämistä) · jami@putkikasvu.fi
 **Ostaja:** [virallinen yritys, Y-tunnus, osoite] · **valtuutettu hyväksyjä:** [nimi, asema, yrityssähköposti].
 **Palvelu:** Putkikasvu Standard, yritys [ ], toimialue [ ], hyväksytyt aineistot [ ].
 
@@ -39,3 +39,6 @@
 > Olen tarkistanut esikatselun [URL ja versio/pvm], hyväksyn sen toimituslaajuuden mukaisena julkaisuvalmiiksi ja pyydän laskuttamaan 295 € loppuerän. Tuotantojulkaisu tapahtuu vasta maksun vahvistamisen sekä domainin/hostingin käyttöönottovalmiuden jälkeen.
 
 **Arkistointi:** tallenna tarjous, liitteiden muuttumattomat versiot, asiakkaan hyväksyntä ja toimittajan vahvistus samaan sopimustunnukseen. Älä lisää henkilötietoja julkiseen GitHubiin.
+
+## Käyttö ja versionhallinta
+Tämä on täytettävä pohja, ei avoin tilauslomake. Korvaa kaikki hakasulut ja tarkista hinta, veromerkintä, maksutapa, sovitut sivut sekä aikataulu ennen lähettämistä. Koko prosessi hoidetaan kirjallisesti ilman pakollista puhelua tai demopalaveria. Lähetä ehtojen muuttumaton tallennettava versio tarjouksen mukana. Nykyinen v1.2-sisältöhyväksyntä on kirjattu tiedostoon WRITTEN_APPROVAL_PACKAGE.md; älä pyydä samaa sisältöhyväksyntää uudelleen. Asiakaskohtaiset täytetyt tarjoukset ja henkilötiedot säilytetään yksityisessä projektikansiossa.
