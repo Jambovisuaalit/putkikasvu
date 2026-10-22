@@ -106,3 +106,9 @@ Jos ennakonpidätys soveltuu, maksuerän täsmäytykseen merkitään sovittu bru
 
 ## GitHub-viennin tietosuojatarkistus
 Repositorio varmennettiin julkiseksi. Uudesta raportista poistettiin myyjän nimen ja Y-tunnuksen tarpeeton toisto; yksityisiä perustamispapereita, henkilötunnuksia tai access-linkkejä ei lisätty. Ensimmäinen push estettiin automaattisessa riskitarkistuksessa; tämä paikallinen versio vähentää tietosisältöä ennen mahdollista vientiä.
+
+## Omistajan täsmennys 23.10.2026 — statusmuutos
+
+Omistaja vahvistaa: myyjä **ei ole ALV-velvollinen**, vuotuinen liikevaihto on **alle 20 000 €**, Verohallinnon **perusilmoitus on tehty**, ja käytössä oleva **Revolut Pro -maksulinkki toimii**. Tämä **päivittää** raportin alkuosan historiallisia puutemerkintöjä, joissa ilmoitus ja toimiva maksulinkki kuvattiin puuttuviksi. Omistajan ilmoitus ei ole sama kuin tuore viranomaisote tai maksutapahtuman testitosite.
+
+Jäljelle jäävä rajattu varmennus: ALV-rajan soveltaminen edelliseen ja kuluvaan kalenterivuoteen sekä rekisteriasema; ennakkoperintärekisterin merkintä tai asiakkaan ennakonpidätyskäytäntö; myyjän virallinen laskutusosoite; Revolut Pro -maksun saajan, tositteen ja palautuspolun näkyvyys. Demojen asiakaskohtainen linkki-/mobiili-QA on edelleen erillinen avoin työ. Ei maksua tai lähetystä tämän kirjauksen perusteella.
