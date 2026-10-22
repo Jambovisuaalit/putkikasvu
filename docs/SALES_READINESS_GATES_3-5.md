@@ -13,7 +13,7 @@ Päiväys 22.10.2026. Tila: **TEKNINEN MYYNTIVERSIO / EI VIELÄ KAUPALLINEN GO**
 - [x] Sopimus- ja tietosuojaluonnokset sekä käsittelysopimuksen luonnos nykyiseen samaan GitHub-haaraan.
 - [x] Verohallinnon 20 000 € vähäisen toiminnan raja tarkistettu virallisesta lähteestä; kuluvan ja edellisen kalenterivuoden raja seurattava.
 - [x] Virallinen YTJ tarkistettu selaimessa 22.10.2026: Y-tunnus 3581581-6, yksityinen elinkeinonharjoittaja, ainoa aktiivinen rekisteröinti Verohallinnon perustiedot.
-- [ ] **P0 – ennakkoperintärekisteri ei näy**. Hae merkintää OmaVerossa tai varmista työkorvauksen ennakonpidätys yritysasiakkaalle. Ei normaalia 295 € + 295 € B2B-laskutusta ennen asian ratkaisua.
+- [ ] **P0 – ennakkoperintärekisteri ei näy**. Käyttäjä aikoo jättää paperisen Y6-ilmoituksen 23.10.2026 (suunniteltu, **ei vielä lähetetty**). Vahvista aikanaan saapuminen sekä voimaantulo YTJ:ssä, tai järjestä asiakkaan lakisääteinen ennakonpidätys. Ei normaalia 295 € + 295 € B2B-laskutusta ennen asian ratkaisua.
 - [ ] ALV-rekisterimerkintää ei näy, mutta vahvista vähäisen toiminnan 20 000 € raja 2025 ja 2026 toteutuneesta liikevaihdosta.
 - [ ] Vahvista toiminimen rekisterissä näkyvä virallinen nimi/osoite muusta luotettavasta lähteestä ennen tilausta; YTJ ei julkisesti näytä niitä.
 - [ ] Hyväksy sopimuksen peruutusehdot, keskeytyksen 90 €/h enimmäisrajauksineen, käyttö-/luovutusoikeudet sekä mahdollinen palautussääntö.
@@ -26,9 +26,10 @@ Päiväys 22.10.2026. Tila: **TEKNINEN MYYNTIVERSIO / EI VIELÄ KAUPALLINEN GO**
 - [x] Keskitetty mailto-linkki visualjambo@gmail.com, UTF-8-esitäytetty aihe ja viesti; kuusi etusivun CTA:ta.
 - [x] Näkyvä varapolku osoitteen kopioinnille; ei verkkopalvelimelle lähetettävää lomaketta.
 - [x] Resend-kytkentä ei ole edellytys Gmail-vastaanotolle; putkikasvu.fi Resend on not_started.
-- [x] Gmailissa aiemmin havaittu vastaanotettu Putkikasvu-aiheinen testiviesti (ei tässä muutoksessa lähetetty).
-- [ ] Testaa juuri tämän uuden esikatselun CTA mobiilin ulkoisella sähköpostisovelluksella (avaat luonnoksen, käyttäjä lähettää).
+- [x] Gmailissa on vahvistettu 22.10.2026 sisäinen lähetys ja vastaanotto samassa `visualjambo@gmail.com`-tilissä: testiviesti `QA-TESTI-20261022-CRO-01`, INBOX + SENT. Tämä ei todista ulkopuolisen lähettäjän tai mobiililaitteen mailto-ketjua.
+- [ ] Testaa juuri tämän uuden esikatselun CTA mobiilin ulkoisella sähköpostisovelluksella (avaa luonnoksen, käyttäjä lähettää). Chromiumin mailto-klikkitesti kattaa vain selaimessa laukeavan linkin, ei iOS/Androidin omaa mail handleria; katso `docs/ops/CONTACT_BROWSER_TEST_SCOPE.md`.
 - [ ] Varmista oikean ulkopuolisen käyttäjän vastaanottotesti ja käsittelyprosessi; älä lähetä kampanjaa.
+- [x] Ensimmäisen asiakaspilotin käsin tarkastettava GO/NO-GO-työjärjestys: `docs/ops/FIRST_CUSTOMER_PILOT_RUNBOOK.md`. Ei hyväksymislupaa.
 
 ## Rakenteellinen turvallisuus
 - Vercel Authentication pysyy käytössä.
