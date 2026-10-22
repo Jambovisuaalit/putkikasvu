@@ -14,6 +14,8 @@ Putkikasvu on oman prospektoinnin, markkinointikieltojen, sopimusten ja laskutuk
 
 Resend ilmoittaa asiakasdatan tallennuspaikaksi Yhdysvallat. Lähetysalue eu-west-1 ei tarkoita EU-tallennusta. Resendin mukaan DPA tulee voimaan rekisteröitymisellä; oman sopimuksen ja siirtoperusteen dokumentointi on silti kesken.
 
+Suojatun esikatselun HTML-vastauksessa havaittiin Vercelin lisäämä vercel.live-palautetyökalun komentosarja. Paikallisen staattisen HTML:n nollakutsutesti ei kata tätä palvelun lisäystä; esikatselun lokit ja mahdolliset evästeet on arvioitava erikseen.
+
 ## Todellinen poistotesti
 22.10.2026 luotiin henkilötiedoton synteettinen Drive-testitiedosto, luettiin sen metadata ja poistettiin se pysyvästi. Uusintaluku palautti NOT_FOUND / 404. Testi osoittaa yksittäisen tiedoston poistopolun toiminnan. Se ei osoita CRM-rivien, Googlen varmistusten, Gmailin, Resendin, Revolutin tai Vercelin tietojen poistumista. Oikeita asiakas- tai prospektitietoja ei poistettu.
 
