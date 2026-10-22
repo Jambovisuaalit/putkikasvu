@@ -1,28 +1,30 @@
 # Putkikasvu Standard — kirjallinen omistajan hyväksyntä v1.2
-Päiväys 22.10.2026. Tila: **HYVÄKSYTTÄVÄ LUONNOS; EI MYYNTI-/LASKUTUSLUPA**.
+Päiväys 22.10.2026. Tila: **TEKSTIEHDOT HYVÄKSYTTY 22.10.2026; EI MYYNTI-/LASKUTUS-/JULKAISULUPA**.
 
 Tämän tiedoston hyväksyntä koskee sopimustekstien ja liiketoimintaehtojen sisältöä, **ei** tosiasiallisten rekisterimerkintöjen, tietosuojatoimien eikä maksuliikenteen valmistumista. GitHub PR:n yhdistäminen tai kommentti ei yksin muodosta asiakkaan sopimusta.
 
-## A. Omistajan päätökset — kirjaa kyllä / ei / muutos
+## A. Omistajan päätökset — tekstiversio hyväksytty 22.10.2026
 | Päätös | Ehdotus | Päätös ja päivämäärä |
 | --- | --- | --- |
-| Standard ja maksu | 590 € yhteensä; 295 € etukäteen kirjallisen tilaussopimuksen jälkeen ja 295 € asiakkaan nimenomaisen hyväksynnän jälkeen ennen julkaisua | [ ] |
-| Toimitus | 3 sivua, email/soita-CTA, perus-SEO, 1 korjauskierros; esikatselun tavoite 5 arkipäivää ja julkaisu 2 arkipäivää edellytysten täyttyessä | [ ] |
-| Peruutus ennen aloitusta | Ennakko palautetaan kokonaan, ellei etukäteen hyväksyttyjä peruuttamattomia kuluja ole syntynyt | [ ] |
-| Keskeytys aloituksen jälkeen | Todennettava työ 90 €/h + asiakkaan ennakkoon hyväksymät peruuttamattomat ulkoiset kulut, enintään Standardin 590 € sovittu kokonaishinta; 14 päivää vahvistetun palautussumman palauttamiseen | [ ] |
-| Käyttö- ja lähdekoodioikeudet | Maksetun toimituksen pysyvä, maailmanlaajuinen, rojaltivapaa, ei-yksinomainen käyttö-/muokkaus-/siirto-oikeus; luovutus 5 arkipäivässä maksusta; kolmansien lisenssit säilyvät | [ ] |
-| Asiakkaan oma domain/hosting | Asiakkaan hallintaan ja erikseen veloitettavat; 1 tekninen julkaisu, ei automaattista ylläpitoa | [ ] |
-| Lisätyö | Lisäsivu 149 €, uusi kierros enintään 1 h 99 €, muutokset 90 €/h; vain erillisen kirjallisen hyväksynnän jälkeen | [ ] |
-| Ylläpito | 29 €/kk vain erillisellä sopimuksella (sisältö, palvelutaso, irtisanominen erikseen hyväksyttävä) | [ ] |
-| Säilytystavoitteet | Ei kauppaa: 12 kk; projektiviestintä: yleensä 3 vuotta sopimuksen päättymisestä; ylimääräinen aineisto: 90 päivää luovutuksesta; lakisääteinen kirjanpito erikseen | [ ] |
-| Henkilötiedot | Vain käsittelykartassa todetut palvelut; asiakkaan kävijä-/lomaketietoja ei käsitellä ilman roolien ja tarvittaessa DPA:n hyväksyntää | [ ] |
+| Standard ja maksu | 590 € yhteensä; 295 € etukäteen kirjallisen tilaussopimuksen jälkeen ja 295 € asiakkaan nimenomaisen hyväksynnän jälkeen ennen julkaisua | Hyväksytty tekstiversioksi 22.10.2026 |
+| Toimitus | 3 sivua, email/soita-CTA, perus-SEO, 1 korjauskierros; esikatselun tavoite 5 arkipäivää ja julkaisu 2 arkipäivää edellytysten täyttyessä | Hyväksytty tekstiversioksi 22.10.2026 |
+| Peruutus ennen aloitusta | Ennakko palautetaan kokonaan, ellei etukäteen hyväksyttyjä peruuttamattomia kuluja ole syntynyt | Hyväksytty tekstiversioksi 22.10.2026 |
+| Keskeytys aloituksen jälkeen | Todennettava työ 90 €/h + asiakkaan ennakkoon hyväksymät peruuttamattomat ulkoiset kulut, enintään Standardin 590 € sovittu kokonaishinta; 14 päivää vahvistetun palautussumman palauttamiseen | Hyväksytty tekstiversioksi 22.10.2026 |
+| Käyttö- ja lähdekoodioikeudet | Maksetun toimituksen pysyvä, maailmanlaajuinen, rojaltivapaa, ei-yksinomainen käyttö-/muokkaus-/siirto-oikeus; luovutus 5 arkipäivässä maksusta; kolmansien lisenssit säilyvät | Hyväksytty tekstiversioksi 22.10.2026 |
+| Asiakkaan oma domain/hosting | Asiakkaan hallintaan ja erikseen veloitettavat; 1 tekninen julkaisu, ei automaattista ylläpitoa | Hyväksytty tekstiversioksi 22.10.2026 |
+| Lisätyö | Lisäsivu 149 €, uusi kierros enintään 1 h 99 €, muutokset 90 €/h; vain erillisen kirjallisen hyväksynnän jälkeen | Hyväksytty tekstiversioksi 22.10.2026 |
+| Ylläpito | 29 €/kk vain erillisellä sopimuksella (sisältö, palvelutaso, irtisanominen erikseen hyväksyttävä) | Hyväksytty tekstiversioksi 22.10.2026 |
+| Säilytystavoitteet | Ei kauppaa: 12 kk; projektiviestintä: yleensä 3 vuotta sopimuksen päättymisestä; ylimääräinen aineisto: 90 päivää luovutuksesta; lakisääteinen kirjanpito erikseen | Hyväksytty tekstiversioksi 22.10.2026 |
+| Henkilötiedot | Vain käsittelykartassa todetut palvelut; asiakkaan kävijä-/lomaketietoja ei käsitellä ilman roolien ja tarvittaessa DPA:n hyväksyntää | Hyväksytty tekstiversioksi 22.10.2026 |
 
-**Hyväksyjä:** [nimi ja asema]  
-**Päivämäärä:** [pp.kk.vvvv]  
-**Hyväksytyt tiedostoversiot / PR commit SHA:** [täytetään]  
-**Päätös:** [ ] Hyväksyn yllä olevat tekstiehdot  [ ] Hyväksyn muutoksin (erittely)  [ ] Hylkään  
-**Muutokset:** [täytetään]  
-**Kirjallinen hyväksymisviesti / allekirjoitettu dokumentti:** [viite].
+**Hyväksyjä:** Putkikasvu-palvelun omistaja (käyttäjän kirjallinen vahvistus tässä keskustelussa)  
+**Päivämäärä:** 22.10.2026  
+**Hyväksytty tekstiversio:** v1.2, tämän tiedoston kohdan A kaikki 10 kohtaa; alkuperäinen PR #9 SHA `48ddca5eb860f6f9aff18e55cf78e7a4d67eb09c` ennen hyväksyntäkirjausta.  
+**Päätös:** [x] Hyväksyn yllä olevat tekstiehdot  [ ] Hyväksyn muutoksin  [ ] Hylkään  
+**Muutokset:** Ei ilmoitettu.  
+**Kirjallinen hyväksymisviesti:** ChatGPT-keskustelu 22.10.2026: ”Hyväksyn Putkikasvu Standardin sopimusehdot v1.2 kirjalliseksi tekstiversioksi. Jatka PR #9:n viimeistelyä; tämä ei ole maksamisen tai julkaisun hyväksyntä.”
+
+**Rajaus:** Tämä ei todista YTJ/ALV-rekisteröintejä, henkilötietojen käsittelyn toteutusta tai oikean puhelimen sähköpostitestiä. Kohdan B rastit jäävät avoimiksi. Ei asiakassopimusta eikä lupaa vastaanottaa maksuja.
 
 ## B. Pakolliset faktat ja käyttöönottoesteet (EI voi hyväksyä oletuksina)
 - [ ] **P0:** Ennakkoperintärekisterin voimassaolo varmistettu ennen yritysasiakkaan työkorvauksen maksamista tai maksajan ennakonpidätys järjestetty lain edellyttämällä tavalla. YTJ:n 22.10.2026 tarkastelun mukaan merkintä puuttui.
