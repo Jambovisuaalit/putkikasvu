@@ -38,6 +38,15 @@ Tämän tiedoston hyväksyntä koskee sopimustekstien ja liiketoimintaehtojen si
 - [ ] **P1:** Jos asiakkaan henkilötietoja käsitellään asiakkaan puolesta, `DPA_TEMPLATE.md` täytetty (myös liitteet, alikäsittelijät ja siirrot) ja hyväksytty kirjallisesti ennen käsittelyä.
 - [ ] **P1:** Suojatun mobiiliselaimen ja sähköpostiluonnoksen testi sekä ulkoinen vastaanottotesti läpäisty; mahdollinen tuotantojulkaisu hyväksytty erikseen.
 
+## B2. Tietosuojan hyväksyntäpakettiin lisätyt luonnokset — 22.10.2026
+
+Käyttäjän päätöksellä seuraavat **kaksi dokumenttia on kirjattu hyväksyntäpaketin osiksi**, mutta niitä **ei ole merkitty teknisesti käyttöönotetuiksi**, julkaistu tietosuojaselosteeksi eikä hyväksytty uusien markkinointilähetysten perusteiksi:
+
+1. [Rekisterinpitäjän rooli ja vastuut](CONTROLLER_ROLE_DRAFT.md) — **KIRJATTU / LUONNOS / EI KÄYTTÖÖNOTETTU**.
+2. [Prospektien oikeutettu etu ja GDPR 14 artiklan informointi](PROSPECT_LIA_AND_NOTICE_DRAFT.md) — **KIRJATTU / ALUSTAVA TASAPAINOTESTI / EI KÄYTTÖÖNOTETTU**.
+
+Hyväksynnän rajaus: kyse on dokumentointipäätöksestä, ei väitteestä käsittelyperusteen lopullisesta hyväksynnästä, tietosuojainformoinnin lähettämisestä, markkinointikieltojen käytännön testauksesta, DPA:n toimeenpanosta, laskutuksen valmistumisesta tai asiakkaan sopimuksesta. Kohdan B avoimet henkilötietoihin liittyvät rastit **säilyvät avoimina**.
+
 ## C. Päätöstilat
 1. **TEXT APPROVED**: kohta A kirjallisesti hyväksytty, tekstit voidaan sisällyttää tarjouksen liitteeksi korjattuna.
 2. **CONDITIONAL SALES READY**: A + B:n tilaamista edeltävät P0-esteet ratkaistu ja nykyiset henkilötietokäsittelyt dokumentoitu. Vasta tällöin voidaan pyytää ensimmäisen asiakkaan allekirjoitusta.
