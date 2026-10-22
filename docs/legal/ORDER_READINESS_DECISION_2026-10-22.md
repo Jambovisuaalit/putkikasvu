@@ -56,3 +56,15 @@ Omistaja ilmoitti keskustelussa 23.10.2026:
 **Päivitetty portti:** ALV-asema, perusilmoitus ja maksulinkin toimivuus kirjataan **OMISTAJAN VAHVISTAMAKSI**; aiemmin avoimet kohdat rajataan rekisterin/veroedellytysten tositetarkistukseen ja maksun dokumentointiin. Maksulinkkiä ei aktivoida uutena eikä maksua pyydetä automaattisesti. Tämän merkinnän tarkoitus on säilyttää uusi tieto ilman, että se esitetään riippumattomana varmennuksena.
 
 Lähteet: https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/48658/arvonlisaveroton-vahainen-toiminta/ ; https://www.vero.fi/yritykset-ja-yhteisot/yritystoiminta/verohallinnon-rekisterit/ennakkoperintarekisteri/
+
+## Myynnin ja maksun erottaminen — omistajan päätös 23.10.2026
+
+**Ennakkoperintärekisterihakemus tehdään viikonlopun 24.–25.10.2026 aikana (omistajan ilmoitus, ei vielä toteutuneeksi vahvistettu).** Hakemuksen vireillepano tai rekisterimerkinnän odottaminen **ei ole myyntikiellon eikä tarjousten tekemisen ehto**. Verohallinnon ohje vahvistaa, ettei ennakkoperintärekisteriin kuuluminen ole pakollista ja että rekisteriin kuulumaton henkilö voi toimia toimeksiantosuhteessa: https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/47881/ennakkoperintarekisteroinnin-vaikutukset-yritystoimintaan5/ .
+
+**Toimintojen erottelu:**
+- **GO / myyntityö:** jatka prospektitutkimusta ja sallittua asiakashankintaa, demoesittelyitä, asiakasneuvotteluita sekä tarjousten ja tilausluonnosten valmistelua. Noudatetaan erillisiä markkinoinnin, henkilötietojen ja käyttäjän lähetyshyväksyntärajoja.
+- **GO / sopiminen ehdollisesti:** toimeksiantosopimusta ei sinänsä estä ennakkoperintärekisterin puute. Oikea sopimusosapuoli, tuotteen ehdot ja verokohtelu varmistetaan ennen sitovaa hyväksyntää.
+- **MAKSUN EHTO:** jos myyjä ei maksupäivänä ole rekisterissä, ostajayrityksen tulee yleensä toimittaa työkorvauksesta ennakonpidätys. Yksityinen elinkeinonharjoittaja antaa työkorvauksen verokortin; ilman sitä pidätys on yleensä 60 %. Sopimuksen bruttomäärä 590 € ja maksuerien bruttomäärät 295 € eivät muutu; myyjälle maksettu netto ja Verohallinnolle tilitetty pidätys dokumentoidaan erikseen. Revolut Pro -linkkiä ei käytetä veloittamaan automaattisesti täyttä 295 €:a, jos maksajan on tehtävä pidätys. Lähde: https://www.vero.fi/yritykset-ja-yhteisot/yritystoiminta/verohallinnon-rekisterit/ennakkoperintarekisteri/ .
+- **HALLINNOLLINEN TEHTÄVÄ:** tee hakemus viikonloppuna ja tarkista sen vastaanotto sekä myöhempi rekisterimerkintä. Ei viivästytetä myyntityötä tämän takia.
+
+**Rajaus:** Tämä päivitys ei ole lupa lähettää uusia myyntiviestejä, julkaista demoja tuotantoon, aktivoida maksamista tai yhdistää PR:ää. Aiempien hyväksyntäpaketin P0-merkintöjen tulkinta tulee päivittää niin, etteivät ne väitä rekisteröinnin puuttumisen estävän kaikkia tarjouksia tai neuvotteluita.
