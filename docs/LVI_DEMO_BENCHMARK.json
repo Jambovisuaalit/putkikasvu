@@ -1,0 +1,27 @@
+{
+  "kind": "synthetic-company-clone",
+  "startedAt": "2026-10-22T00:01:17.705Z",
+  "finishedAt": "2026-10-22T00:01:25.606Z",
+  "seconds": 7.9,
+  "targetSeconds": 1800,
+  "pass": true,
+  "slug": "benchmark-1792627277706",
+  "stages": [
+    {
+      "name": "generate-and-validate",
+      "seconds": 0.057,
+      "exit": 0
+    },
+    {
+      "name": "build-export",
+      "seconds": 7.842,
+      "exit": 0
+    },
+    {
+      "name": "export-acceptance",
+      "seconds": 0.001,
+      "exit": 0
+    }
+  ],
+  "scope": "Ready synthetic source data → new company config → validation → local production export → HTML checks. Excludes prospect research, real photo consent, human copy approval, browser visual QA and deployment. Template development time excluded."
+}

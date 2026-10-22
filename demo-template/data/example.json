@@ -1,0 +1,14 @@
+{
+  "status": "draft",
+  "synthetic": true,
+  "companyName": "Malliputki — kuvitteellinen yritys",
+  "area": "Helsinki ja lähialueet",
+  "phone": "000 000 0000",
+  "email": "demo@example.invalid",
+  "services": [
+    {"title":"Putkiasennukset","description":"Vesi- ja viemäriputkien asennustöiden esittely. Palvelukuvaus tarkistetaan yrityksen kanssa."},
+    {"title":"LVI-huollot","description":"Huoltotöiden esittely ja yhteydenotto työn tarpeen arviointia varten."},
+    {"title":"Korjaustyöt","description":"Korjaustöiden esittely. Työn sisältö, aikataulu ja hinta sovitaan erikseen."}
+  ],
+  "images": []
+}
