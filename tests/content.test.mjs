@@ -55,7 +55,8 @@ test('written legal signoff is distinct from commercial GO', () => {
   assert.match(signoff, /EI MYYNTI-\/LASKUTUS-\/JULKAISULUPA/);
   assert.match(signoff, /P0/);
   assert.match(signoff, /ennakkoperintärekisterin/i);
-  assert.match(signoff, /yritysosoite/i);
+  assert.match(signoff, /yritysosoitteeksi/i);
+  assert.match(signoff, /Virallinen rekisterivarmennus/);
   assert.match(dataMap, /EI TODETTU/);
   assert.match(dataMap, /Kuluttaja-Gmailiin ei oleteta Google Workspace/);
   assert.match(offer, /valtuutettu hyväksyjä/);
