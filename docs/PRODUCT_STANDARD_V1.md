@@ -7,9 +7,9 @@ Yrityskohtainen, epävirallinen demo ennen ostopäätöstä. Asiakkaan tilaama v
 
 | Erä | Rajaus |
 | --- | --- |
-| Myyjä | Tmi Jami Harju, Y-tunnus 3581581-6 (YTJ-rekisterimerkinnät varmistettava ennen laskutusta) |
+| Myyjä | Tmi Jami Harju, Y-tunnus 3581581-6 (YTJ 22.10.2026 vahvisti Y-tunnuksen ja yksityisen elinkeinonharjoittajan yritysmuodon; toiminimi ja osoite erikseen vahvistettava) |
 | Hinta | Standard 590 €; 295 € ennakko kirjallisen tilauksen jälkeen, 295 € hyväksytyn julkaisuvalmiin version jälkeen ennen julkaisua |
-| ALV | Userin ilmoittama vähäisen toiminnan verovapaus; tarkistettava YTJ:n ja 2025/2026 liikevaihdon perusteella ennen laskutusta |
+| ALV | Userin ilmoittama vähäisen toiminnan verovapaus; YTJ:n aktiivirekistereissä ei näy ALV-merkintää 22.10.2026; 2025/2026 liikevaihto ja vähäisen toiminnan soveltuvuus tarkistettava ennen laskutusta |
 | Sivut | Enintään 3 varsinaista sivua: Etusivu, Palvelut ja Yhteystiedot |
 | Sisältö | Mobiilioptimoitu rakenne; palvelut ja toimialue; klikattava puhelin ja sähköposti; ohjattu tarjouspyyntö; otsikko-/meta-/alt-perus-SEO; asiakkaan tiedot ja hyväksytyt kuvat |
 | Muutokset | Yksi koottu korjauskierros alkuperäiseen toimitussisältöön; uusi rakenne/lisätoiminnot erillisenä lisätyönä |
@@ -38,5 +38,6 @@ Todellinen kate = 590 € − maksunvälityskulut − hankinnat/lisenssit − as
 
 ## Julkaisusäännöt
 - Ei maksulinkkiä tai automaattista asiakastallennusta ennen juridista ja maksunvarmennuksen GO-päätöstä.
+- **Ennakkoperintärekisteri ei näy YTJ:ssä 22.10.2026**. Ennen työkorvauslaskun hyväksyntää joko rekisteröidy OmaVerossa tai järjestä ostavan yrityksen ennakonpidätys soveltuvan verokortin perusteella.
 - Demot merkitään luonnoksiksi eikä niissä väitetä oikean asiakkaan hyväksyntää.
 - Tässä dokumentissa oleva versio on kaupallinen tarkistusehdokas, ei juridisesti hyväksytty sopimus.
