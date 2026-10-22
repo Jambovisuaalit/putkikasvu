@@ -1,17 +1,115 @@
 import Link from 'next/link';
 import BrandLogo from '../components/BrandLogo';
-export const metadata={title:'Palvelu- ja toimitusehdot | Putkikasvu'};
-const sections=[
-['1. Palveluntarjoaja ja soveltamisala','Putkikasvu on Tmi Jami Harjun (Y-tunnus 3581581-6) käyttämä palvelubrändi. Näitä ehtoja sovelletaan yritysasiakkaille tarjottaviin Putkikasvu Standard -verkkosivutoimituksiin. Asiakaskohtainen kirjallinen tarjous määrittää toimituksen tarkemmat tiedot ja on ristiriitatilanteessa ensisijainen. Yhteydenotot: visualjambo@gmail.com.'],
-['2. Sopimuksen syntyminen','Sopimus syntyy vasta, kun yritysasiakas on hyväksynyt kirjallisen tarjouksen ja nämä ehdot sekä tilaus on vahvistettu. Pelkkä demoon tutustuminen ei muodosta tilausta. Ennakkomaksua ei pyydetä ilman asiakkaan nimenomaista hyväksyntää.'],
-['3. Toimituksen sisältö','Putkikasvu Standard sisältää enintään kolme verkkosivua tai vastaavan yksisivuisen rakenteen, responsiivisen ulkoasun, soita-painikkeen, tarjouspyyntö- tai yhteydenottoratkaisun erikseen määritellyllä vastaanottotavalla, tekniset perustason hakukonemäärittelyt, asiakkaan toimittamien kuvien ja tekstien sijoittelun, yhden kootun korjauskierroksen sekä sovitun julkaisutyön. Sivujen sisältö, tekniikka ja lomakkeen toteutustapa sovitaan tarjouksessa.'],
-['4. Hinta ja maksuerät','Pilottituotteen kokonaishinta on 590 euroa. Maksuerät ovat 295 euroa sopimuksen hyväksynnän jälkeen ja 295 euroa sen jälkeen, kun asiakas on hyväksynyt julkaisuvalmiin toteutuksen mutta ennen tuotantojulkaisua. Laskuun ei nykyisen ilmoitetun verostatuksen perusteella lisätä arvonlisäveroa. Mahdolliset lisätyöt hinnoitellaan ja hyväksytetään erikseen ennen toteutusta. Maksut voidaan suorittaa Revolut Pro -maksulinkin kautta.'],
-['5. Rajaukset ja lisäpalvelut','Domainin hankinta tai uusiminen, hosting, jatkuva ylläpito, kuvaukset, laaja tekstintuotanto, maksulliset lisenssit, ulkopuoliset API-palvelut ja kolmannen osapuolen kulut eivät sisälly kertahintaan, ellei kirjallisesti muuta sovita. Ehdotettu ylläpito 29 €/kk edellyttää erillistä sopimusta; sitä ei lisätä automaattisesti.'],
-['6. Aikataulu ja asiakasyhteistyö','Toimitusaikataulu sovitaan kirjallisessa tarjouksessa. Toimitus edellyttää, että asiakas toimittaa oikeat yritys- ja yhteystiedot, tarpeelliset aineistot ja käyttöoikeudet sekä antaa hyväksynnät kohtuullisessa ajassa. Puuttuvat tiedot tai viivästyneet hyväksynnät voivat siirtää aikataulua, mistä ilmoitetaan asiakkaalle.'],
-['7. Muutokset, tarkastus ja hyväksyntä','Asiakas saa katselmoida toteutuksen ja toimittaa yhden koottuun viestiin yhdistetyn korjauslistan sovittuun sisältöön kuuluvista muutoksista. Olennaisesti uusi rakenne tai lisätoiminnot käsitellään lisätyönä. Asiakas hyväksyy julkaisuvalmiin sivuston kirjallisesti ennen loppumaksua ja julkaisua. Virheiksi ilmoitetut sovitun toimituksen puutteet käsitellään erillään lisätyöpyynnöistä.'],
-['8. Keskeytys, peruuttaminen ja maksun palautus','Tilauksen keskeytyessä osapuolet selvittävät kirjallisesti, mikä työ on suoritettu ja mitä kustannuksia on perustellusti syntynyt. Ennakkomaksua ei määritellä automaattisesti palautumattomaksi. Mahdollisen palautuksen määrä arvioidaan tehdyn työn, sovitun hinnoittelun, virheiden ja sovellettavan lain perusteella. Palveluntarjoajan olennaiseen sopimusrikkomukseen sovelletaan lain ja sopimuksen mukaisia seuraamuksia.'],
-['9. Aineistot, tekijänoikeudet ja domain','Asiakas vastaa toimittamiensa materiaalien käyttöoikeuksista ja oikeellisuudesta. Asiakas omistaa oman domaininsa sekä itse toimittamansa aineistot. Valmiin sivuston asiakkaalle luovutettavat käyttö- ja muokkausoikeudet, mahdolliset kolmannen osapuolen lisenssit ja lähdekoodin luovutustapa yksilöidään asiakaskohtaisessa tarjouksessa. Ilman erillistä sopimista palvelu ei lupaa kaikkien taustajärjestelmien tai lisenssien omistusoikeuden siirtymistä.'],
-['10. Virheet, vastuut ja yhteydenotot','Havaitusta virheestä pyydetään ilmoittamaan viivytyksettä osoitteeseen visualjambo@gmail.com. Virheet arvioidaan sovittua toimitussisältöä vasten. Palveluntarjoaja ei lupaa tiettyä hakukonesijoitusta, asiakasmäärää tai liikevaihtoa. Vastuita koskevat pakottavan lain säännökset säilyvät voimassa.'],
-['11. Riitojen ratkaisu','Erimielisyydet pyritään ratkaisemaan ensisijaisesti neuvottelemalla. Muutoin sovelletaan Suomen lakia ja toimivaltaisen tuomioistuimen määräytymisessä noudatetaan soveltuvaa lainsäädäntöä.']
+
+export const metadata = { title: 'Palvelu- ja toimitusehdot | Putkikasvu' };
+
+const sections = [
+  {
+    title: '1. Sopijapuolet ja soveltamisala',
+    paragraphs: [
+      'Palveluntarjoaja on Tmi Jami Harju (Y-tunnus 3581581-6), joka käyttää Putkikasvu-palvelubrändiä. Sähköposti: visualjambo@gmail.com. Näitä ehtoja sovelletaan vain elinkeinotoimintaa varten tilaavien yritysasiakkaiden Putkikasvu Standard -toimituksiin. Kuluttajatilauksia ei hyväksytä näillä ehdoilla.',
+      'Asiakaskohtainen kirjallinen tarjous, siinä sovittu toimituserittely ja sen jälkeen nämä ehdot muodostavat sopimuksen. Ristiriitatilanteessa yksilöity tarjous on ensisijainen. Sopijapuolten tiedot ja ehtojen versio kirjataan tilausvahvistukseen.'
+    ]
+  },
+  {
+    title: '2. Tarjous, demo ja sopimuksen syntyminen',
+    paragraphs: [
+      'Mahdollinen yrityskohtainen demo on luonnos, ei asiakkaan virallinen sivusto eikä tilaus. Sopimus syntyy, kun asiakas nimenomaisesti hyväksyy kirjallisen tarjouksen ja nämä ehdot ja palveluntarjoaja vahvistaa tilauksen kirjallisesti. Hiljaisuus tai demon katselu ei ole hyväksyntä.',
+      'Ennen ennakkomaksun pyytämistä asiakkaalle annetaan kokonaishinta, toimitussisältö, aikataulun alkuehdot, mahdolliset erilliskulut sekä korjaus- ja peruutusehdot. Sivusto ei tarjoa tällä hetkellä verkkokassaa tai toimivaa maksulinkkiä.'
+    ]
+  },
+  {
+    title: '3. Standard-toimituksen rajat',
+    paragraphs: [
+      'Standard 590 € sisältää enintään kolme varsinaista sivua (etusivu, palvelut, yhteystiedot), vakiopohjaan perustuvan responsiivisen ulkoasun, asiakkaan toimittamien tekstien kevyen editoinnin ja käyttöluvallisten kuvien sijoittelun, klikattavan puhelin- ja sähköpostiyhteyden, yhden selkeän tarjouspyyntöön ohjaavan toimintakehotteen, perustason tekniset SEO-määrittelyt, yhden kootun korjauskierroksen, perustestauksen sekä yhden sovitun julkaisukerran.',
+      'Yhteydenotto toteutetaan oletusarvoisesti sähköpostilinkillä tai muulla tarjouksessa täsmennetyllä vastaanottotavalla. Tietoja tallentava lomake, ajanvaraus, integraatiot, verkkokauppa, monikielisyys, laaja sisällöntuotanto, kuvaus, mainonta ja hakukonesijoitusten tai liidimäärien takuu eivät sisälly hintaan.'
+    ]
+  },
+  {
+    title: '4. Hinta, ALV ja maksut',
+    paragraphs: [
+      'Kokonaishinta on 590 euroa: 295 euroa ennakkomaksuna vahvistetun tilauksen jälkeen ja 295 euroa hyväksytyn julkaisuvalmiin sivuston jälkeen mutta ennen tuotantojulkaisua. Ennakko hyvitetään aina kokonaishinnasta. Erillisiä pakollisia tilaus- tai ylläpitomaksuja ei lisätä.',
+      'Myyjä on ilmoittanut, ettei ole arvonlisäverovelvollisten rekisterissä. Siksi ilmoitettuun hintaan ei tämän tiedon perusteella lisätä arvonlisäveroa; verokohtelu ja rekisteritilanne tarkistetaan ennen laskutusta. Jos olosuhteet muuttuvat, mahdollisesta hinnan ja veron käsittelystä sovitaan asiakkaan kanssa ennen uusia velvoitteita. Maksutapa ja eräpäivät ilmoitetaan laskussa tai tilausvahvistuksessa; tällä sivustolla maksaminen ei ole käytössä.',
+      'Hyväksytyt lisätyöt laskutetaan erikseen niiden nimenomaisesti hyväksytyn tarjouksen mukaan. Maksun viivästymiseen sovelletaan soveltuvaa korkolakia; maksuerimielisyydet käsitellään ennen riidanalaisen osan perimistä.'
+    ]
+  },
+  {
+    title: '5. Aikataulu ja asiakkaan myötävaikutus',
+    paragraphs: [
+      'Ensimmäinen esikatselu toimitetaan tavoiteaikatauluna viiden arkipäivän kuluessa siitä, kun ennakko on vastaanotettu sekä kaikki tilausvahvistuksessa pyydetyt aineistot ja käyttöoikeudet on saatu. Julkaisu tavoitellaan kahden arkipäivän kuluessa asiakkaan kirjallisesta hyväksynnästä, loppumaksusta sekä toimivan domainin ja hostingin käyttöönottoedellytysten täyttymisestä.',
+      'Asiakas vastaa toimittamiensa yritystietojen oikeellisuudesta, aineistojen oikeuksista, omista palvelutilauksistaan ja hyväksynnöistään. Asiakkaasta tai kolmannesta osapuolesta johtuvan viiveen vaikutuksesta ilmoitetaan, ja uusi realistinen toimituspäivä sovitaan. Jos palveluntarjoaja viivästyy olennaisesti, asiakas voi vaatia korjaavaa aikataulua ja olennaisen sopimusrikkomuksen perusteella päättää sopimuksen.'
+    ]
+  },
+  {
+    title: '6. Katselmointi, korjaukset ja hyväksyntä',
+    paragraphs: [
+      'Asiakas saa julkaisuvalmiista toteutuksesta esikatselulinkin ja viisi arkipäivää aikaa antaa yhden kootun palautelistan. Vakiokierrokseen sisältyy enintään viisi sovitun sisällön mukaista kohtuullista tarkennusta. Puutteellisesti toteutettujen sovittujen ominaisuuksien korjaus ei kuluta korjauskierrosta eikä ole lisätyö.',
+      'Uusi sivu, olennaisesti uusi rakenne, uudet ominaisuudet ja ylimääräiset muutoskierrokset hinnoitellaan ennakkoon erikseen. Julkaisu edellyttää asiakkaan nimenomaista kirjallista hyväksyntää. Vastaamattomuus ei ole hyväksyntä eikä synnytä loppumaksun erääntymistä.'
+    ]
+  },
+  {
+    title: '7. Peruutus ennen aloitusta',
+    paragraphs: [
+      'Yritysasiakkaalla ei ole tämän sopimuksen perusteella automaattista kuluttajakaupan 14 päivän peruuttamisoikeutta. Asiakas voi kuitenkin peruuttaa vahvistetun tilauksen kirjallisesti. Jos työtä ei ole aloitettu eikä asiakkaan nimenomaisesti hyväksymiä, peruuttamattomia ulkopuolisia kuluja ole syntynyt, ennakkomaksu palautetaan kokonaan.'
+    ]
+  },
+  {
+    title: '8. Keskeytys työn aloittamisen jälkeen ja palautukset',
+    paragraphs: [
+      'Jos asiakas peruuttaa toimituksen työn jo alettua ilman palveluntarjoajan sopimusrikkomusta, palveluntarjoaja voi veloittaa vain todennettavasti tehdyn työn 90 €/h mukaan sekä asiakkaan etukäteen hyväksymät, tosiasiallisesti syntyneet ja peruuttamattomat ulkopuoliset kulut. Yhteissumma ei ylitä 590 euroa eikä mahdollista erikseen hyväksyttyä lisätyötä lasketa siihen ilman omaa sopimustaan. Jo maksettu ennakko luetaan hyvitykseksi; mahdollinen ylijäämä palautetaan.',
+      'Palveluntarjoaja antaa asiakkaalle työ- ja kuluerittelyn. Palautus suoritetaan 14 kalenteripäivän kuluessa siitä, kun palautuksen määrä on sovittu tai vahvistettu, pääsääntöisesti alkuperäiselle maksutilille. Jos palveluntarjoaja rikkoo sopimusta olennaisesti eikä korjaa rikkomusta kohtuullisessa kirjallisesti annetussa määräajassa, asiakkaalla on oikeus päättää sopimus ja saada palautus suorittamatta jääneestä tai käyttökelvottomasta toimitusosasta; mahdolliset muut lainmukaiset oikeudet säilyvät.'
+    ]
+  },
+  {
+    title: '9. Domain, hosting ja ylläpito',
+    paragraphs: [
+      'Domain rekisteröidään asiakkaan nimiin ja asiakkaan hallinnoimalle tilille. Asiakas maksaa domainin uusimisen ja hostingin suoraan palveluntarjoajille sekä säilyttää näiden hallintaoikeudet. Putkikasvu avustaa sovitussa DNS-kytkennässä ja yhdessä käyttöönotossa. Julkaisua ei luvata ennen kuin tuotantokäyttöön soveltuva hosting on valittu ja käyttöoikeudet ovat kunnossa.',
+      'Jatkuva ylläpito ei sisälly 590 euron toimitukseen. Mahdollinen 29 €/kk ylläpito on vapaaehtoinen ja syntyy vain erillisellä kirjallisella sopimuksella; sen palvelutaso, rajaukset, irtisanomisaika ja vastuut annetaan asiakkaalle ennen tilausta. Ilman ylläpitosopimusta asiakkaan hostingin, domainin, uusintojen ja myöhempien muutosten hallinta kuuluu asiakkaalle.'
+    ]
+  },
+  {
+    title: '10. Tekijänoikeudet, lähdekoodi ja kolmannen osapuolen aineisto',
+    paragraphs: [
+      'Asiakas säilyttää oikeutensa toimittamiinsa nimiin, merkkeihin, teksteihin, kuviin ja muuhun materiaaliin sekä vakuuttaa, että niitä saa käyttää toimituksessa. Kun koko sovittu toimitushinta on maksettu, asiakas saa toimituskohtaisesti tuotettuun verkkosivustoon pysyvän, maailmanlaajuisen, rojaltivapaan, ei-yksinomaisen käyttö-, kopiointi-, muokkaus-, ylläpito- ja siirto-oikeuden sekä oikeuden käyttää uutta palveluntarjoajaa sivuston ylläpitoon ja jatkokehitykseen.',
+      'Putkikasvu luovuttaa asiakkaalle sovitun sivuston lähdekoodin ja tarpeelliset rakentamis- ja julkaisuohjeet tai sovitun koodivaraston käyttöoikeuden kohtuullisessa siirrettävässä muodossa viimeistään viiden arkipäivän kuluessa loppumaksusta. Putkikasvu säilyttää oikeudet omiin yleiskäyttöisiin pohjiin, työmenetelmiin ja komponentteihin ja saa käyttää niitä muualla, kuitenkaan paljastamatta asiakkaan luottamuksellista aineistoa.',
+      'Avoimen lähdekoodin ja muiden kolmansien osapuolten lisenssit sekä mahdolliset asiakaskohtaiset rajoitukset ilmoitetaan toimituksessa. Muiden oikeudenhaltijoiden tekijän moraalisia oikeuksia tai tekijänoikeuksia ei väitetä siirtyvän sopimuksella.'
+    ]
+  },
+  {
+    title: '11. Virheet, tietoturva ja vastuunjako',
+    paragraphs: [
+      'Palveluntarjoaja vastaa siitä, että toimitus vastaa kirjallisesti sovittua sisältöä ja tekee oman työnsä huolellisesti. Sovitun toimituksen virheet korjataan ilman lisämaksua kohtuullisessa ajassa. Pyydämme ilmoittamaan virheistä kirjallisesti viivytyksettä; ilmoittamispyyntö ei poista lain nojalla mahdollisesti kuuluvia oikeuksia.',
+      'Asiakas vastaa omien materiaalien laillisuudesta ja julkaistavien väitteiden oikeellisuudesta. Putkikasvu ei takaa tiettyä Google-sijoitusta, tarjouspyyntömäärää tai taloudellista tulosta. Kumpikaan osapuoli ei vastaa toisen itsenäisesti hallinnoimien kolmansien palveluiden käyttökatkoista siltä osin kuin häiriö ei johdu osapuolen omasta laiminlyönnistä. Tahallisuuteen, törkeään huolimattomuuteen, tietosuojaa koskeviin lakisääteisiin velvoitteisiin ja muihin pakottaviin velvoitteisiin perustuvia vastuita ei rajoiteta näillä ehdoilla.'
+    ]
+  },
+  {
+    title: '12. Henkilötietojen käsittely',
+    paragraphs: [
+      'Putkikasvu käsittelee omien asiakasyhteyksiensä, tarjoustensa ja laskutuksensa henkilötietoja itsenäisenä rekisterinpitäjänä sivustolla julkaistun tietosuojaselosteen mukaisesti. Jos Putkikasvu käsittelee asiakkaan verkkosivukävijöiden tai asiakkaiden henkilötietoja asiakkaan lukuun, osapuolet tekevät kirjallisen GDPR 28 artiklan mukaisen henkilötietojen käsittelysopimuksen ennen käsittelyn aloittamista ja sopivat alihankkijat, tietoturvan ja poistot.',
+      'Asiakas vastaa oman verkkosivustonsa rekisterinpitäjänä omasta tietosuojainformoinnistaan, evästesuostumuksista ja käsittelyn lainmukaisuudesta. Putkikasvu ei ota käyttöön henkilötietoja kerääviä lomakkeita, analytiikkaa tai maksutoimintoja ilman erillistä hyväksyntää ja tietosuojatarkistusta.'
+    ]
+  },
+  {
+    title: '13. Asiakkaan aineistot ja luottamuksellisuus',
+    paragraphs: [
+      'Osapuolet käsittelevät toimituksen yhteydessä saamiaan ei-julkisia yritys- ja henkilötietoja luottamuksellisesti. Putkikasvu ei julkaise asiakkaan keskeneräistä demoa asiakkaan virallisena sivustona eikä käytä asiakkaan nimeä referenssinä ilman erillistä lupaa. Toimitustiedostojen säilytyksestä ja poistamisesta kerrotaan tietosuojaselosteessa ja mahdollisessa henkilötietojen käsittelysopimuksessa.'
+    ]
+  },
+  {
+    title: '14. Sovellettava laki ja riitojen ratkaisu',
+    paragraphs: [
+      'Sopimukseen sovelletaan Suomen lakia. Riita pyritään ensin ratkaisemaan kirjallisilla neuvotteluilla. Ellei sovintoa synny, asia ratkaistaan toimivaltaisessa suomalaisessa tuomioistuimessa soveltuvan lain mukaisesti. Tämä ehto ei rajoita pakottavan lainsäädännön mukaisia oikeuksia.'
+    ]
+  }
 ];
-export default function Terms(){return <><header className="nav"><div className="wrap"><BrandLogo /><Link href="/">Etusivu →</Link></div></header><main id="main-content" tabIndex={-1} className="wrap legal"><p className="eyebrow eyebrow-on-light">Putkikasvu · B2B</p><h1>Palvelu- ja toimitusehdot</h1><p>Versio 1.0 · 21.10.2026</p><p className="warning"><strong>Ennakkotarkistettava sopimusversio:</strong> myyjän rekisteri- ja ALV-tiedot, sopijapuolen osoite sekä asiakaskohtaiset omistus- ja ylläpitojärjestelyt vahvistetaan ennen ensimmäistä maksullista tilausta. Maksaminen ei ole käytössä tällä sivustolla.</p>{sections.map(([h,p])=><section key={h}><h2>{h}</h2><p>{p}</p></section>)}</main></>}
+
+export default function Terms() {
+  return <><header className="nav"><div className="wrap"><BrandLogo /><Link href="/">Etusivu →</Link></div></header>
+    <main id="main-content" tabIndex={-1} className="wrap legal">
+      <p className="eyebrow eyebrow-on-light">Putkikasvu · vain B2B</p>
+      <h1>Palvelu- ja toimitusehdot</h1>
+      <p>Luonnos v1.1 · 22.10.2026</p>
+      <p className="warning"><strong>Hyväksyntää odottava sopimusluonnos:</strong> myyjän YTJ- ja ALV-merkinnät, yrityksen virallinen osoite, tilausprosessi sekä asiakkaan hosting- ja henkilötietojen käsittelyjärjestelyt on vahvistettava ennen maksullista käyttöönottoa. Verkkomaksaminen ei ole käytössä.</p>
+      {sections.map(({title,paragraphs})=><section key={title}><h2>{title}</h2>{paragraphs.map(p=><p key={p}>{p}</p>)}</section>)}
+    </main></>;
+}
