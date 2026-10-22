@@ -83,6 +83,7 @@ const keyboard=await browser.newPage({viewport:{width:1440,height:900}});
 keyboard.setDefaultTimeout(12000);
 await check("skip link and main landmark via keyboard",async()=>{
  await keyboard.goto(base+"/",{waitUntil:"domcontentloaded"});
+ await keyboard.waitForTimeout(350);
  await keyboard.keyboard.press("Tab");
  assert.equal(await keyboard.evaluate(()=>document.activeElement?.classList.contains("skip-link")),true);
  await keyboard.keyboard.press("Enter");
