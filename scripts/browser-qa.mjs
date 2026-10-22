@@ -35,10 +35,12 @@ async function overflow(page,context){
 }
 for(const width of [375,390,768,1440]){
  const page=await browser.newPage({viewport:{width,height:900}});
+ page.setDefaultTimeout(12000);
+ page.setDefaultNavigationTimeout(12000);
  await check("home "+width+"px: layout/images/fonts",async()=>{
-  const result=await page.goto(base+"/",{waitUntil:"networkidle"});
+  const result=await page.goto(base+"/",{waitUntil:"domcontentloaded"});
   assert.equal(result.status(),200);
-  await page.evaluate(()=>document.fonts.ready);
+  await page.waitForTimeout(300);
   assert.equal(await page.locator("h1").count(),1);
   assert.equal(await page.locator("main#main-content").count(),1);
   const images=await page.locator("img").evaluateAll(xs=>xs.map(x=>({src:x.getAttribute("src"),ok:x.complete&&x.naturalWidth>0})));
@@ -52,10 +54,10 @@ for(const width of [375,390,768,1440]){
   assert.equal(await page.locator(".hero a[href^='mailto:']").isVisible(),true);
   assert.match(await page.locator(".hero a[href^='mailto:']").getAttribute("href"),/visualjambo@gmail\.com/);
   assert.equal(await page.locator("a[href*='checkout.revolut.com']").count(),0);
-  await page.screenshot({path:path.join(screenshots,"home-"+width+".png"),fullPage:true});
+  await page.screenshot({timeout:12000,path:path.join(screenshots,"home-"+width+".png"),fullPage:true});
  });
  await check("home "+width+"px: anchors and FAQ keyboard",async()=>{
-  await page.goto(base+"/",{waitUntil:"networkidle"});
+  await page.goto(base+"/",{waitUntil:"domcontentloaded"});
   await page.locator(".navlinks a[href='#hinta']").click();
   assert.equal(new URL(page.url()).hash,"#hinta");
   const summary=page.locator("details summary").first();
@@ -65,7 +67,7 @@ for(const width of [375,390,768,1440]){
  });
  for(const route of ["ehdot","tietosuoja"]){
   await check(route+" "+width+"px: route/logo/reflow",async()=>{
-   const result=await page.goto(base+"/"+route,{waitUntil:"networkidle"});
+   const result=await page.goto(base+"/"+route,{waitUntil:"domcontentloaded"});
    assert.equal(result.status(),200);
    assert.equal(await page.locator("h1").count(),1);
    assert.equal(await page.locator("main#main-content").count(),1);
@@ -78,8 +80,9 @@ for(const width of [375,390,768,1440]){
  await page.close();
 }
 const keyboard=await browser.newPage({viewport:{width:1440,height:900}});
+keyboard.setDefaultTimeout(12000);
 await check("skip link and main landmark via keyboard",async()=>{
- await keyboard.goto(base+"/",{waitUntil:"networkidle"});
+ await keyboard.goto(base+"/",{waitUntil:"domcontentloaded"});
  await keyboard.keyboard.press("Tab");
  assert.equal(await keyboard.evaluate(()=>document.activeElement?.classList.contains("skip-link")),true);
  await keyboard.keyboard.press("Enter");
@@ -89,9 +92,11 @@ await check("skip link and main landmark via keyboard",async()=>{
 await keyboard.close();
 for(const width of [768,1440]){
  const page=await browser.newPage({viewport:{width,height:900}});
- await check("CSS zoom 200% reflow proxy at "+width+"px",async()=>{
-  await page.goto(base+"/",{waitUntil:"networkidle"});
-  await page.evaluate(()=>{document.body.style.zoom="200%"});
+ page.setDefaultTimeout(12000);
+ page.setDefaultNavigationTimeout(12000);
+ await check("200% equivalent browser reflow at "+width+"px",async()=>{
+  await page.goto(base+"/",{waitUntil:"domcontentloaded"});
+  await page.setViewportSize({width:Math.floor(width/2),height:900});
   await overflow(page,"zoom "+width);
   await page.screenshot({path:path.join(screenshots,"zoom-200-"+width+".png"),fullPage:true});
  });
@@ -100,7 +105,7 @@ for(const width of [768,1440]){
 const page=await browser.newPage();
 await check("404 output, robots and no write form",async()=>{
  assert.equal((await page.goto(base+"/404.html")).status(),200);
- await page.goto(base+"/",{waitUntil:"networkidle"});
+ await page.goto(base+"/",{waitUntil:"domcontentloaded"});
  assert.match(await page.locator('meta[name="robots"]').getAttribute("content"),/noindex/);
  assert.equal(await page.locator("form").count(),0);
 });
