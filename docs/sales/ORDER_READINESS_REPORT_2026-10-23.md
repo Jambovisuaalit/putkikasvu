@@ -1,6 +1,6 @@
 # Putkikasvu — tilausvalmiuden hyväksyntäraportti 23.10.2026
 
-**Kokonaispäätös: ESTE.** Ensimmäisen 590 € tilauksen edellytyksiä parannettiin, mutta myyjän rekisteri-, vero- ja maksutietoja sekä asiakkaan demoavausta ei ole vielä todennettu. Ei viestejä, maksuja, tuotantojulkaisua tai PR-yhdistämistä.
+**Ajantasainen päätös 23.10.2026: MYYNTITYÖ VOI JATKUA; MAKSUN KÄSITTELY EHDOLLINEN.** Ennakkoperintärekisterin puute ei ole yleinen myynnin, tarjousten tai toimeksiantosopimuksen este. Sitovan sopimuksen osapuolet, ehdot ja verokohtelu sekä maksuvaiheen pidätys, maksunsaaja ja tositteet tarkistetaan erikseen. Demojen asiakaslinkki- ja mobiilitesti ovat edelleen avoinna. Alla olevat alkuperäisen tarkistuksen havainnot ovat historiallisia siltä osin kuin lopun omistajan täsmennykset muuttavat niitä. Ei uusia viestejä, maksuja, tuotantojulkaisua tai PR-yhdistämistä.
 
 | # | Kohde | Tila | Todennettu tulos ja jäljellä oleva vaatimus |
 | --- | --- | --- | --- |
@@ -14,7 +14,7 @@
 | 8 | Kolme demoa | ESTE jakovalmiudelle | Kaikki READY, valtuutettu HTTP 200, anonyymi selain estetty, luonnokset näkyvät, ankkurit ehjät, ei kuvia/lomakkeita. Näkyvät tekstit vastaavat uudempaa arkistoa. Asiakkaan access-linkin testi ja tuore mobiili-QA puuttuvat. |
 | 9 | Myyntivastaukset | VALMIS rajatulle tarkistukselle | Resend: kaikki 10 delivered, ei uusia pilotin toimitusvirheitä listauksessa. Gmail: kaikkien 10 tunnetun osoitteen haku kaikista kansioista ei osumia; aihe-/kieltohaku ei tuottanut pilotin vastausta. Toisesta osoitteesta tai välittymättömään Euronic-laatikkoon saapunutta vastausta ei suljeta pois. Delivered ei tarkoita luettua. |
 | 10 | Hyväksyntäesteet | ESTE | Alla yksilöity; ei korvata omistajan hyväksynnällä puuttuvaa näyttöä. |
-| 11 | Seuraava käytännön toimi | ESTE maksun pyytämiselle | Hanki tuore myyjän rekisteriote ja 2025/2026 liikevaihtoluvut; vahvista pidätys-/laskutusmenettely ja maksun vastaanottaja. Samalla tee asiakkaan näkökulmasta demoavaus ja mobiili-QA. Tavoite: 0 puuttuvaa P0-tietoa ennen ensimmäistä sitovaa tarjousta. |
+| 11 | Seuraava käytännön toimi | ESTE maksun pyytämiselle | Hanki tuore myyjän rekisteriote ja 2025/2026 liikevaihtoluvut; vahvista pidätys-/laskutusmenettely ja maksun vastaanottaja. Samalla tee asiakkaan näkökulmasta demoavaus ja mobiili-QA. Tavoite: sopimuksen edellyttämät osapuoli-, ehto- ja verotiedot ennen sitovaa hyväksyntää; maksun P0-tarkistukset ennen maksua. Rekisterihakemus ei viivästytä myyntityön valmistelua. |
 
 ## Toteutetut korjaukset
 - Tietosuojainventaariossa näkyy kaikkien sopimusten, siirtojen ja poistojen keskeneräisyys sekä kuluttaja-Gmailin sopimusrajaus.
