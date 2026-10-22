@@ -12,7 +12,10 @@ Päiväys 22.10.2026. Tila: **TEKNINEN MYYNTIVERSIO / EI VIELÄ KAUPALLINEN GO**
 ## 4. B2B/GDPR
 - [x] Sopimus- ja tietosuojaluonnokset sekä käsittelysopimuksen luonnos nykyiseen samaan GitHub-haaraan.
 - [x] Verohallinnon 20 000 € vähäisen toiminnan raja tarkistettu virallisesta lähteestä; kuluvan ja edellisen kalenterivuoden raja seurattava.
-- [ ] Varmista YTJ:stä oikea yritys / ALV-rekisteri / ennakkoperintä ja virallinen yritysosoite; YTJ:n yrityskohtaista tietuetta ei saatu julkisesti avattua.
+- [x] Virallinen YTJ tarkistettu selaimessa 22.10.2026: Y-tunnus 3581581-6, yksityinen elinkeinonharjoittaja, ainoa aktiivinen rekisteröinti Verohallinnon perustiedot.
+- [ ] **P0 – ennakkoperintärekisteri ei näy**. Hae merkintää OmaVerossa tai varmista työkorvauksen ennakonpidätys yritysasiakkaalle. Ei normaalia 295 € + 295 € B2B-laskutusta ennen asian ratkaisua.
+- [ ] ALV-rekisterimerkintää ei näy, mutta vahvista vähäisen toiminnan 20 000 € raja 2025 ja 2026 toteutuneesta liikevaihdosta.
+- [ ] Vahvista toiminimen rekisterissä näkyvä virallinen nimi/osoite muusta luotettavasta lähteestä ennen tilausta; YTJ ei julkisesti näytä niitä.
 - [ ] Hyväksy sopimuksen peruutusehdot, keskeytyksen 90 €/h enimmäisrajauksineen, käyttö-/luovutusoikeudet sekä mahdollinen palautussääntö.
 - [ ] Varmista Gmail/Vercel-sopimusten henkilötietojen käsittelyn roolit, DPA- ja ETA-siirtoehtojen tosiasialliset asetukset.
 - [ ] Toteuta tietosuojaluonnoksen 12 kk / 3 v / 90 pv säilytys- ja poistokäytäntö sähköpostiin/projektikansioihin: dokumentointi ei ole toteutus.
@@ -39,3 +42,4 @@ Päiväys 22.10.2026. Tila: **TEKNINEN MYYNTIVERSIO / EI VIELÄ KAUPALLINEN GO**
 - https://www.finlex.fi/fi/lainsaadanto/1997/1336
 - https://eur-lex.europa.eu/eli/reg/2016/679/oj?locale=fi
 - https://tietopalvelu.ytj.fi/yritys/3581581-6
+- https://www.vero.fi/yritykset-ja-yhteisot/yritystoiminta/verohallinnon-rekisterit/ennakkoperintarekisteri/
