@@ -6,6 +6,7 @@
  * No outbound mail is sent. No secrets or message bodies are written to Sheets.
  */
 import { createSign } from 'node:crypto';
+import { safeMetrics, sheetRowIndex } from './crm-sync-core.mjs';
 
 const SHEET_ID = '1xVjcWb8lq4xVwSFu6oMkwdPeLXY8oKAtVfv2qhx23LA';
 const TAB = "'SEURANTA 22-10-2026'";
@@ -38,10 +39,12 @@ async function main(){
   const grid=(await request(base+range,{headers:auth(sheetToken)})).values||[];
   if(grid[0]?.[0]!=='Yritys'||grid[0]?.[2]!=='Resend ID')throw new Error('Unexpected CRM schema');
   const gmail=await gmailToken();
+  const writeEnabled=process.env.CRM_SYNC_WRITE==='true';
   const updates=[];
   for(let i=1;i<grid.length;i++){
     const row=grid[i]; const email=row[1];const id=row[2];
     if(!email||!id)continue;
+    const targetRow=sheetRowIndex(grid,id);
     const r=await request('https://api.resend.com/emails/'+encodeURIComponent(id),{headers:auth(env('RESEND_API_KEY'))});
     // Resend metrics endpoint is used for opens/clicks; absence of an event means zero *tracked* events.
     const start='2026-10-01';const end=new Date().toISOString().slice(0,10);
@@ -55,13 +58,15 @@ async function main(){
     }catch{ /* avoid falsely reporting zero when metrics endpoint is unavailable */ }
     const query='from:('+email+') after:2026/10/19';
     const result=await request('https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=30&q='+encodeURIComponent(query),{headers:auth(gmail)});
-    const reply=(result.messages?.length||0)>0?'Mahdollinen vastaus – tarkista ketju':'Ei löydetty';
-    const state=reply.startsWith('Mahdollinen')?'Tarkista vastaus':'Odottaa vastausta';
+    // A sender-only Gmail search is not evidence of a reply to this exact outbound message.
+    const reply=(result.messages?.length||0)>0?'Ehdokkaita – ketjukohdistus puuttuu':'Ei löydetty';
+    const state=reply.startsWith('Ehdokkaita')?'Tarkista viestiketju':'Odottaa vastausta';
     const stamp=new Date().toISOString();
     const values=[[r.last_event||r.status||'Tuntematon',opens,clicks,reply,state,stamp]];
-    updates.push({range:TAB+'!D'+(i+1)+':I'+(i+1),values});
+    updates.push({range:TAB+'!D'+targetRow+':I'+targetRow,values});
   }
-  if(updates.length)await request('https://sheets.googleapis.com/v4/spreadsheets/'+SHEET_ID+'/values:batchUpdate',{method:'POST',headers:{...auth(sheetToken),'content-type':'application/json'},body:JSON.stringify({valueInputOption:'RAW',data:updates})});
-  console.log(JSON.stringify({updated:updates.length,at:new Date().toISOString()}));
+  if(writeEnabled) throw new Error('CRM_SYNC_WRITE is blocked pending verified Resend metrics schema and exact Gmail thread matching');
+  if(false && updates.length)await request('https://sheets.googleapis.com/v4/spreadsheets/'+SHEET_ID+'/values:batchUpdate',{method:'POST',headers:{...auth(sheetToken),'content-type':'application/json'},body:JSON.stringify({valueInputOption:'RAW',data:updates})});
+  console.log(JSON.stringify({mode:'dry-run',candidates:updates.length,updated:0,at:new Date().toISOString()}));
 }
 main().catch(e=>{console.error(e.message);process.exitCode=1;});
