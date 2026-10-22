@@ -1,15 +1,43 @@
 # Putkikasvu — käsittelykartta ja poiston todennus v1.0
 22.10.2026. **Suunnitellut aikarajat eivät vielä osoita toteutunutta poistamista.**
 
-## 1. Havaittu, suunniteltu vai tuntematon
-| Tietovirta | Rooli | Palvelu / tilanne | Nykyinen näyttö | Vaatimus ennen laajennusta |
-| --- | --- | --- | --- | --- |
-| Putkikasvun sivun kävijät, pyynnöt ja tekniset lokit | Putkikasvu rekisterinpitäjä omasta markkinoinnista; Vercelin rooli sopimuksesta riippuen | Vercel, nykyinen staattinen sivu / suojattu preview | Repon koodi ei sisällä omaa lomaketietokantaa eikä maksukassaa; Vercel-hosting tunnettu. Palvelulokit, evästeet, IP-käsittely, alueet ja tosiasialliset DPA-sopimusehdot **ei vahvistettu** | Projektin asetukset, tuotantoverkon Network/Storage, deployment security, lokit ja DPA/alikäsittelijät |
-| Liidin lähettämä sähköposti | Putkikasvu rekisterinpitäjä | visualjambo@gmail.com / Gmail | Mailto avaa asiakkaan oman sähköpostisovelluksen; palvelimelle ei tallennu lomakeviestiä | Gmailin tilityyppi, käsittelysopimuksen soveltuvuus, suojaus, sijainnit, poistomalli |
-| Tarjous, tilaussopimus, laskutustiedot | Putkikasvu rekisterinpitäjä | Sähköposti / manuaalinen arkistointi | Ei tuotantokelpoista maksulinkkiä eikä CRM-käsittelyrekisteriä tässä PR:ssä | Varsinainen tallennuspaikka, käyttöoikeudet, laki-/sopimusperuste, arkistointikäytäntö |
-| Julkaisumateriaalien väliaikaiset kopiot | Putkikasvu joko käsittelijänä asiakkaan lukuun tai itsenäisenä rekisterinpitäjänä tilanteesta riippuen | Sovittava projektikohtaisesti | Ei vielä vahvistettua aineistokansiota, käyttöoikeusmallia eikä poistotodistetta | Materiaalien luokat, pääsynhallinta ja käsittelyroolin arvio, tarvittaessa DPA |
-| Asiakkaan oman sivuston kävijät/lomakeviestit | Asiakas yleensä rekisterinpitäjä | Asiakkaan erikseen valitsema hosting | Ei oletusarvoista keräävää lomaketta Standardissa | Selvitä sivusto- ja hostingratkaisu, asiakkaan seloste, roolit, DPA, siirrot |
-| Resend / Supabase / Revolut | Ei aktiivisena tämän PR:n tietovirrassa | Ei tässä versiossa | Ei liitettyjä lomake-, kanta- tai maksutoimintoja | Uusi dokumentointi ennen tulevaa käyttöönottoa |
+## 1. Rekisterinpitäjä ja nykyiset tietovirrat
+Palveluntarjoaja ja rekisterinpitäjä: Harju Jami, Putkikasvu, Y-tunnus 3581581-6
+(rekisteriyhteys tarkistettava). Osoite Mannerheimintie 109, Helsinki; kotipaikka Helsinki.
+Yhteys: jami@putkikasvu.fi, https://putkikasvu.fi.
+Tiedot ovat omistajan ilmoittamia; rekisterivarmennusta ei kuitata.
+
+Putkikasvu toimii oman asiakashankintansa, markkinointikieltojensa, sopimustensa ja
+laskutuksensa osalta itsenäisenä rekisterinpitäjänä.
+
+| Käsittely | Rooli ja palvelu | Todettu käyttö | Vielä todennettava |
+| --- | --- | --- | --- |
+| Prospektointi, CRM ja estolista | Putkikasvu rekisterinpitäjä; Google Sheets / Drive | Nykyinen myyntipilottitaulukko, kontaktit, lähetysloki ja seuranta käytössä | Käsittelyperuste, informointi, käyttöoikeudet, säilytys ja poistot |
+| Markkinointiviestit | Putkikasvu rekisterinpitäjä; Resend | 10 viestin toimitus tarkistettu 22.10.2026; avaus- ja klikkausseuranta pois | Palvelusopimukset, roolit, säilytys, siirtoperusteet |
+| Yhteydenotot ja vastaukset | Putkikasvu rekisterinpitäjä; domainin sähköpostipalvelu ja Gmail | jami@putkikasvu.fi → visualjambo@gmail.com vastaanottoreitti varmennettu | Gmailin tilityyppi ja ehdot, suojaus, kansainväliset siirrot ja poistot |
+| Tarjoukset, sopimukset ja laskutus | Putkikasvu rekisterinpitäjä; sähköposti ja yksityinen arkistointi | Tekstipohjat olemassa; ei näyttöä ensimmäisestä maksavasta tilauksesta | Asiakaskohtainen tallennuspaikka, pääsynhallinta, sopimus- ja lakiperuste |
+| Maksut | Putkikasvu oman laskutuksensa rekisterinpitäjä; Revolutin oma rooli määräytyy ehdoista | Omistaja vahvisti maksulinkin toimivaksi; manuaalinen täsmäytys suunniteltu | Maksunsaaja ja tilauskohtainen tapahtumatodiste; palveluehdot |
+| Hosting ja tekniset lokit | Putkikasvu oman sivunsa rekisterinpitäjä; Vercelin rooli sopimuksesta | Vercel-projekti ja suojatut previewt tunnettu | Todellisen tuotannon lokit, evästeet, alueet ja sopimukset |
+| Asiakkaan aineistot ja sivuston henkilötiedot | Roolit arvioidaan projektikohtaisesti; asiakas yleensä oman sivustonsa rekisterinpitäjä | Standard ei oletusarvoisesti sisällä keräävää lomaketta | Tarvittaessa DPA ennen asiakkaan puolesta käsittelyä; aineistojen oikeudet |
+| Suunniteltu Supabase-onboarding ja maksutausta | Ei todettua aktiivista käsittelyä | Kehityshaaran API:t dokumentoitu aktivoimattomiksi | Erillinen käyttöönotto ja testit; ei kuvata nykyiseksi palveluksi |
+
+### Prospektien informointi ja oikeutettu etu
+Julkisista lähteistä kerättyjen henkilökohtaisten yhteystietojen käsittelylle
+dokumentoidaan käsittelyperuste, informointi ja tarvittaessa oikeutetun edun
+tasapainotesti. Kun perusteeksi valitaan oikeutettu etu, dokumentoidaan tarkoitus,
+tarpeellisuus ja rekisteröidyn etujen sekä oikeuksien punninta ennen käsittelyä.
+Julkisuus ei yksin merkitse suostumusta.
+
+Jos tietoja käytetään yhteydenottoon, GDPR 14 artiklan tiedot annetaan viimeistään
+ensimmäisen yhteydenoton yhteydessä, ellei soveltuva poikkeus täyty; muut 14 artiklan
+määräajat huomioidaan. Markkinoinnin vastustamisoikeus tuodaan esiin selkeästi.
+GDPR-käsittelyperuste ei yksin ratkaise sähköisen suoramarkkinoinnin sallittavuutta.
+
+Informointiin sisällytetään rekisterinpitäjä ja yhteys, tarkoitus ja peruste,
+tietoryhmät ja lähteet, vastaanottajat, mahdolliset siirrot, säilytys,
+rekisteröidyn oikeudet ja valitusoikeus. Tietyn prospektin lähde ja toimitettu
+informointiversio kirjataan yksityiseen CRM:ään; henkilötietoja ei kopioida julkiseen repoon.
+Tämä ohje ei todista aiempien viestien informoinnin tai tasapainotestin toteutusta.
 
 **Julkiset toimittajatekstit eivät osoita tietyn tilin tarkkoja asetuksia.**
 - Vercel DPA https://vercel.com/legal/dpa ja alikäsittelijälista https://security.vercel.com
