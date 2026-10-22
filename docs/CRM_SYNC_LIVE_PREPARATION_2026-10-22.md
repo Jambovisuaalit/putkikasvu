@@ -99,3 +99,30 @@ Read-only recheck:
 
 Next required input is secure provisioning of a private runner and provider-owned
 credentials; connector access cannot be transferred into standalone worker tokens.
+
+## Mailbox routing evidence and credential boundary
+A metadata-only read of an existing test message addressed to jami@putkikasvu.fi
+confirms Delivered-To: visualjambo@gmail.com and Received hops through the
+domain mail provider into Gmail. Additional messages addressed to that domain
+mailbox are present in Gmail on 22 October. This proves observed inbound forwarding;
+it does not prove a pilot recipient's reply correlation or expose the Resend Reply-To.
+
+Credential provisioning is blocked by the current tool capabilities:
+- Google connectors cannot create Cloud service accounts/OAuth clients or supply
+  worker-owned offline refresh tokens.
+- The Resend key creation action returns the secret into conversation and requires
+  displaying it; this does not meet the requested direct-to-secret-store flow.
+- No worker credentials are available in the runtime, and no private worker runner
+  has been provisioned. The existing static marketing Vercel project is not the runner.
+No keys were created or exposed. No authenticated worker run has occurred.
+
+Required secure operator setup:
+1. Provision a private Node 22+ runner with no public endpoint or automatic schedule.
+2. Create a Sheets service account, enable Sheets API, and share only the canonical
+   test workbook as Viewer. Store its email and private key in the runner secret store.
+3. Create Gmail OAuth client and offline gmail.readonly grant for the confirmed Gmail
+   mailbox; store client ID, client secret and refresh token directly in that store.
+4. Resolve Resend read access, create its credential in provider UI and store it
+   directly in the runner. Do not use sending_access for a retrieval test.
+5. Run provider-specific read checks before full runSync: fixture Resend IDs in the
+   canonical test workbook are synthetic and cannot pass real Resend retrieval.
