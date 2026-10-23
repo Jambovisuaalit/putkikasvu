@@ -42,9 +42,10 @@ export async function verifyResendCrmReadOnly({
        !Number.isSafeInteger(run?.candidates) ||run.candidates<0 ||
        !Array.isArray(run?.updates) ||run.updates.length!==run.candidates)
       throw new Error('CRM planner produced unsafe result');
-    if(run.updates.some(u=>
-      typeof u?.range!=='string' ||
-      !/^'TEST CRM'!D[2-9][0-9]*:I[2-9][0-9]*$/.test(u.range)))
+    if(run.updates.some(u=>{
+      const match=/^'TEST CRM'!D([1-9][0-9]*):I([1-9][0-9]*)$/.exec(u?.range||'');
+      return !match || Number(match[1])<2 || match[1]!==match[2];
+    }))
       throw new Error('CRM planner returned wrong update target');
   }
   assert.deepStrictEqual(second,first,'Two read-only plans differ');
