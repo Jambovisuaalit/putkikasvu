@@ -23,8 +23,8 @@ test('one-command verifier authenticates first, plans twice, never reports write
   planner:async()=>{seq.push('dry-run');return plan();}
  });
  assert.deepEqual(seq,['inbound GET','dry-run','dry-run']);
- assert.deepEqual(r,{mode:'read-only',inboundAuthenticated:true,workerCandidates:1,
-   proposedWrites:0,realWrites:0,emailsSent:0,repeatPlanIdentical:true});
+ assert.deepEqual(r,{mode:'read-only',inboundAuthenticated:true,candidateUpdates:1,
+   actualSheetWrites:0,emailsSent:0,repeatPlanIdentical:true});
  assert.equal(JSON.stringify(r).includes('synthetic@example.invalid'),false);
 });
 test('aborts before network unless isolated read-only and required credentials present',async()=>{
