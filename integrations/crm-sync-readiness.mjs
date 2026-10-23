@@ -1,6 +1,8 @@
 /** Secret-safe prerequisite validation before any outbound provider request. */
 export function credentialReadiness(env) {
- const keys=['GOOGLE_SERVICE_ACCOUNT_EMAIL','GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY','GMAIL_REFRESH_TOKEN','GMAIL_CLIENT_ID','GMAIL_CLIENT_SECRET','RESEND_API_KEY'];
+ const keys=['GOOGLE_SERVICE_ACCOUNT_EMAIL','GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY','RESEND_API_KEY'];
+ const source=env.CRM_SYNC_REPLY_SOURCE||'gmail';
+ if(source!=='resend')keys.push('GMAIL_REFRESH_TOKEN','GMAIL_CLIENT_ID','GMAIL_CLIENT_SECRET');
  return {ready:keys.every(k=>Boolean(String(env[k]||'').trim())),missing:keys.filter(k=>!String(env[k]||'').trim())};
 }
 export function assertLiveReadReady(env) {
