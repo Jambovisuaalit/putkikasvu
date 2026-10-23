@@ -79,3 +79,65 @@ providerin metatietoristiriidan ja sivutusvirheet.
 
 PR pysyy Draftina. Ei tuotantoworkeria, ajastusta,
 DNS-muutoksia, tuotanto-CRM-kirjauksia tai kampanjalähetyksiä.
+
+
+## Lisävahvistus 23.10.2026 — tunnuksellinen testiajuri
+
+Tarkistukset:
+- Resend-kytkentä voi lukea lähetetyt ja saapuneet viestit jo
+  ChatGPT-yhteyden kautta. Tämä ei siirrä Resend-tokenia Node-runnerille.
+- Resendissä on olemassa API-avaimia, mutta listaus ei vahvista
+  avainten lukuoikeutta eikä palauta kerran luotuja salaisuuksia.
+- Vercelin putkikasvu-projektissa ei ollut ympäristömuuttujia.
+  Sitä ei käytetä yksityisenä CRM-runnerina.
+- Erillisessä TEST CRM -taulukossa testirivien C2 ja C3 ovat yhä
+  kuvitteellisia. Putkikasvulle ei löytynyt varmennettua sisäistä,
+  Resendin kautta lähetettyä outbound-testiviestiä.
+- Aiemman lähetystestin Resend-received ID on vastaanotto-ID;
+  sitä EI saa sijoittaa C-sarakkeen outbound Resend ID -kenttään.
+- Tässä vaiheessa ei luotu eikä jaettu avainta, lähetetty sähköpostia
+  tai kirjoitettu taulukkoon.
+
+### Suojattuun ajoon tarvittavat muuttujat
+
+    CRM_SYNC_ENV=test
+    CRM_SYNC_WRITE=false
+    CRM_SYNC_REPLY_SOURCE=resend
+    CRM_SYNC_TEST_SHEET_ID=1qGVHhvoUXqAQ5np9PmOc5cgAyUL1i70OBg7wBf-PdZc
+    CRM_SYNC_TEST_TAB=TEST CRM
+    CRM_SYNC_RECEIVING_ADDRESS=04687389@pixoosal.resend.app
+    CRM_SYNC_INBOUND_SMOKE_ID=<existing internal inbound received UUID>
+    RESEND_API_KEY=<private runner secret>
+
+Viimeiset kaksi arvoa säilytetään vain suojatussa ajurissa;
+älä lisää avainta dokumentteihin, chatteihin, lokiin tai julkiseen
+GitHub Actions -työnkulkuun. Resendin read API voi edellyttää
+full-access-avainta, jolla on myös muita oikeuksia: käsittele sitä
+korkean riskin, väliaikaisena salaisuutena, ei rajattuna
+read-only-tokenina.
+
+Ensimmäinen provider-varmistus:
+
+    node integrations/crm-sync-resend-inbound-auth-smoke.mjs
+
+Skripti lukee vain erikseen määritetyn saapuneen viestin Resendin
+GET-rajapinnasta, tarkistaa palautettujen otsakkeiden rakenteen
+sekä kohteen ja palauttaa bool-tyyppisen tuloksen. Ei tulosta
+sisältöä eikä viestiotsakkeita. Testin onnistuminen ei vielä
+todista outbound-vastausparin kohdistamista.
+
+### Aito worker-E2E pysyy erillisenä
+
+Kun oikea, sisäinen Putkikasvusta Resendillä lähetetty
+testiviesti ja sen oma outbound Resend-ID on saatavilla, voidaan
+päivittää yksi synteettisen TEST CRM -taulukon rivi.
+Vaaditaan testin lähettäjäksi ja vastaanottajaksi vain omia
+osoitteita. Vasta tätä seuraa aidolla read-only-runSync-ajolla
+kohdistuksen tarkistus ja saman ajon toisto.
+
+CI-hyväksyntä todistaa vain fixture-tapaukset. Se ei
+todista todellisen Google Sheets -palvelutilin ja Resendin tokenin
+autentikointia tai oikeaa Gmailista saapuvaa vastausotsaketta.
+
+**Nykyinen portti:** älä avaa kirjoitusreittiä, ajastinta,
+tuotantokohdetta tai PR-mergeä.
