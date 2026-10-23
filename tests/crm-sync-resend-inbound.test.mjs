@@ -123,3 +123,16 @@ test('inbound metadata parser handles display names, case-insensitive headers an
    references:[original],inReplyTo:original
   });
 });
+
+test('missing inbound header object and malformed timestamp abort rather than falsely classify no reply',async()=>{
+ for(const invalid of [
+  {...full,headers:null},
+  {...full,headers:undefined},
+  {...full,created_at:'invalid-date'}
+ ]){
+  await assert.rejects(
+   runSync(fake({detail:invalid}).options),
+   /Resend inbound headers unavailable|Resend inbound received timestamp invalid/
+  );
+ }
+});
