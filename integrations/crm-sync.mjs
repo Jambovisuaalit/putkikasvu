@@ -10,6 +10,7 @@ import { pathToFileURL } from 'node:url';
 import { readConfig } from './crm-sync-config.mjs';
 import { assertLiveReadReady } from './crm-sync-readiness.mjs';
 import { matchesReply, mergeEvent, safeMetrics, sheetRowIndex } from './crm-sync-core.mjs';
+import { listInboundReplyMetadata, matchesInboundReply } from './resend-inbound.mjs';
 
 const env = (key) => { if (!process.env[key]) throw new Error('Missing '+key); return process.env[key]; };
 const b64url = (v) => Buffer.from(JSON.stringify(v)).toString('base64url');
@@ -38,6 +39,7 @@ export async function runSync({ environment=process.env, requestJson=request,
   tokens={sheet:serviceToken,gmail:gmailToken}, now=()=>new Date() }={}) {
   // Validate isolation and write prohibition before any OAuth or external request.
   const config=readConfig(environment);
+  const replySource=config.replySource;
   // Fail before any OAuth/network I/O when a live read cannot authenticate.
   // Fixture runners can inject mock tokens/providers and must opt in explicitly.
   if (!environment.CRM_SYNC_FIXTURE_MODE) assertLiveReadReady(environment);
@@ -48,7 +50,13 @@ export async function runSync({ environment=process.env, requestJson=request,
   if(grid[0]?.[0]!=='Yritys'||grid[0]?.[2]!=='Resend ID')throw new Error('Unexpected CRM schema');
   // Validate all IDs before reading other providers.
   for(const row of grid.slice(1)) if(row[2]) sheetRowIndex(grid,row[2]);
-  const gmail=await tokens.gmail();
+  const gmail=replySource==='resend'?null:await tokens.gmail();
+  // Fetch once, only in explicit Resend/both test mode; never read message bodies.
+  const inbound=replySource==='gmail'?[]:await listInboundReplyMetadata({
+    requestJson, token:environment.RESEND_API_KEY||'',
+    recipients:grid.slice(1).map(row=>row[1]),
+    receivingAddress:environment.CRM_SYNC_RECEIVING_ADDRESS,
+  });
   const updates=[];
   for(const row of grid.slice(1)) {
     const email=row[1], id=row[2];
@@ -88,6 +96,8 @@ export async function runSync({ environment=process.env, requestJson=request,
         if(pageToken && seen.has(pageToken))throw new Error('Repeated Gmail page token');
         if(pageToken)seen.add(pageToken);
       } while(pageToken && !found);
+      }
+      if(!found && inbound.some(candidate=>matchesInboundReply(candidate,email,messageId,sentAt)))found=true;
       reply=found?'Vastaus tunnistettu':'Ei löydetty';
     }
     // Preserve a previously verified reply if a later search no longer finds it.
