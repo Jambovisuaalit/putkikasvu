@@ -1,0 +1,21 @@
+name: Credential-free CRM worker tests
+on:
+  push:
+    branches: [feat/crm-sync-worker-20261022]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  crm-worker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test worker with synthetic providers and no service credentials
+        run: node --test tests/crm-sync*.test.mjs
