@@ -24,12 +24,18 @@ function headersValue(headers,name) {
   return '';
 }
 export function inboundMetadata(message) {
-  const refs=headersValue(message?.headers,'references').match(/<[^<>\s]+>/g)||[];
+  // Resend may return headers: null; never interpret uninspectable mail as "no reply".
+  if(!message?.headers || (typeof message.headers!=='object'))
+    throw new Error('Resend inbound headers unavailable');
+  const receivedAtMs=Date.parse(message.created_at||'');
+  if(!Number.isFinite(receivedAtMs))
+    throw new Error('Resend inbound received timestamp invalid');
+  const refs=headersValue(message.headers,'references').match(/<[^<>\s]+>/g)||[];
   return {
-    from:mailbox(message?.from),
-    receivedAtMs:Date.parse(message?.created_at||''),
+    from:mailbox(message.from),
+    receivedAtMs,
     references:refs,
-    inReplyTo:headersValue(message?.headers,'in-reply-to').trim(),
+    inReplyTo:headersValue(message.headers,'in-reply-to').trim(),
   };
 }
 
@@ -73,8 +79,7 @@ export async function listInboundReplyMetadata({
         !detail.to.some(v=>mailbox(v)===receivingAddress)||
         mailbox(detail.from)!==mailbox(entry.from))
         throw new Error('Resend inbound message metadata mismatch');
-      const candidate=inboundMetadata(detail);
-      if(Number.isFinite(candidate.receivedAtMs))output.push(candidate);
+      output.push(inboundMetadata(detail));
     }
     if(!response.has_more)return output;
     if(!response.data.length)throw new Error('Resend inbound pagination stopped unexpectedly');
