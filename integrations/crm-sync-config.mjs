@@ -7,5 +7,9 @@ export function readConfig(env) {
   const tab=env.CRM_SYNC_TEST_TAB;
   if(!sheetId || !/^[A-Za-z0-9_-]+$/.test(sheetId))throw new Error('Missing or invalid test sheet ID');
   if(!tab || !/^TEST(?:$|[ _-])/.test(tab) || tab.length>100 || /[\[\]:*?\/\\]/.test(tab))throw new Error('Test tab must start with TEST');
-  return {sheetId,tab};
+  const replySource=env.CRM_SYNC_REPLY_SOURCE||'gmail';
+  if(!['gmail','resend','both'].includes(replySource))throw new Error('Unsupported CRM reply source');
+  if(replySource!=='gmail' && env.CRM_SYNC_RECEIVING_ADDRESS!=='04687389@pixoosal.resend.app')
+    throw new Error('Expected dedicated Putkikasvu Resend receiving address');
+  return {sheetId,tab,replySource};
 }
