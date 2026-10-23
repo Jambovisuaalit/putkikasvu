@@ -141,3 +141,47 @@ autentikointia tai oikeaa Gmailista saapuvaa vastausotsaketta.
 
 **Nykyinen portti:** älä avaa kirjoitusreittiä, ajastinta,
 tuotantokohdetta tai PR-mergeä.
+
+
+## Read-only worker + vastaanoton yksikomentoinen tarkistus (23.10.2026)
+
+Uusi tiedosto: integrations/crm-sync-resend-readonly-check.mjs.
+Kun erillinen suojattu ajuri ja oikeat tunnukset on valtuutettu,
+se tekee:
+1. Resend GET /emails/receiving/{CRM_SYNC_INBOUND_SMOKE_ID}.
+2. Google Sheets -luku vain erillisestä TEST CRM -taulukosta.
+3. Resend GET -lukupyynnöt ja reply-kohdistuksen ilman sähköpostilähetyksiä.
+4. Toisen saman read-only dry-runin kiinnitetyllä aikaleimalla.
+5. Suunnitelmien täsmällisen vertailun ilman yhtäkään tietokantakirjoitusta.
+
+Komento yksityisessä ajurissa:
+
+    node integrations/crm-sync-resend-readonly-check.mjs
+
+Odotettu tulos vain turvallisia aggregaatteja sisältävänä JSONina,
+esimerkiksi { "mode": "read-only", "inboundAuthenticated": true,
+"workerCandidates": 1, "proposedWrites": 0, "realWrites": 0,
+"emailsSent": 0, "repeatPlanIdentical": true }.
+Esimerkki ei ole oikeasti saavutettu autentikoitu testitulos.
+Toistuva sama suunnitelma ei todista pysyvää event-ledger-deduplikointia.
+
+API-avainten oikeuksien huomio: Resend tarjoaa tämänhetkisen
+dokumentaation mukaan Full access ja Sending access -tasot,
+ei erillistä vain vastaanotettujen viestien lukuoikeutta.
+Saapuneiden viestien autentikoitu GET edellyttää siis
+Full access -tyyppistä avainta; kyseisellä avaimella olisi
+myös muita tilioikeuksia. Käytä mieluiten väliaikaista
+erillistä tiliä/testiympäristöä tai eristettyä salaisuushallintaa,
+älä upota tällaista avainta julkisen repohaaransa CI:hin.
+Jo olemassa olevien avainten arvot eivät ole luettavissa
+Resend-tilin API-avainlistauksesta.
+
+Mikäli TEST CRM sisältää yhä synthetic-alkuisia outbound-ID:itä,
+aito worker-E2E EI voi mennä läpi; älä tee siinä tilanteessa
+väitettä tuotantokelpoisuudesta. Pelkän inbound-proben voi
+ajaa erikseen jo tunnetulla sisäisellä vastaanotto-ID:llä,
+mutta se ei korvaa workerin kokonaisyhteystestiä.
+
+Resendin vastaanoton raw-otsakkeiden puuttuminen tai
+virheellinen vastaanottoaikaleima pysäyttää workerin.
+Se ei merkitse prospektille virheellistä Ei löydetty -tilaa.
