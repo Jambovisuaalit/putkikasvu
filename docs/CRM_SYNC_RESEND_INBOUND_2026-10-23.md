@@ -160,7 +160,7 @@ Komento yksityisessä ajurissa:
 
 Odotettu tulos vain turvallisia aggregaatteja sisältävänä JSONina,
 esimerkiksi { "mode": "read-only", "inboundAuthenticated": true,
-"workerCandidates": 1, "proposedWrites": 0, "realWrites": 0,
+"candidateUpdates": 1, "actualSheetWrites": 0,
 "emailsSent": 0, "repeatPlanIdentical": true }.
 Esimerkki ei ole oikeasti saavutettu autentikoitu testitulos.
 Toistuva sama suunnitelma ei todista pysyvää event-ledger-deduplikointia.
