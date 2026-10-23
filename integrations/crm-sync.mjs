@@ -51,7 +51,7 @@ export async function runSync({ environment=process.env, requestJson=request,
   // Validate all IDs before reading other providers.
   for(const row of grid.slice(1)) if(row[2]) sheetRowIndex(grid,row[2]);
   const gmail=replySource==='resend'?null:await tokens.gmail();
-  // Fetch once, only in explicit Resend/both test mode; never read message bodies.
+  // Fetch once in explicit Resend/both test mode. Discard full-email bodies returned by Resend; never log or persist them.
   const inbound=replySource==='gmail'?[]:await listInboundReplyMetadata({
     requestJson, token:environment.RESEND_API_KEY||'',
     recipients:grid.slice(1).map(row=>row[1]),
