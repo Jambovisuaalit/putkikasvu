@@ -71,6 +71,7 @@ export async function runSync({ environment=process.env, requestJson=request,
     let found=false;
     let reply='Kohdistustiedot puuttuvat';
     if(typeof messageId==='string' && /^<[^<>\s]+>$/.test(messageId) && Number.isFinite(sentAt)) {
+      if(gmail) {
       const query='from:'+email+' after:'+Math.floor(sentAt/1000);
       let pageToken;
       const seen=new Set();
