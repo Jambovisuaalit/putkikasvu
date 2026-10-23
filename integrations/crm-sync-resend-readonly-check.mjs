@@ -52,9 +52,8 @@ export async function verifyResendCrmReadOnly({
   return {
     mode:'read-only',
     inboundAuthenticated:true,
-    workerCandidates:first.candidates,
-    proposedWrites:0,
-    realWrites:0,
+    candidateUpdates:first.candidates,
+    actualSheetWrites:0,
     emailsSent:0,
     repeatPlanIdentical:true,
     // No actual row values, recipient addresses, IDs or event contents.
