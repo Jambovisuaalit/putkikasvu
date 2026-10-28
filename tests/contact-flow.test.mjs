@@ -6,7 +6,7 @@ import { CONTACT_EMAIL, CONTACT_SUBJECT, CONTACT_BODY, CONTACT_MAILTO, CONTACT_P
 const read = file => readFileSync(new URL('../' + file, import.meta.url), 'utf8');
 
 test('contact email is canonical and the mailto link has a UTF-8-safe subject/body', () => {
-  assert.equal(CONTACT_EMAIL, 'visualjambo@gmail.com');
+  assert.equal(CONTACT_EMAIL, 'jami@putkikasvu.fi');
   assert.equal(CONTACT_PLAIN_MAILTO, 'mailto:' + CONTACT_EMAIL);
   const url = new URL(CONTACT_MAILTO);
   assert.equal(url.protocol, 'mailto:');
