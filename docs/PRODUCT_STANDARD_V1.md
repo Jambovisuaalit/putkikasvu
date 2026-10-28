@@ -9,12 +9,12 @@ Yrityskohtainen, epävirallinen demo ennen ostopäätöstä. Asiakkaan tilaama v
 | --- | --- |
 | Myyjä | Tmi Jami Harju, Y-tunnus 3581581-6 (YTJ 22.10.2026 vahvisti Y-tunnuksen ja yksityisen elinkeinonharjoittajan yritysmuodon; toiminimi ja osoite erikseen vahvistettava) |
 | Hinta | Standard 590 €; 295 € ennakko kirjallisen tilauksen jälkeen, 295 € hyväksytyn julkaisuvalmiin version jälkeen ennen julkaisua |
-| ALV | Userin ilmoittama vähäisen toiminnan verovapaus; YTJ:n aktiivirekistereissä ei näy ALV-merkintää 22.10.2026; 2025/2026 liikevaihto ja vähäisen toiminnan soveltuvuus tarkistettava ennen laskutusta |
+| ALV | Myyjän 28.10.2026 vahvistama: ei ALV-rekisterissä, vähäinen liiketoiminta. Laskumerkintä ja vähäisen toiminnan edellytysten seuranta tarkistetaan ennen laskutusta |
 | Sivut | Enintään 3 varsinaista sivua: Etusivu, Palvelut ja Yhteystiedot |
 | Sisältö | Mobiilioptimoitu rakenne; palvelut ja toimialue; klikattava puhelin ja sähköposti; ohjattu tarjouspyyntö; otsikko-/meta-/alt-perus-SEO; asiakkaan tiedot ja hyväksytyt kuvat |
 | Muutokset | Yksi koottu korjauskierros alkuperäiseen toimitussisältöön; uusi rakenne/lisätoiminnot erillisenä lisätyönä |
-| Esikatselu | Tavoite 5 arkipäivää vasta siitä, kun 295 € ennakko, tarvittavat aineistot ja käyttöoikeudet on vastaanotettu |
-| Julkaisu | Tavoite 2 arkipäivää asiakkaan nimenomaisesta kirjallisesta hyväksynnästä ja loppumaksusta, jos domain-, hosting- ja DNS-oikeudet ovat käytettävissä |
+| Esikatselu | Sovitaan kirjallisesti tilauskohtaisesti; työn aloitus edellyttää sovittua ennakkoa, aineistoja ja käyttöoikeuksia |
+| Julkaisu | Julkaisuajankohta sovitaan kirjallisesti; edellytyksinä asiakkaan hyväksyntä, loppumaksu sekä domain-, hosting- ja DNS-valmius |
 | Domain ja hosting | Asiakkaan nimissä ja asiakkaan erikseen maksamina; Standard sisältää yhden sovitun teknisen käyttöönoton ja HTTPS-lopputarkistuksen |
 | Luovutus | Asiakkaan oma materiaali säilyy asiakkaan omistuksessa; lopulliseen sopimukseen kirjataan maksettujen sivujen käyttö-, muokkaus- ja siirto-oikeudet, kolmansien lisenssejä kunnioittaen |
 | Ylläpito | Erillinen valinnainen 29 €/kk ehdotus: kuukausittainen toimivuustarkistus, yksi enintään 10 minuutin teksti- tai kuvapäivitys ja alustava häiriöselvitys. Ei sisällä domainia, hostingia eikä suuria muutoksia. Sopimus ja irtisanominen erikseen (ehdotus 1 kk). |
