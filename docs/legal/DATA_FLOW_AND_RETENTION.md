@@ -1,6 +1,10 @@
 # Putkikasvu — tietosuojainventaario
 Päivitetty 22.10.2026. Omistaja: Harju Jami / Putkikasvu, jami@putkikasvu.fi. Y-tunnus 3581581-6 on käyttäjän ilmoittama; rekisteriyhteyttä ei ole tässä tarkistuksessa vahvistettu.
 
+## Varmennuksen rajaus
+**EI TODETTU:** CRM:n, Gmailin, Resendin ja muiden käytössä olevien palvelujen suunniteltujen säilytys- ja poistokäytäntöjen automaattista toteutumista. Pelkkä dokumentaatio ei ole todistus poistosta.
+Kuluttaja-Gmailiin ei oleteta Google Workspace -tason tietojenkäsittelysopimusta, Vault-säilytystä tai muita organisaatio-ominaisuuksia. Todellinen tilisopimus on varmistettava erikseen.
+
 ## Toteutunut käsittely
 Putkikasvu on oman prospektoinnin, markkinointikieltojen, sopimusten ja laskutuksen rekisterinpitäjä. Maksupalvelun oma lakisääteinen käsittely arvioidaan erikseen. Julkinen lähde ei yksin oikeuta sähköpostimarkkinointiin: henkilökohtaisen työosoitteen käyttötarkoitus, käsittelyperuste, tarvittaessa tasapainotesti ja GDPR 14 -informointi tarkistetaan ennen yhteydenottoa.
 
