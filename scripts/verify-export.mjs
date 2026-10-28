@@ -16,7 +16,7 @@ for (const route of ['index','ehdot','tietosuoja','404']) {
   assert.ok(existsSync(path.join('out',match[1])),match[1]);
 }
 const home=readFileSync('out/index.html','utf8');
-assert.match(home,/mailto:jami@putkikasvu\.com/);
+assert.match(home,/mailto:jami@putkikasvu\.fi/);
 for(const id of ['miten','hinta','esimerkit'])assert.match(home,new RegExp(`id="${id}"`));
 assert.equal((home.match(/<summary\b/g)||[]).length,4);
 console.log('Static export checks PASS: routes, 404, assets, headings, anchors, FAQ and no write/payment forms.');
