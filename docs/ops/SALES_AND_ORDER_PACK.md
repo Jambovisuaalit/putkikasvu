@@ -166,11 +166,19 @@ Päivitetty käyttäjän tietojen perusteella 22.10.2026.
 ### Maksaminen: olemassa oleva resurssi, ei uusi integraatio
 Omistajan toimittama Revolut-maksulinkki:
 https://checkout.revolut.com/pay/595062b8-6377-4e8d-bb80-fd53ecced9c9
-Linkkiä ei tarvitse luoda uudelleen. Linkin avaaminen lukutyökalulla ei onnistunut;
-summaa, valuuttaa, maksunsaajaa, linkin voimassaoloa tai tilausviitekenttää ei siten
-vahvistettu tässä työssä. Älä lisää linkkiä asiakasviestiin ennen niiden tarkistusta.
-Olemassa oleva dokumentaatio käsittelee jaettua 295 EUR linkkiä, mutta sen kuvaus
-ei yksin todista juuri tämän URL:n nykyistä sisältöä.
+Linkkiä ei tarvitse luoda uudelleen. 28.10.2026 asiakaspuolen maksusivu avattiin onnistuneesti lukutilassa (HTTP 200).
+Se näyttää **Pay €295**, valuutta **EUR**, vastaanottajan näyttönimi **Putkikasvu.fi**,
+ja kentän **Yrityksesi nimi?**. Maksua ei suoritettu eikä checkoutin seuraavaan
+vaiheeseen edetty. Tämä vahvistaa 295 euron näkyvän kertamaksun määrän,
+mutta EI osoita maksunsaajan rekisteröityä oikeushenkilöä, lopullista
+tilitystiliä, linkin mahdollista käyttörajaa tai yksilöllistä tilausviitettä.
+
+Maksulinkki luovutetaan vain yksilöidyn tarjouksen kirjallisen hyväksynnän
+ja laskutus-/ennakkoperintäedellytysten tarkistuksen jälkeen. Ennen asiakkaalle
+lähettämistä avaa myös Revolut Pro / Business -hallinta ja varmista linkin omistaja,
+täsmälleen 295 euron veloitus, tilitystili, linkin tila,
+mahdolliset palvelumaksut ja tilauskohtainen kohdistus. Älä oleta
+asiakkaan kirjoittaman yritysnimen olevan yksilöllinen tilausnumero.
 Jaettu linkki ei ole yksilöllinen tilausviite. Kumpikin 295 € erä kohdistetaan
 omaan maksutapahtumaan ja hyväksyttyyn tilaukseen palveluntarjoajan näkymästä.
 
