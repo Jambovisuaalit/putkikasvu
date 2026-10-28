@@ -37,3 +37,7 @@ Julkinen tuotanto ja suojatut esikatselut pidetään erillään Vercelin Standar
 ## Tarkistukset
 
 17 testiä: hinta, sisältö, brändi, saavutettava navigaatio ja lomakkeen palvelinpuolen validointi, virheet sekä vastaanottajan rajaus. Lisäksi tuotantokäännös ja selaimen tarkistus.
+
+## First Payment Agent v1
+
+Suojattu tarkistus- ja valmisteluprosessi: `agents/first-payment/README.md`. Vain kaksi yksityisesti määritettyä prioriteettia, tuore CRM/postilaatikkosnapshot, vastausluokittelu ja kirjallinen tarjousluonnos. Omistaja hyväksyy kaikki viestit. API ei lähetä asiakasviestejä eikä käynnistä maksamista. Ei itsenäistä Gmail/Sheets-tausta-ajoa tai ajastusta tässä versiossa.

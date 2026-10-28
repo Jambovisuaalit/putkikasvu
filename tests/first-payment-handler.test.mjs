@@ -1,0 +1,11 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {handleFirstPayment} from '../lib/first-payment-handler.mjs';
+const scope=['PK01','PK02'].map((id,i)=>({id,company:`Test ${i}`,recipient:`test${i}@example.com`,sentMessageIds:[`<sent${i}@example.com>`]}));
+const env={FIRST_PAYMENT_AGENT_TOKEN:'unit-test-token',FIRST_PAYMENT_SCOPE_JSON:JSON.stringify(scope)};
+const snapshot=()=>({crm:{status:'ok',checkedAt:new Date().toISOString(),records:scope.map(s=>({...s,firstSentAt:'2026-01-01T00:00:00Z',followupPermission:'manual_one_message',optOut:false,followupSent:false,delivery:'delivered'}))},mailbox:{status:'ok',checkedAt:new Date().toISOString(),messages:[]}});
+const req=(body=snapshot(),token='Bearer unit-test-token')=>new Request('https://test.example/api/internal/first-payment',{method:'POST',headers:{authorization:token,'content-type':'application/json'},body:JSON.stringify(body)});
+test('private endpoint rejects unauthenticated and unicode credentials',async()=>{for(const token of ['', 'Bearer wrong','ä'.repeat(27)])assert.equal((await handleFirstPayment(req(snapshot(),token),env)).status,401);});
+test('unconfigured endpoint fails closed',async()=>{assert.equal((await handleFirstPayment(req(),{})).status,503);});
+test('authenticated current snapshot produces private review-only plan',async()=>{const response=await handleFirstPayment(req(),env);assert.equal(response.status,200);assert.equal(response.headers.get('cache-control'),'private, no-store');const body=await response.json();assert.equal(body.externalSends,0);assert.equal(body.records[0].sendAllowed,false);});
+test('configuration binds actual recipient and message references',async()=>{const body=snapshot();body.crm.records[0].recipient='other@example.com';assert.equal((await handleFirstPayment(req(body),env)).status,403);});
+test('stale source and oversized payload cannot execute',async()=>{const body=snapshot();body.crm.checkedAt='2020-01-01';assert.equal((await handleFirstPayment(req(body),env)).status,422);assert.equal((await handleFirstPayment(req({payload:'x'.repeat(130000)}),env)).status,413);});

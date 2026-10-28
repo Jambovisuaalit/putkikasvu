@@ -3,8 +3,9 @@ import assert from 'node:assert/strict';
 import {existsSync,readFileSync,readdirSync} from 'node:fs';
 const root=new URL('../',import.meta.url);
 const read=p=>readFileSync(new URL(p,root),'utf8');
-test('server release only enables the approved inquiry endpoint',()=>{
- assert.deepEqual(readdirSync(new URL('app/api',root)),['tarjous']);
+test('server release only enables the inquiry and protected agent endpoints',()=>{
+ assert.deepEqual(readdirSync(new URL('app/api',root)).sort(),['internal','tarjous']);
+ assert.deepEqual(readdirSync(new URL('app/api/internal',root)),['first-payment']);
  assert.match(read('app/api/tarjous/route.js'),/export async function POST/);
  for(const p of ['database','lib/server','lib/pilot-order.ts','app/demo']) assert.equal(existsSync(new URL(p,root)),false,p);
  assert.doesNotMatch(read('next.config.mjs'),/output:.*export/);
