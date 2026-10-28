@@ -47,11 +47,13 @@ jobs:
           node-version: '22'
       - name: Check credential prerequisites without printing values
         env:
+          PK_SHEET_ID: ${{ vars.PK_SHEET_ID }}
           PK_GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.PK_GOOGLE_SERVICE_ACCOUNT_JSON }}
           PK_RESEND_READ_API_KEY: ${{ secrets.PK_RESEND_READ_API_KEY }}
         run: node agent/preflight.mjs
       - name: Read-only external audit
         env:
+          PK_SHEET_ID: ${{ vars.PK_SHEET_ID }}
           PK_GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.PK_GOOGLE_SERVICE_ACCOUNT_JSON }}
           PK_RESEND_READ_API_KEY: ${{ secrets.PK_RESEND_READ_API_KEY }}
         run: node agent/run.mjs --live-read

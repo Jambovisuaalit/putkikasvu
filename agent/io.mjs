@@ -1,5 +1,5 @@
 import {createSign} from 'node:crypto';
-const id='1xVjcWb8lq4xVwSFu6oMkwdPeLXY8oKAtVfv2qhx23LA';
+// Spreadsheet ID is runtime configuration; never commit a customer workbook ID.
 const ranges={
   followup:"'SEURANTA 22-10-2026'!A1:J100",
   blocks:"'ESTOLISTA'!A1:J100",
@@ -22,7 +22,7 @@ async function googleToken(json) {
   if(!response.ok) throw Error('OAuth failed: '+response.status);
   return (await response.json()).access_token;
 }
-async function readSheet(token,range) {
+async function readSheet(token,range,id) {
   const url='https://sheets.googleapis.com/v4/spreadsheets/'+id+'/values/'+encodeURIComponent(range);
   const r=await fetch(url,{headers:{authorization:'Bearer '+token},signal:AbortSignal.timeout(15000)});
   if(!r.ok) throw Error('Sheets read failed: '+r.status);
@@ -37,11 +37,12 @@ async function resend(key,path) {
   return r.json();
 }
 export async function liveSnapshot(env=process.env) {
-  if(!env.PK_GOOGLE_SERVICE_ACCOUNT_JSON||!env.PK_RESEND_READ_API_KEY)
+  if(!env.PK_GOOGLE_SERVICE_ACCOUNT_JSON||!env.PK_RESEND_READ_API_KEY||!env.PK_SHEET_ID)
     throw Error('Read-only credentials not configured');
+  if(!/^[a-zA-Z0-9_-]{15,}$/.test(env.PK_SHEET_ID)) throw Error('Invalid spreadsheet configuration');
   const token=await googleToken(env.PK_GOOGLE_SERVICE_ACCOUNT_JSON);
   const [followup,blocks,sent,page]=await Promise.all([
-    readSheet(token,ranges.followup),readSheet(token,ranges.blocks),readSheet(token,ranges.sent),
+    readSheet(token,ranges.followup,env.PK_SHEET_ID),readSheet(token,ranges.blocks,env.PK_SHEET_ID),readSheet(token,ranges.sent,env.PK_SHEET_ID),
     resend(env.PK_RESEND_READ_API_KEY,'/emails/receiving?limit=100')]);
   if(!Array.isArray(page.data)) throw Error('Invalid Resend list response');
   const addresses=new Set(followup.slice(1)
