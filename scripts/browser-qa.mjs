@@ -52,9 +52,40 @@ for(const width of [375,390,768,1440]){
   await overflow(page,"home "+width);
   assert.equal(await page.locator(".navlinks a[href='#miten']").isVisible(),true);
   assert.equal(await page.locator(".hero a[href^='mailto:']").isVisible(),true);
-  assert.match(await page.locator(".hero a[href^='mailto:']").getAttribute("href"),/visualjambo@gmail\.com/);
+  assert.match(await page.locator(".hero a[href^='mailto:']").getAttribute("href"),/jami@putkikasvu\.fi/);
   assert.equal(await page.locator("a[href*='checkout.revolut.com']").count(),0);
   await page.screenshot({timeout:12000,path:path.join(screenshots,"home-"+width+".png"),fullPage:true});
+ });
+ await check("home "+width+"px: real click resolves prefilled email draft and accessible fallback",async()=>{
+  await page.goto(base+"/",{waitUntil:"domcontentloaded"});
+  const links=page.locator('a[href^="mailto:jami@putkikasvu.fi?"]');
+  assert.equal(await links.count(),6);
+  const href=await links.first().getAttribute("href");
+  const parsed=new URL(href);
+  assert.equal(parsed.protocol,"mailto:");
+  assert.equal(parsed.pathname,"jami@putkikasvu.fi");
+  assert.equal(parsed.searchParams.get("subject"),"Putkikasvu | Esimerkkisivupyyntö");
+  const body=parsed.searchParams.get("body");
+  for(const term of ["Yritys:","Paikkakunta / palvelualue:","Yhteyshenkilö:"])
+    assert.ok(body.includes(term),term);
+  // Intercept navigation ONLY in this local Chromium test: no mail client launched.
+  await page.evaluate(()=>{window.__mailtoClicks=0;document.addEventListener("click",event=>{
+    if(event.target?.closest?.('a[href^="mailto:"]')){event.preventDefault();window.__mailtoClicks++;}
+  },true)});
+  await links.first().click();
+  assert.equal(await page.evaluate(()=>window.__mailtoClicks),1);
+  const fallback=page.locator('#yhteys');
+  assert.equal(await fallback.count(),1);
+  assert.equal(await fallback.locator('a[href="mailto:jami@putkikasvu.fi"]').count(),1);
+  const copy=fallback.getByRole("button",{name:"Kopioi sähköpostiosoite"});
+  assert.equal(await copy.isVisible(),true);
+  // Next.js static HTML can arrive before client-side hydration. Wait for all
+  // page assets/React listeners rather than treating pre-hydration clicks as failure.
+  await page.waitForLoadState("networkidle",{timeout:12000});
+  await copy.click();
+  await page.waitForFunction(()=>/Osoite kopioitu|Kopiointi ei onnistunut/.test(document.querySelector("#yhteys [role=status]")?.textContent||""),null,{timeout:5000});
+  const status=await fallback.locator('[role="status"]').innerText();
+  assert.match(status,/Osoite kopioitu|Kopiointi ei onnistunut/);
  });
  await check("home "+width+"px: anchors and FAQ keyboard",async()=>{
   await page.goto(base+"/",{waitUntil:"domcontentloaded"});
