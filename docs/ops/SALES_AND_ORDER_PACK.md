@@ -147,7 +147,7 @@ Maksu varmennetaan palveluntarjoajan omasta näkymästä tai tiliotteelta. Asiak
 ## 10. Lähetysvalmius
 Tekstiehdot v1.2 on hyväksytty: niitä ei tarvitse hyväksyttää uudelleen.
 Avoimet faktat ja kaupallisen käyttöönoton portit: ../legal/WRITTEN_APPROVAL_PACKAGE.md, kohta B.
-Varmennettava ennen sitovaa tarjous-/tilausvaihetta: virallinen myyjän nimi ja osoite, ennakkoperinnän järjestely, ALV- ja laskumerkinnät sekä todelliset tietosuojakäytännöt. Ennen maksupyyntöä lisäksi maksunsaaja, maksutili, tapahtuman varmennus ja erillinen maksamisen GO. Älä merkitse näitä toteutuneiksi pelkän tekstipaketin perusteella.
+Varmennettava ennen sitovaa tarjous-/tilausvaihetta: virallinen myyjän nimi ja osoite, ALV- ja laskumerkinnät sekä todelliset tietosuojakäytännöt. Omistajan 28.10.2026 päätöksen mukaan ennakkoperintäasiat hoidetaan erillisenä veroasioiden työnkulkuna eivätkä ole myyntiautomaation sisäinen esto; tämä ei merkitse vapautusta lakisääteisistä velvoitteista. Ennen maksupyyntöä lisäksi maksunsaaja, maksutili, tapahtuman varmennus ja erillinen maksamisen GO. Älä merkitse näitä toteutuneiksi pelkän tekstipaketin perusteella.
 
 ## Mittarit ensimmäiselle asiakkaalle
 Seuraa: kiinnostus → tarjous → hyväksytty tilaus → maksettu ennakko → toimitus.
@@ -174,7 +174,7 @@ mutta EI osoita maksunsaajan rekisteröityä oikeushenkilöä, lopullista
 tilitystiliä, linkin mahdollista käyttörajaa tai yksilöllistä tilausviitettä.
 
 Maksulinkki luovutetaan vain yksilöidyn tarjouksen kirjallisen hyväksynnän
-ja laskutus-/ennakkoperintäedellytysten tarkistuksen jälkeen. Ennen asiakkaalle
+ja tilaustietojen sekä maksutavan tarkistuksen jälkeen. Ennen asiakkaalle
 lähettämistä avaa myös Revolut Pro / Business -hallinta ja varmista linkin omistaja,
 täsmälleen 295 euron veloitus, tilitystili, linkin tila,
 mahdolliset palvelumaksut ja tilauskohtainen kohdistus. Älä oleta
