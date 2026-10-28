@@ -52,7 +52,7 @@ for(const width of [375,390,768,1440]){
   await overflow(page,"home "+width);
   assert.equal(await page.locator(".navlinks a[href='#miten']").isVisible(),true);
   assert.equal(await page.locator(".hero a[href^='mailto:']").isVisible(),true);
-  assert.match(await page.locator(".hero a[href^='mailto:']").getAttribute("href"),/jami@putkikasvu\.com/);
+  assert.match(await page.locator(".hero a[href^='mailto:']").getAttribute("href"),/jami@putkikasvu\.fi/);
   assert.equal(await page.locator("a[href*='checkout.revolut.com']").count(),0);
   await page.screenshot({timeout:12000,path:path.join(screenshots,"home-"+width+".png"),fullPage:true});
  });
