@@ -58,12 +58,12 @@ for(const width of [375,390,768,1440]){
  });
  await check("home "+width+"px: real click resolves prefilled email draft and accessible fallback",async()=>{
   await page.goto(base+"/",{waitUntil:"domcontentloaded"});
-  const links=page.locator('a[href^="mailto:jami@putkikasvu.com?"]');
+  const links=page.locator('a[href^="mailto:jami@putkikasvu.fi?"]');
   assert.equal(await links.count(),6);
   const href=await links.first().getAttribute("href");
   const parsed=new URL(href);
   assert.equal(parsed.protocol,"mailto:");
-  assert.equal(parsed.pathname,"jami@putkikasvu.com");
+  assert.equal(parsed.pathname,"jami@putkikasvu.fi");
   assert.equal(parsed.searchParams.get("subject"),"Putkikasvu | Esimerkkisivupyyntö");
   const body=parsed.searchParams.get("body");
   for(const term of ["Yritys:","Paikkakunta / palvelualue:","Yhteyshenkilö:"])
@@ -76,7 +76,7 @@ for(const width of [375,390,768,1440]){
   assert.equal(await page.evaluate(()=>window.__mailtoClicks),1);
   const fallback=page.locator('#yhteys');
   assert.equal(await fallback.count(),1);
-  assert.equal(await fallback.locator('a[href="mailto:jami@putkikasvu.com"]').count(),1);
+  assert.equal(await fallback.locator('a[href="mailto:jami@putkikasvu.fi"]').count(),1);
   const copy=fallback.getByRole("button",{name:"Kopioi sähköpostiosoite"});
   assert.equal(await copy.isVisible(),true);
   // Next.js static HTML can arrive before client-side hydration. Wait for all
