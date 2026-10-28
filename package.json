@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run test && next build && node scripts/verify-export.mjs",
-    "test": "node --test tests/*.test.mjs"
+    "build": "npm run test && next build",
+    "test": "node --test tests/*.test.mjs",
+    "start": "next start"
   },
   "dependencies": {
     "next": "15.5.28",

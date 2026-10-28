@@ -5,5 +5,5 @@ export default function SkipLink() {
     // Set keyboard focus reliably after React hydration as well.
     document.getElementById("main-content")?.focus({ preventScroll: true });
   }
-  return <a className="skip-link" href="#main-content" onClick={focusMain}>Siirry sisältöön</a>;
+  return <a className="skip" href="#main-content" onClick={focusMain}>Siirry sisältöön</a>;
 }

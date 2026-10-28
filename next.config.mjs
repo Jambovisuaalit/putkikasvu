@@ -1,6 +1,2 @@
-/** Static marketing release: no application server or write endpoints. */
-const nextConfig = {
-  output: 'export',
-  poweredByHeader: false,
-};
+const nextConfig = { poweredByHeader: false };
 export default nextConfig;

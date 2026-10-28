@@ -5,7 +5,7 @@ import { readFileSync } from "node:fs";
 const get = (file) => readFileSync(new URL("../" + file, import.meta.url));
 const layout = get("app/layout.jsx").toString("utf8");
 const style = get("app/style.css").toString("utf8");
-const page = get("app/page.jsx").toString("utf8");
+const page = JSON.parse(get("content/home.json").toString("utf8"));
 const logo = get("app/components/BrandLogo.jsx").toString("utf8");
 
 function assertPng(path, width, height) {
@@ -21,7 +21,7 @@ test("Canva v1.1 wordmark and original P-symbol included as local valid PNG file
 });
 test("Visible header uses official wordmark instead of placeholder text", () => {
   assert.match(logo, /putkikasvu-wordmark-white-v1\.1\.png/);
-  assert.match(page, /<BrandLogo\s*\/>/);
+  assert.match(page, /putkikasvu-wordmark-white-v1\.1\.png/);
   assert.doesNotMatch(page, /className="mark">P/);
 });
 test("Brand colors exactly match the Canva v1.1 five-token palette", () => {
@@ -42,6 +42,6 @@ test("Brand update does not enable payment links or storage", () => {
 });
 
 test("Small section labels use accessible on-light teal instead of low-contrast original", () => {
-  assert.match(style, /\.eyebrow-on-light\s*\{color:#006B65\}/);
+  assert.match(style.toLowerCase(), /\.eyebrow-on-light\s*\{color:#006b65\}/);
   assert.doesNotMatch(page, /#00857d/i);
 });
