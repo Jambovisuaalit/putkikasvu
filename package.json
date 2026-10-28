@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run test && next build && node scripts/verify-export.mjs",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "agent:dry-run": "node agent/run.mjs --fixture",
+    "agent:check": "node agent/run.mjs --live-read"
   },
   "dependencies": {
     "next": "15.5.28",

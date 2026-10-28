@@ -1,0 +1,41 @@
+name: First Payment Agent (read-only)
+on:
+  push:
+    branches: [feature/first-payment-agent-v1]
+    paths:
+      - 'agent/**'
+      - 'tests/first-payment-agent.test.mjs'
+      - '.github/workflows/first-payment-agent.yml'
+      - 'package.json'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'fixture or live-read'
+        type: choice
+        default: fixture
+        options: [fixture, live-read]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+      - run: npm test
+      - name: Run read-only pilot
+        env:
+          PK_GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.PK_GOOGLE_SERVICE_ACCOUNT_JSON }}
+          PK_RESEND_READ_API_KEY: ${{ secrets.PK_RESEND_READ_API_KEY }}
+          MODE: ${{ inputs.mode }}
+        run: |
+          if [ "${MODE:-fixture}" = "live-read" ]; then
+            node agent/run.mjs --live-read
+          else
+            node agent/run.mjs --fixture
+          fi
