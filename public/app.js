@@ -46,4 +46,5 @@ if (inquiryForm) {
    showStatus(error.name === 'TimeoutError' ? 'Lähetyksen vahvistaminen kesti liian kauan. Voit yrittää uudelleen samoilla tiedoilla tai lähettää sähköpostin osoitteeseen jami@putkikasvu.fi.' : error.message || 'Verkkoyhteydessä tapahtui virhe. Yritä uudelleen tai lähetä sähköpostia osoitteeseen jami@putkikasvu.fi.','error');
   } finally { pending = false; submitButton.disabled = false; inquiryForm.removeAttribute('aria-busy'); status.focus(); }
  });
+ submitButton.disabled = false;
 }
