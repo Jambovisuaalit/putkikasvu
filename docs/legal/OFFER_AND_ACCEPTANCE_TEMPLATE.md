@@ -16,7 +16,6 @@
 **Sisäinen tarkistus ennen lähettämistä:** ALV-teksti perustuu myyjän ilmoitukseen. Rekisteritiedon sekä vuosien 2025 ja 2026 vähäisen toiminnan edellytysten varmennusta ei merkitä tehdyksi tämän ilmoituksen perusteella.
 **Maksuerät:** 295 € kirjallisen tilaussopimuksen jälkeen; 295 € asiakkaan kirjallisesti hyväksyttyä julkaisuvalmiin toteutuksen, ennen julkaisua.
 **Maksutapa ja eräpäivä:** [manuaalisesti vahvistettava lasku/tili/viite]; maksu tunnistetaan tiliotteelta ennen työn aloitusta/julkaisua.
-**Ennakonpidätys:** [varmista voimassaoleva ennakkoperintärekisteri tai ennakonpidätyksen käytännöt ennen työkorvauslaskua].
 
 **Aikataulu:** esikatselun sovittu ajankohta [päiväys tai arvio ja aloitusehdot]; julkaisun sovittu ajankohta [päiväys tai arvio ja edellytykset]. Aikataulu vahvistetaan kirjallisesti asiakaskohtaisesti ennen tilausta.
 
