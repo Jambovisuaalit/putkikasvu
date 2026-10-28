@@ -7,7 +7,7 @@ const sections = [
   {
     title: '1. Sopijapuolet ja soveltamisala',
     paragraphs: [
-      'Palveluntarjoaja on Tmi Jami Harju (Y-tunnus 3581581-6), joka käyttää Putkikasvu-palvelubrändiä. Yritysosoite: Mannerheimintie 109, Helsinki (palveluntarjoajan ilmoittama). Sähköposti: visualjambo@gmail.com. Näitä ehtoja sovelletaan vain elinkeinotoimintaa varten tilaavien yritysasiakkaiden Putkikasvu Standard -toimituksiin. Kuluttajatilauksia ei hyväksytä näillä ehdoilla.',
+      'Palveluntarjoaja on Tmi Jami Harju (Y-tunnus 3581581-6), joka käyttää Putkikasvu-palvelubrändiä. Yritysosoite: Mannerheimintie 109, Helsinki (palveluntarjoajan ilmoittama). Sähköposti: jami@putkikasvu.fi. Näitä ehtoja sovelletaan vain elinkeinotoimintaa varten tilaavien yritysasiakkaiden Putkikasvu Standard -toimituksiin. Kuluttajatilauksia ei hyväksytä näillä ehdoilla.',
       'Asiakaskohtainen kirjallinen tarjous, siinä sovittu toimituserittely ja sen jälkeen nämä ehdot muodostavat sopimuksen. Ristiriitatilanteessa yksilöity tarjous on ensisijainen. Tarjouksessa ja tilausvahvistuksessa ilmoitetaan myyjän maantieteellinen yritysosoite, sopijapuolten tiedot, palvelun rajaukset, ehdot ja versio. Ehdot toimitetaan asiakkaalle ennen hyväksyntää sellaisessa muodossa, että ne voi tallentaa ja toisintaa.'
     ]
   },
@@ -29,14 +29,14 @@ const sections = [
     title: '4. Hinta, ALV ja maksut',
     paragraphs: [
       'Kokonaishinta on 590 euroa: 295 euroa ennakkomaksuna vahvistetun tilauksen jälkeen ja 295 euroa hyväksytyn julkaisuvalmiin sivuston jälkeen mutta ennen tuotantojulkaisua. Ennakko hyvitetään aina kokonaishinnasta. Erillisiä pakollisia tilaus- tai ylläpitomaksuja ei lisätä.',
-      'Myyjä on ilmoittanut, ettei ole arvonlisäverovelvollisten rekisterissä. Siksi ilmoitettuun hintaan ei tämän tiedon perusteella lisätä arvonlisäveroa; verokohtelu ja rekisteritilanne tarkistetaan ennen laskutusta. Jos olosuhteet muuttuvat, mahdollisesta hinnan ja veron käsittelystä sovitaan asiakkaan kanssa ennen uusia velvoitteita. Maksutapa ja eräpäivät ilmoitetaan laskussa tai tilausvahvistuksessa; tällä sivustolla maksaminen ei ole käytössä.',
+      'Myyjä on ilmoittanut, ettei ole arvonlisäverovelvollisten rekisterissä. Myyjän ilmoituksen mukaan vähäisen liiketoiminnan perusteella arvonlisäveroa ei lisätä 590 euron hintaan. Vähäisen toiminnan soveltuminen varmistetaan myyjän liikevaihtotiedoista ennen laskutusta. Jos olosuhteet muuttuvat, mahdollisesta hinnan ja veron käsittelystä sovitaan asiakkaan kanssa ennen uusia velvoitteita. Maksutapa ja eräpäivät ilmoitetaan laskussa tai tilausvahvistuksessa; tällä sivustolla maksaminen ei ole käytössä.',
       'Hyväksytyt lisätyöt laskutetaan erikseen niiden nimenomaisesti hyväksytyn tarjouksen mukaan. Maksun viivästymiseen sovelletaan soveltuvaa korkolakia; maksuerimielisyydet käsitellään ennen riidanalaisen osan perimistä.'
     ]
   },
   {
     title: '5. Aikataulu ja asiakkaan myötävaikutus',
     paragraphs: [
-      'Ensimmäinen esikatselu toimitetaan tavoiteaikatauluna viiden arkipäivän kuluessa siitä, kun ennakko on vastaanotettu sekä kaikki tilausvahvistuksessa pyydetyt aineistot ja käyttöoikeudet on saatu. Julkaisu tavoitellaan kahden arkipäivän kuluessa asiakkaan kirjallisesta hyväksynnästä, loppumaksusta sekä toimivan domainin ja hostingin käyttöönottoedellytysten täyttymisestä.',
+      'Esikatselun ja julkaisun määräpäivät sovitaan kirjallisesti yksilöidyssä tarjouksessa ennen tilauksen vahvistamista. Toteutus aloitetaan sovitusti, kun ennakko sekä tilausvahvistuksessa pyydetyt aineistot ja käyttöoikeudet on saatu. Tuotantojulkaisu edellyttää lisäksi asiakkaan nimenomaista kirjallista hyväksyntää, loppumaksua sekä toimivaa domainia ja hostingia.',
       'Asiakas vastaa toimittamiensa yritystietojen oikeellisuudesta, aineistojen oikeuksista, omista palvelutilauksistaan ja hyväksynnöistään. Asiakkaasta tai kolmannesta osapuolesta johtuvan viiveen vaikutuksesta ilmoitetaan, ja uusi realistinen toimituspäivä sovitaan. Jos palveluntarjoaja viivästyy olennaisesti, asiakas voi vaatia korjaavaa aikataulua ja olennaisen sopimusrikkomuksen perusteella päättää sopimuksen.'
     ]
   },
@@ -64,7 +64,7 @@ const sections = [
     title: '9. Domain, hosting ja ylläpito',
     paragraphs: [
       'Domain rekisteröidään asiakkaan nimiin ja asiakkaan hallinnoimalle tilille. Asiakas maksaa domainin uusimisen ja hostingin suoraan palveluntarjoajille sekä säilyttää näiden hallintaoikeudet. Putkikasvu avustaa sovitussa DNS-kytkennässä ja yhdessä käyttöönotossa. Julkaisua ei luvata ennen kuin tuotantokäyttöön soveltuva hosting on valittu ja käyttöoikeudet ovat kunnossa.',
-      'Jatkuva ylläpito ei sisälly 590 euron toimitukseen. Mahdollinen 29 €/kk ylläpito on vapaaehtoinen ja syntyy vain erillisellä kirjallisella sopimuksella; sen palvelutaso, rajaukset, irtisanomisaika ja vastuut annetaan asiakkaalle ennen tilausta. Ilman ylläpitosopimusta asiakkaan hostingin, domainin, uusintojen ja myöhempien muutosten hallinta kuuluu asiakkaalle.'
+      'Jatkuva ylläpito ei sisälly 590 euron toimitukseen. Mahdollinen ylläpito on vapaaehtoinen erillinen palvelu, josta ei ole vielä hyväksytty lopullista sopimustuotetta. Sen hinta, palvelutaso, rajaukset, irtisanomisaika ja vastuut annetaan erillisessä kirjallisessa tarjouksessa ennen tilausta. Ilman ylläpitosopimusta asiakkaan hostingin, domainin, uusintojen ja myöhempien muutosten hallinta kuuluu asiakkaalle.'
     ]
   },
   {
