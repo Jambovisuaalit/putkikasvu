@@ -12,7 +12,7 @@ Myytävä Standard on 590 €: enintään 3 sivua (etusivu, palvelut, yhteystied
 5. **Tarjous:** luonnostele yksilöity kirjallinen tarjous `docs/legal/OFFER_AND_ACCEPTANCE_TEMPLATE.md` pohjalta; ÄLÄ lähetä juridisesti sitovaa tilaustarjousta ennen kohtien P0 hyväksyntää.
 
 ## P0 – estä kaupallinen tilaus ja ennakkolinkki kunnes
-- [ ] Ennakkoperintärekisteri voimassa tai työkorvauksen ennakonpidätys ostajalle asianmukaisesti järjestetty. **Y6-paperihakemus on käyttäjän suunnitelman mukaan tarkoitus lähettää 23.10.2026; sitä ei ole merkitty jätetyksi eikä hyväksytyksi.**
+- [x] **Omistajan päätös 28.10.2026:** ennakkoperintä/ennakonpidätys käsitellään yrittäjän erillisessä veroasioiden prosessissa, ei myyntiautomaation tilaus- tai maksupyyntöporttina. Tämä ei muuta asiakkaan tai myyjän mahdollisia lakisääteisiä velvoitteita eikä oikeuta myyntiviestiä väittämään, ettei niitä ole.
 - [ ] Myyjän todellinen kauppanimi / allekirjoittajan nimi / maantieteellinen yritysosoite vahvistettu eikä yksityiseksi tarkoitettua osoitetta lisätä julkiseen GitHubiin.
 - [ ] ALV:n vähäisen toiminnan ehdot 2025 ja 2026, laskun oikea veromerkintä vahvistettu.
 - [ ] Sopimusehtojen peruutus, keskeytyksen 90 €/h, 14 päivän palautuksen määräpäätös, lähdekoodin käyttö-/luovutusoikeudet ja ylläpidon 29 €/kk erilliset ehdot hyväksytty omistajan kirjallisena päätöksenä (`docs/legal/WRITTEN_APPROVAL_PACKAGE.md`).
