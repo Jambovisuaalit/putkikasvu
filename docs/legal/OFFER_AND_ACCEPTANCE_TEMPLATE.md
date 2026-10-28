@@ -7,7 +7,7 @@
 **Ostaja:** [virallinen yritys, Y-tunnus, osoite] · **valtuutettu hyväksyjä:** [nimi, asema, yrityssähköposti].
 **Palvelu:** Putkikasvu Standard, yritys [ ], toimialue [ ], hyväksytyt aineistot [ ].
 
-**Sisältyy:** 3 sivua (etusivu / palvelut / yhteystiedot), mobiilirakenne, kevyt tekstieditointi, asiakkaan luvalliset kuvat, soita- ja sähköposti-CTA, teknisen SEO:n perustaso, 1 koottu korjauskierros (enintään 5 kohtuullista tarkennusta), testaus ja 1 sovittu julkaisu.
+**Sisältyy:** enintään 3 sivua (etusivu / palvelut / yhteystiedot), mobiilirakenne, kevyt tekstieditointi, asiakkaan luvalliset kuvat, soita- ja sähköposti-CTA, teknisen SEO:n perustaso, 1 koottu korjauskierros (enintään 5 kohtuullista tarkennusta), testaus ja 1 sovittu julkaisu.
 
 **Ei sisälly:** tallentava lomake, CRM- tai maksukytkentä, ajanvaraus, monikielisyys, referenssien hankinta, kuvatyöt, markkinointi, tulostakuu, hosting- tai domainmaksut, jatkuva ylläpito.
 
@@ -18,11 +18,11 @@
 **Maksutapa ja eräpäivä:** [manuaalisesti vahvistettava lasku/tili/viite]; maksu tunnistetaan tiliotteelta ennen työn aloitusta/julkaisua.
 **Ennakonpidätys:** [varmista voimassaoleva ennakkoperintärekisteri tai ennakonpidätyksen käytännöt ennen työkorvauslaskua].
 
-**Aikataulu:** esikatselun tavoite 5 arkipäivää vasta maksun + kaikkien sovittujen materiaalien/oikeuksien saamisesta; julkaisun tavoite 2 arkipäivää kirjallisen hyväksynnän, loppumaksun ja domain-/hosting-edellytysten täyttymisestä.
+**Aikataulu:** esikatselun sovittu ajankohta [päiväys tai arvio ja aloitusehdot]; julkaisun sovittu ajankohta [päiväys tai arvio ja edellytykset]. Aikataulu vahvistetaan kirjallisesti asiakaskohtaisesti ennen tilausta.
 
 **Domain/hosting:** tilaaja [ ], hallintaoikeuksien haltija [ ], tilaajan kustannukset [arvio tai toimittajan hinnasto], sovittu käyttöönotto [ ].
 
-**Erikseen hyväksyttävät lisätyöt, jos niitä tarvitaan:** [sisältö, määrä, hinta, toteutuksen rajaus]. Ei automaattisia lisämaksuja. Mahdollinen 29 €/kk ylläpito ei kuulu tähän sopimukseen.
+**Erikseen hyväksyttävät lisätyöt, jos niitä tarvitaan:** [sisältö, määrä, hinta, toteutuksen rajaus]. Ei automaattisia lisämaksuja. Jatkuva ylläpito ei kuulu tähän sopimukseen, eikä siitä sovita tämän tarjouksen yhteydessä.
 
 **Sopimuksen liitteet:**
 1. `/ehdot` — Palvelu- ja toimitusehdot, versio/päiväys [ ], toimitettu tallennettavassa muodossa [päiväys].
