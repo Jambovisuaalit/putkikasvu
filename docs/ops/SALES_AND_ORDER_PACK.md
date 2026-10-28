@@ -33,7 +33,7 @@ Hei [nimi],
 
 Liitteenä on [yritykselle] yksilöity tarjous Putkikasvu Standard -verkkosivustosta sekä palvelu- ja toimitusehdot v1.2 [päiväys].
 
-Kokonaishinta on 590 €, maksuerät 295 € + 295 €. Sisältö, sovitut sivut, aikataulutavoitteet ja erikseen maksettavat domain-/hostingkulut on eritelty tarjouksessa.
+Kokonaishinta on 590 €, maksuerät 295 € + 295 €. Sisältö, sovitut sivut, sovittu aikataulu ja erikseen maksettavat domain-/hostingkulut on eritelty tarjouksessa.
 
 Jos hyväksytte tarjouksen yrityksenne puolesta, vastatkaa tarjouksessa olevalla hyväksymistekstillä ja ilmoittakaa nimenne sekä asemanne. Vahvistan tilauksen tämän jälkeen kirjallisesti. Jos haluatte muutoksia, kirjatkaa ne vastaukseen ennen hyväksymistä.
 
@@ -58,7 +58,7 @@ Sopimusehdot: mukana toimitettu v1.2 [päiväys].
 Domain ja hosting: [asiakkaan omistamat palvelut ja erilliset kulut].
 Lisätyöt: [ei sovittuja lisätöitä / erikseen hyväksytty erittely].
 
-Esikatselun tavoite on viisi arkipäivää siitä, kun ennakkomaksu, kaikki sovitut aineistot ja tarvittavat käyttöoikeudet on vastaanotettu. Vahvistan aloituspäivän ja tavoitepäivän erikseen. Pakettiin kuuluu yksi koottu korjauskierros sovitun toimitussisällön sisällä.
+Esikatselun ajankohta sovitaan yksilöidyssä tarjouksessa. Vahvistan aloituspäivän ja sovitun määräpäivän erikseen, kun ennakkomaksu, sovitut aineistot ja tarvittavat käyttöoikeudet on vastaanotettu. Pakettiin kuuluu yksi koottu korjauskierros sovitun toimitussisällön sisällä.
 
 Lähetän ennakkomaksun tiedot erikseen sovitulla menetelmällä.
 
@@ -110,7 +110,7 @@ Sovitut korjaukset on tehty: [suojattu URL], versio [tunniste ja päiväys].
 Jos hyväksytte version julkaisuvalmiiksi, vastatkaa:
 ”Olen tarkistanut esikatselun [URL ja versio/päiväys], hyväksyn sen toimituslaajuuden mukaisena julkaisuvalmiiksi ja pyydän laskuttamaan 295 € loppuerän.”
 
-Julkaisu tehdään loppumaksun varmistamisen jälkeen, kun domainin ja hostingin käyttöönottovalmius on kunnossa. Julkaisun tavoite on kaksi arkipäivää näiden edellytysten täyttymisestä.
+Julkaisu tehdään loppumaksun varmistamisen jälkeen, kun domainin ja hostingin käyttöönottovalmius on kunnossa. Julkaisuajankohta vahvistetaan kirjallisesti tapauskohtaisesti, kun nämä edellytykset täyttyvät.
 
 Jami
 Putkikasvu
