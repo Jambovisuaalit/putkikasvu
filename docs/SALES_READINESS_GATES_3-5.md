@@ -13,7 +13,7 @@ Päiväys 22.10.2026. Tila: **TEKNINEN MYYNTIVERSIO / EI VIELÄ KAUPALLINEN GO**
 - [x] Sopimus- ja tietosuojaluonnokset sekä käsittelysopimuksen luonnos nykyiseen samaan GitHub-haaraan.
 - [x] Verohallinnon 20 000 € vähäisen toiminnan raja tarkistettu virallisesta lähteestä; kuluvan ja edellisen kalenterivuoden raja seurattava.
 - [x] Virallinen YTJ tarkistettu selaimessa 22.10.2026: Y-tunnus 3581581-6, yksityinen elinkeinonharjoittaja, ainoa aktiivinen rekisteröinti Verohallinnon perustiedot.
-- [ ] **P0 – ennakkoperintärekisteri ei näy**. Käyttäjä aikoo jättää paperisen Y6-ilmoituksen 23.10.2026 (suunniteltu, **ei vielä lähetetty**). Vahvista aikanaan saapuminen sekä voimaantulo YTJ:ssä, tai järjestä asiakkaan lakisääteinen ennakonpidätys. Ei normaalia 295 € + 295 € B2B-laskutusta ennen asian ratkaisua.
+- [x] **Omistajan 28.10.2026 päätös:** ennakkoperintä / ennakonpidätys ei ole myyntiautomaation sisäinen GO/NO-GO-portti. Yrittäjä hoitaa vero- ja ennakkoperintään liittyvät asiat erikseen; mitään lainmukaista velvollisuutta ei tällä päätöksellä poisteta eikä ostajalle väitetä vapautusta. Kirjallinen hyväksyntä ja maksun todennus säilyvät pakollisina.
 - [ ] ALV-rekisterimerkintää ei näy, mutta vahvista vähäisen toiminnan 20 000 € raja 2025 ja 2026 toteutuneesta liikevaihdosta.
 - [ ] Vahvista toiminimen rekisterissä näkyvä virallinen nimi/osoite muusta luotettavasta lähteestä ennen tilausta; YTJ ei julkisesti näytä niitä.
 - [x] Peruutus-, keskeytys-, palautus- ja käyttö-/luovutusehdot hyväksytty kirjalliseksi tekstiversioksi 22.10.2026; WRITTEN_APPROVAL_PACKAGE.md on päätöslähde.
