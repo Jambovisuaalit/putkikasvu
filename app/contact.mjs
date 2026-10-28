@@ -1,6 +1,6 @@
 // Centralize the customer-facing contact address, subject and email draft.
 // Clicking a mailto: link NEVER sends a message automatically.
-export const CONTACT_EMAIL = 'visualjambo@gmail.com';
+export const CONTACT_EMAIL = 'jami@putkikasvu.fi';
 export const CONTACT_SUBJECT = 'Putkikasvu | Esimerkkisivupyyntö';
 export const CONTACT_BODY = [
   'Hei Putkikasvu,',
